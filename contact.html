@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+        <title>Philippe Ducasse Portfolio</title>
+        <link rel="shortcut icon"  type="image/x-icon" href="img/logo.svg">
+        <link rel="normalize" type=text/css href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    </head>
+    <body>
+        <header class="page-header">
+            <img class="page-header__item page-header__logo" src="img/logo.png" alt="logo" >
+            <nav class="page-header__item"> 
+                <!--<a href="#">Default Link</a>
+                <button type="button">Default Button</button>
+                <button class="button_secondary">Secondary Button</button> -->
+                <ul role="menubar" class="navigation-list">
+                    <li role="presentation">
+                        <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
+                    </li>
+                    <li role="presentation">            
+                        <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="contact.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Contact</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="work.html" role="menuitem" class="navigation-list__item">Work</a>
+                    </li>
+                </ul>
+            </nav> 
+        </header> 
+        <div class="contact">
+                <h1>Contact</h1>
+                <div>Philippe Ducasse <br>
+                    Friedel Str. 28 <br>
+                    12047 Berlin <br>
+                    Germany <br>
+                    <br>
+                    Telephone:<a href="tel:+4915203723752"> +4915203723752</a> <br>
+                    Skype:<a href="skype:Ducassephi">Ducassephi </a><br>
+                    Email:<a href="mailto:ducassephi@hotmail.fr">ducassephi@hotmail.fr</a><br>
+                    <a href="mailto:ducassephi@hotmail.fr">Contact me</a>
+                </div>
+                <div class="contact__form">
+                    <form action="/email" method="post" id="contact form">
+                        <label class="standard-label" for="email">Email</label> <!-- for attribute  is used to specify the type of form element a label is bound to, makes it more accessible. -->
+                        <input type="email" id="email" name="user_name" required> <!-- name="user_name" gives a name to the input being given for the backend -->
+                        <label class="standard-label">Telephone</label>
+                        <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                        <label class="standard-label">Message:</label>
+                        <textarea required maxlength="240"></textarea>                        
+                        <input type="submit" value="Send message"></input>
+                    </form>
+                </div>
+        </div>
+        <footer class="page-footer">
+            <p>Find me on</p>
+            <div class="social-media">
+                <img src="img/github_icon.svg" alt="Githublogo">
+                <img src="img/twitter_icon.svg" alt="Twitterlogo">
+                <img src="img/linkdin_icon.svg" alt="Linkdinlogo">
+            </div>
+        </footer>
+        <script src="js/tota11y.min.js"></script>
+    </body>
+</html>

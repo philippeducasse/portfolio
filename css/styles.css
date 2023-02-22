@@ -1,0 +1,259 @@
+/* colours used:
+            #cfe2f3
+            #357b70
+            #05676e
+            #489c79
+            #fff
+            #e0b354 
+            #eeeeee */
+:root {
+    --primary-color:#357b70;
+    --secondary-color:#e0b354;
+    --tertiary-color:#05676e;
+    --fourth-color:#489c79;
+    --dark-grey: #2b2b2b;
+    --background-color:#eeeeee;
+    --text-color:#fff;
+    --font-weight-1:700;
+
+}
+
+
+* {
+    box-sizing: border-box;
+}
+.shortcut-icon{
+    max-width: auto;
+    height: auto;
+}
+body {
+    background-color:#eeeeee;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    /* Defines type of font, size in pixels, and distance between lines */
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: var(--font-weight-1);
+}
+h2 {
+    font-size: 24px;
+    font-weight: var(--font-weight-1);
+}
+h3 {
+    font-size: 18px;
+    font-weight: var(--font-weight-1);
+}
+a {
+    color: var(--primary-color);
+  }
+a:visited {
+    color: var(--tertiary-color);
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--fourth-color);
+}
+.page-header__logo{
+    width: 100px;
+    margin-left:300px; /*not sure this is good code*/
+}
+button,
+.button{
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the button */
+    background-color:var(--primary-color);
+    color:var(--text-color);
+    text-decoration: none;
+    padding:10px;
+    border-radius: 3px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid var(--dark-grey);
+    /*adds transition fx; this is the shorthand version*/
+    transition:opacity .5s; /*this isn´t working, VSCode doesn´t seem to recognise "opacity" */
+    margin: 30px;
+}
+
+.button:hover,
+.button:focus{
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+.button_secondary {
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+}
+@keyframes color-change {
+    
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+.sun{
+    animation: 8s color-change infinite alternate linear;
+}
+@keyframes cloud-move{
+    from{
+        transform: translate(0,50px);
+    }
+    to{
+        transform: translate(200px,50px)
+    }
+}
+.cloud-front{
+    animation: 30s cloud-move infinite alternate linear;
+}
+@keyframes cloud-move-reverse{
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+.cloud-back{
+    animation: 40s cloud-move-reverse infinite alternate linear;
+}
+.navigation-list__item--active {
+    text-decoration: none;
+}
+.profile {
+    max-width: 700px;
+    margin:0 auto; /* I don´t understand why this property centers both the image and the text. text-align should also align images?
+    but when I use it here it doesn´t*/
+    margin-top: -100px;
+}
+.profile__portrait {
+    width: 250px;
+    float:left;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+.profile__description {
+    margin-top: 30; /*this doesn´t work */
+}
+#profile__span {
+    font-style: italic;
+}
+.about {
+    text-align: center;
+    margin-top: -100px;
+}
+.about-table {
+    margin:0 auto; /*this doesn´t do anything */
+}
+.about-table__item {
+    padding: 15px;
+}
+.contact{
+    text-align: center;
+    margin-top: -100px;
+}
+.contact__form{
+    margin:50px
+}
+.standard-label{
+    padding: 30px 30px;
+    margin-top: 30px;
+}
+
+.page-footer {
+    clear: both;
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.page-header{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+.page-header__item {
+    flex-basis: 100px;
+    flex-shrink: 1;
+}
+.page-header__item:last-child{
+    flex-grow:1;
+    text-align: right;
+}
+.navigation-list{
+    list-style-type: none;
+}
+.navigation-list li{
+    display: inline-block;
+    margin-left: 15px;
+}
+.my-work{
+    text-align: center;
+}
+/* start grid fallback */
+.grid__item{
+    display: inline-block;
+    width:33%;
+}
+/* end grid fallback */
+
+@supports (display:grid) { /*tells the bowser that if it can support it, display this property*/
+
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr; /*2 rows and 3 columns of 300px; in columns value specifies width, in rows height "fr" units are better, responsive*/
+    grid-gap: 20px;
+    margin:0;
+}
+.grid__item {
+    background-color: #d3d3d3;
+    padding:10px;   
+    text-align: center;
+    width: auto; /*makes browser take up as much space as given*/
+    min-height: auto;
+    margin: 0;
+}
+.grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+}
+}
+@media all and (max-width:500px){
+    .grid {
+        grid-template-columns: 1fr;
+        }
+    }
+@media all and (min-width:500px) and (max-width:750px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        }
+        }
+@media all and (max-width:750){
+    .grid{
+        grid-gap: 10px;
+    }
+    .grid__item:last-child{
+        grid-column: auto/auto;
+        grid-row: auto/auto;
+    }
+    h1{
+    font-size: 22px;
+    }
+}

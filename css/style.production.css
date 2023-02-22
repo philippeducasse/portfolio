@@ -1,0 +1,332 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 version
+*/
+
+/* colours used:
+            #cfe2f3
+            #357b70
+            #05676e
+            #489c79
+            #fff
+            #e0b354 
+            #eeeeee */
+
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.shortcut-icon{
+    max-width: auto;
+    height: auto;
+}
+body {
+    background-color:#eeeeee;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    /* Defines type of font, size in pixels, and distance between lines */
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+a {
+    color: #357b70;
+  }
+a:visited {
+    color: #05676e;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    color: #489c79;
+}
+.page-header__logo{
+    width: 150px;
+    margin-left: -50px; /*not sure this is good code*/
+}
+button{
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the button */
+    background-color:#357b70;
+    color:#fff;
+    text-decoration: none;
+    padding:10px;
+    border-radius: 3px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid #2b2b2b;
+    /*adds transition fx; this is the shorthand version*/
+    -webkit-transition:opacity .5s;
+    transition:opacity .5s; /*this isn´t working, VSCode doesn´t seem to recognise "opacity" */
+    margin: 30px;
+}
+.button{
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the button */
+    background-color:#357b70;
+    color:#fff;
+    text-decoration: none;
+    padding:10px;
+    border-radius: 3px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid #2b2b2b;
+    /*adds transition fx; this is the shorthand version*/
+    -webkit-transition:opacity .5s;
+    transition:opacity .5s; /*this isn´t working, VSCode doesn´t seem to recognise "opacity" */
+    margin: 30px;
+}
+
+.button:hover,
+.button:focus{
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+}
+.button_secondary {
+  background-color: #e0b354;
+  color: #2b2b2b;
+}
+@-webkit-keyframes color-change {
+    
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+@keyframes color-change {
+    
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+.sun{
+    -webkit-animation: 8s color-change infinite alternate linear;
+            animation: 8s color-change infinite alternate linear;
+}
+@-webkit-keyframes cloud-move{
+    from{
+        -webkit-transform: translate(0,50px);
+                transform: translate(0,50px);
+    }
+    to{
+        -webkit-transform: translate(200px,50px);
+                transform: translate(200px,50px)
+    }
+}
+@keyframes cloud-move{
+    from{
+        -webkit-transform: translate(0,50px);
+                transform: translate(0,50px);
+    }
+    to{
+        -webkit-transform: translate(200px,50px);
+                transform: translate(200px,50px)
+    }
+}
+.cloud-front{
+    -webkit-animation: 30s cloud-move infinite alternate linear;
+            animation: 30s cloud-move infinite alternate linear;
+}
+@-webkit-keyframes cloud-move-reverse{
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+@keyframes cloud-move-reverse{
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+.cloud-back{
+    -webkit-animation: 40s cloud-move-reverse infinite alternate linear;
+            animation: 40s cloud-move-reverse infinite alternate linear;
+}
+.navigation-list__item--active {
+    text-decoration: none;
+}
+.profile {
+    max-width: 700px;
+    margin:0 auto; /* I don´t understand why this property centers both the image and the text. text-align should also align images?
+    but when I use it here it doesn´t*/
+    margin-top: -100px;
+}
+.profile__portrait {
+    width: 250px;
+    float:left;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+.profile__description {
+    margin-top: 30; /*this doesn´t work */
+}
+#profile__span {
+    font-style: italic;
+}
+.about {
+    text-align: center;
+    margin-top: -100px;
+}
+.about-table {
+    margin:0 auto; /*this doesn´t do anything */
+}
+.about-table__item {
+    padding: 15px;
+}
+.contact{
+    text-align: center;
+    margin-top: -100px;
+}
+.contact__form{
+    margin:50px
+}
+.standard-label{
+    padding: 30px 30px;
+    margin-top: 30px;
+}
+
+.page-footer {
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.page-header{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+.page-header__item {
+    -ms-flex-preferred-size: 200px;
+        flex-basis: 200px;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+}
+.page-header__item:last-child{
+    -webkit-box-flex:1;
+        -ms-flex-positive:1;
+            flex-grow:1;
+    text-align: right;
+}
+.navigation-list{
+    list-style-type: none;
+}
+.navigation-list li{
+    display: inline-block;
+    margin-left: 15px;
+}
+.my-work{
+    text-align: center;
+}
+/* start grid fallback */
+.grid__item{
+    display: inline-block;
+    width:33%;
+}
+/* end grid fallback */
+
+@supports (display:grid) { /*tells the bowser that if it can support it, display this property*/
+
+.grid{
+    display:-ms-grid;
+    display:grid;
+    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /*2 rows and 3 columns of 300px; in columns value specifies width, in rows height "fr" units are better, responsive*/
+    grid-gap: 20px;
+    margin:0;
+}
+.grid__item {
+    background-color: #d3d3d3;
+    padding:10px;   
+    text-align: center;
+    width: auto; /*makes browser take up as much space as given*/
+    min-height: auto;
+    margin: 0;
+}
+.grid__item:last-child {
+    -ms-grid-column: 3;
+    grid-column: 3 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+}
+}
+@media all and (max-width:500px){
+    .grid {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        }
+    }
+@media all and (min-width:500px) and (max-width:750px){
+    .grid{
+        -ms-grid-columns: 1fr 20px 1fr;
+        grid-template-columns: 1fr 1fr;
+        }
+        }
+@media all and (max-width:750){
+    .grid{
+        grid-gap: 10px;
+    }
+    .grid__item:last-child{
+        grid-column: auto/auto;
+        grid-row: auto/auto;
+    }
+    h1{
+    font-size: 22px;
+    }
+}
