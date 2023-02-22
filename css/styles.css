@@ -141,7 +141,7 @@ button,
     max-width: 700px;
     margin:0 auto; /* I don´t understand why this property centers both the image and the text. text-align should also align images?
     but when I use it here it doesn´t*/
-    margin-top: -100px;
+    margin-top: auto;
 }
 .profile__portrait {
     width: 250px;
@@ -157,7 +157,7 @@ button,
 }
 .about {
     text-align: center;
-    margin-top: -100px;
+    margin-top: auto;
 }
 .about-table {
     margin:0 auto; /*this doesn´t do anything */
@@ -167,7 +167,7 @@ button,
 }
 .contact{
     text-align: center;
-    margin-top: -100px;
+    margin-top: 100px;
 }
 .contact__form{
     margin:50px
