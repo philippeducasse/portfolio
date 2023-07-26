@@ -28,8 +28,6 @@
 }
 body {
     background-color:#eeeeee;
-}
-body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -206,6 +204,9 @@ button,
 }
 .my-work{
     text-align: center;
+}
+#technologies{
+    text-align: left;
 }
 /* start grid fallback */
 .grid__item{
