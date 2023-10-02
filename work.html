@@ -1,79 +1,82 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-        <title>Philippe Ducasse Portfolio</title>
-        <link rel="shortcut icon"  type="image/x-icon" href="img/logo.svg">
-        <link rel="normalize" type=text/css href="css/normalize.css">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/style.production.css">
-    </head>
-    <body>
-        <header class="page-header">
-            <img class="page-header__item page-header__logo" src="img/logo.png" alt="logo" >
-            <nav class="page-header__item"> 
-                <!--<a href="#">Default Link</a>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Philippe Ducasse Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.svg">
+    <link rel="normalize" type="text/css" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.production.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+    <header class="page-header">
+        <img class="page-header__item page-header__logo" src="img/logo.png" alt="logo">
+        <nav class="page-header__item">
+            <!--<a href="#">Default Link</a>
                 <button type="button">Default Button</button>
                 <button class="button_secondary">Secondary Button</button> -->
-                <ul role="menubar" class="navigation-list">
-                    <li role="presentation">
-                        <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
-                    </li>
-                    <li role="presentation">            
-                        <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="work.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Work</a>
-                    </li>
-                </ul>
-            </nav> 
-        </header> 
-        <section class="my-work">
-            <h1>My Work</h1>
-            <div class="grid">
-                <div class="grid__item">
-                    <h2>Mobile Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
+            <ul role="menubar" class="navigation-list">
+                <li role="presentation">
+                    <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
+                </li>
+                <li role="presentation">
+                    <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
+                </li>
+                <li role="presentation">
+                    <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a>
+                </li>
+                <li role="presentation">
+                    <a href="work.html" role="menuitem"
+                        class="navigation-list__item navigation-list__item--active">Work</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section class="my-work">
+        <h1>My Work</h1>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="projectModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="projectModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLongTitle"></h5>
                 </div>
-                <div class="grid__item">
-                    <h2>Desktop Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
+                <div class="modal-body">
                 </div>
-                <div class="grid__item">
-                    <h2>Mobile Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
-                </div>
-                <div class="grid__item">
-                    <h2>Mobile Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
-                </div>
-                <div class="grid__item">
-                    <h2>Mobile Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
-                </div>
-                <div class="grid__item">
-                    <h2>Mobile Web Apps</h2>
-                    <p>In this project I designed various web applications</p>
-                    <a href="#">See my project on Github</a>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        </section>
-        <footer class="page-footer">
-            <p>Find me on</p>
-            <div class="social-media">
-                <img src="img/github_icon.svg" alt="Githublogo">
-                <img src="img/twitter_icon.svg" alt="Twitterlogo">
-                <img src="img/linkdin_icon.svg" alt="Linkdinlogo">
-            </div>
-        </footer>
-        <script src="js/tota11y.min.js"></script>
-    </body>
+        </div>
+    </div>
+</section>
+    <footer class="page-footer">
+        <p>Find me on</p>
+        <div class="social-media">
+            <img src="img/github_icon.svg" alt="Githublogo">
+            <img src="img/twitter_icon.svg" alt="Twitterlogo">
+            <img src="img/linkdin_icon.svg" alt="Linkdinlogo">
+        </div>
+    </footer>
+    <script src="js/tota11y.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
 </html>

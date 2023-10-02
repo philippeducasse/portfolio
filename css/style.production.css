@@ -272,6 +272,8 @@ button{
 }
 .my-work{
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 /* start grid fallback */
 .grid__item{
@@ -279,32 +281,54 @@ button{
     width:33%;
 }
 /* end grid fallback */
+.card-img-top{
+    width: 30%
+}
+.screenshot{
+    width:50%;
+}
+
 
 @supports (display:grid) { /*tells the bowser that if it can support it, display this property*/
 
 .grid{
-    display:-ms-grid;
     display:grid;
-    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-    grid-template-columns: 1fr 1fr 1fr; /*2 rows and 3 columns of 300px; in columns value specifies width, in rows height "fr" units are better, responsive*/
+    grid-template-columns: 1fr 1fr 1fr;
+    
     grid-gap: 20px;
-    margin:0;
+    margin:0 auto;
 }
 .grid__item {
     background-color: #d3d3d3;
+    grid-column-start: 1;
     padding:10px;   
     text-align: center;
     width: auto; /*makes browser take up as much space as given*/
     min-height: auto;
     margin: 0;
 }
-.grid__item:last-child {
+/* .grid__item:last-child {
     -ms-grid-column: 3;
     grid-column: 3 / 3;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1 / 3;
+} */
 }
+.technologies{
+    text-align: left;
+}
+#meet__screenshot{
+    width: 30%;
+}
+.backdrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 @media all and (max-width:500px){
     .grid {
