@@ -272,6 +272,8 @@ button{
 }
 .my-work{
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 /* start grid fallback */
 .grid__item{
