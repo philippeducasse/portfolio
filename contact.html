@@ -34,10 +34,25 @@
         <div class="contact">
                 <h1>Contact</h1>
                 <div>Philippe Ducasse <br>
-                   
+                    Friedel Str. 28 <br>
+                    12047 Berlin <br>
+                    Germany <br>
                     <br>
                     Telephone:<a href="tel:+4915203723752"> +4915203723752</a> <br>
+                    Skype:<a href="skype:Ducassephi">Ducassephi </a><br>
                     Email:<a href="mailto:ducassephi@hotmail.fr">ducassephi@hotmail.fr</a><br>
+                    <a href="mailto:ducassephi@hotmail.fr">Contact me</a>
+                </div>
+                <div class="contact__form">
+                    <form action="/email" method="post" id="contact form">
+                        <label class="standard-label" for="email">Email</label> <!-- for attribute  is used to specify the type of form element a label is bound to, makes it more accessible. -->
+                        <input type="email" id="email" name="user_name" required> <!-- name="user_name" gives a name to the input being given for the backend -->
+                        <label class="standard-label">Telephone</label>
+                        <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                        <label class="standard-label">Message:</label>
+                        <textarea required maxlength="240"></textarea>                        
+                        <input type="submit" value="Send message">
+                    </form>
                 </div>
         </div>
         <footer class="page-footer">
