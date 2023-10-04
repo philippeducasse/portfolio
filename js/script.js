@@ -1,23 +1,24 @@
 let projects = [
+
     {
         id: 1,
-        name: 'Pokédex App',
-        shortDescription: 'Vanilla Javascript app which dynamically displays a list of Pokémons',
-        description: 'In this project I designed a simple API using vanilla Javascript and Jquery to create an App that renders a list of Pokémon with specific details and images for each Pokémon. The Pokémon list is fetched from an external API, and the list is displayed dynamically using JS. Each rendered pokemon contains a button that displays a modal with additional information when clicked.',
-        technologies: ['Vanilla Javascript', 'Jquery', 'Rest API', 'Bootstrap', 'AJAX'],
-        image: './img/Screenshot_pokedex.png',
-        githubLink: 'https://github.com/philippeducasse/Pokedex-App',
-        link: 'https://philippeducasse.github.io/Pokedex-App/',
-    },
-    {
-        id: 2,
         name: 'fletNix',
-        shortDescription: 'An app for displaying a list of movies built with the MERN webstack',
-        description: 'For this project I built an entire application which displays a list of movies, includind the backend server using NodeJS & express and MongoDB, and the frontend using React. The Api includes authorisation and authentication methods using express Passport, allowing users to signup, login, browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile.',
-        technologies: ['NodeJs', 'Express', 'Passport', 'Postman', 'MongoDB', 'Render', 'SQL', 'Mongo Atlas', 'React', 'React Bootstrap'],
+        shortDescription: 'An app for displaying a list of movies built with the React.js',
+        description: 'For this project I built the frontend for a single page application (SPA) using the React.js framework and React Bootstrap, a UI library. After signing up and logging in, users can browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile. The app also allows users to view similar movies from the list based on their genre. This app makes API requests to an API which I created previously, making this a full-stack project.',
+        technologies: ['React', 'React Bootstrap', 'Redux (state management)', 'Parcel (build tool)'],
         image: './img/ss_fletnix.png',
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
         link: 'https://fletnix-s949.onrender.com'
+    },
+    {
+        id: 2,
+        name: 'Movie API',
+        shortDescription: 'An Api for a movie database built with Node.js',
+        description: 'For this project I built the backend for an app which displays a list of movies using a REST API. I used the Express library to write the various CRUD API requests in Node.js. I then used the SQL databse MongoDB and Mongo Atlas for storing the data on a server. The API includes authorisation and authentication methods using express Passport, allowing users to signup, login, browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile.',
+        technologies: ['NodeJs', 'Express', 'Passport', 'Postman', 'MongoDB', 'Render', 'SQL', 'Mongo Atlas'],
+        image: './img/sc_movie_api.png',
+        githubLink: 'https://github.com/philippeducasse/movie_api',
+        link: ''
     },
     {
         id: 3,
@@ -71,33 +72,13 @@ let projects = [
     },
     {
         id: 6,
-        name: 'Other Projects',
-        shortDescription: 'A list of other smaller projects',
-        description: '',
-        projects: [{
-            id: 6,
-            name: 'Results Summary Card',
-            shortDescription: '',
-            description: 'In this small project I created a Summary Card working from a model image provide by Frontendmentor.com. I recrated the model image as accurately as possible using only HTML and CSS',
-            technologies: ['HTML', 'CSS'],
-            image: './img/ss_results_card.png',
-            githubLink: '',
-            link: '',
-        },
-        {
-            id: 7,
-            name: 'Product Preview Card Component',
-            shortDescription: '',
-            description: '',
-            technologies: [],
-            image: './img/ss_preview_card.png',
-            githubLink: '',
-            link: '',
-        },],
-        technologies: [],
-        image: './img/ss_simple_registration_form.png',
-        githubLink: '',
-        link: '',
+        name: 'Pokédex App',
+        shortDescription: 'Vanilla Javascript app which dynamically displays a list of Pokémons',
+        description: 'In this project I designed a simple API using vanilla Javascript and Jquery to create an App that renders a list of Pokémon with specific details and images for each Pokémon. The Pokémon list is fetched from an external API, and the list is displayed dynamically using JS. Each rendered pokemon contains a button that displays a modal with additional information when clicked.',
+        technologies: ['Vanilla Javascript', 'Jquery', 'Rest API', 'Bootstrap', 'AJAX'],
+        image: './img/Screenshot_pokedex.png',
+        githubLink: 'https://github.com/philippeducasse/Pokedex-App',
+        link: 'https://philippeducasse.github.io/Pokedex-App/',
     },
 
 ]
@@ -134,7 +115,7 @@ function addProject(project) {
     // adds button to each project
     let button = document.createElement('button');
     button.innerText = 'See details';
-    button.classList.add('btn', 'btn-primary');
+    button.classList.add('btn', 'btn-primary', 'modal-button');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#projectModalCenter');
     button.setAttribute('type', 'button');
@@ -160,22 +141,29 @@ function showModal(project) {
     projectDescription.textContent = project.description;
 
     let technologiesList = document.createElement('ul')
-    
 
     let projectGithubLink = document.createElement('a');
-    projectGithubLink.textContent = project.githubLink;
+    projectGithubLink.classList.add('modal-github-logo');
+    projectGithubLink.setAttribute('target', '_blank');
     projectGithubLink.setAttribute('href', project.githubLink);
+    projectGithubLink.textContent ='View the repository on GitHub';
 
     let projectLink = document.createElement('a');
-    projectLink.textContent = project.link;
+    projectLink.textContent = 'See the app live';
     projectLink.setAttribute('href', project.link);
+    projectLink.setAttribute('target', '_blank');
+    projectLink.classList.add('live-link');
+
+    let modalLinks = document.createElement('div');
+    modalLinks.classList.add('modal-links')
 
     modalBody.append(projectScreenshot);
     modalBody.append(projectDescription);
     modalBody.append(technologiesList);
-    modalBody.append(projectGithubLink);
-    modalBody.append(projectLink);
+    modalLinks.append(projectGithubLink);
+    modalLinks.append(projectLink);
     modalTitle.append(projectName);
+    modalBody.append(modalLinks);
 }
 
 $(document).ready(function () {
