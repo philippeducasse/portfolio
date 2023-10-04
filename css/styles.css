@@ -18,6 +18,7 @@
 
 }
 
+/* BODY */
 
 * {
     box-sizing: border-box;
@@ -26,13 +27,17 @@
     max-width: auto;
     height: auto;
 }
+html{
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
 body {
-    background-color:#eeeeee;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
-    /* Defines type of font, size in pixels, and distance between lines */
+    margin: 0
 }
 
 h1 {
@@ -40,6 +45,8 @@ h1 {
     font-weight: var(--font-weight-1);
 }
 h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
     font-size: 24px;
     font-weight: var(--font-weight-1);
 }
@@ -59,10 +66,6 @@ a:hover, a:focus {
 
 a:active {
     color: var(--fourth-color);
-}
-.page-header__logo{
-    width: 100px;
-    margin-left:300px; /*not sure this is good code*/
 }
 button,
 .button{
@@ -95,50 +98,42 @@ button,
   background-color: var(--secondary-color);
   color: var(--dark-grey);
 }
-@keyframes color-change {
-    
-  0% {
-    fill: #edc655;
-  }
-  50% {
-    fill: #fcffad;
-  }
-  100% {
-    fill: #f76414;
-  }
+
+/* HEADER */
+.page-header{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 30px solid #337ab7;
+    background-color: #fffF;
 }
-.sun{
-    animation: 8s color-change infinite alternate linear;
+.page-header__logo{
+    width: 100px; 
 }
-@keyframes cloud-move{
-    from{
-        transform: translate(0,50px);
-    }
-    to{
-        transform: translate(200px,50px)
-    }
+.page-header__item {
+    flex-basis: 150px;
+    flex-shrink: 1;
 }
-.cloud-front{
-    animation: 30s cloud-move infinite alternate linear;
-}
-@keyframes cloud-move-reverse{
-  from {
-    transform: translate(446px, 48px);
-  }
-  to {
-    transform: translate(100px, 48px);
-  }
-}
-.cloud-back{
-    animation: 40s cloud-move-reverse infinite alternate linear;
+.page-header__item:last-child{
+    flex-grow:1;
+    text-align: right;
 }
 .navigation-list__item--active {
     text-decoration: none;
 }
+.navigation-list{
+    list-style-type: none;
+}
+.navigation-list li{
+    display: inline-block;
+    margin-left: 15px;
+}
+/* INDEX PAGE */
+
 .profile {
     max-width: 700px;
-    margin:0 auto; /* I don´t understand why this property centers both the image and the text. text-align should also align images?
-    but when I use it here it doesn´t*/
+    margin:0 auto;
     margin-top: auto;
 }
 .profile__portrait {
@@ -153,6 +148,8 @@ button,
 #profile__span {
     font-style: italic;
 }
+
+/* ABOUT PAGE */
 .about {
     text-align: center;
     margin-top: auto;
@@ -163,6 +160,9 @@ button,
 .about-table__item {
     padding: 15px;
 }
+
+/* CONTACT PAGE */
+
 .contact{
     text-align: center;
     margin-top: 100px;
@@ -175,6 +175,8 @@ button,
     margin-top: 30px;
 }
 
+/* FOOTER */
+
 .page-footer {
     clear: both;
     display: flex;
@@ -182,58 +184,110 @@ button,
     text-align: center;
     padding-bottom: 30px;
 }
-.page-header{
-    display: flex;
-    width: 100%;
-    padding: 20px;
+.social-media img{
+    padding: 10px;
 }
-.page-header__item {
-    flex-basis: 100px;
-    flex-shrink: 1;
+.social-media a:hover{
+    text-decoration: none;
 }
-.page-header__item:last-child{
-    flex-grow:1;
-    text-align: right;
+.social-media a{
+    text-decoration: none;
 }
-.navigation-list{
-    list-style-type: none;
-}
-.navigation-list li{
-    display: inline-block;
-    margin-left: 15px;
-}
+
+/* WORK PAGE */
 .work-title{
     text-align: center;
-
+    padding-bottom: 15px;
+    
 }
 
 #technologies{
     text-align: left;
 }
-/* start grid fallback */
+    /* start grid fallback */
 .my-work{
     display: inline-block;
-    background-color: #d3d3d3;
+    background-color: #fff;
+    padding: 30px 0 50px;
+    border-bottom: 30px solid #337ab7;
 }
+/* end grid fallback */
 .screenshot{
     width: 300px;
     height: 150px;
 }
 .btn {
-    margin: 25px;
+    margin: 10px;
     display: inline-block;
 }
 .short-description {
-    margin-top: 30px;
+    margin-top: 20px;
 }
-/* end grid fallback */
+.modal-button {
+    position: absolute;
+    bottom: 0;
+    left: 115px;
+}
+.background-bar1{
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    height: 30px;
+    background-color: #337ab7;
+    z-index:0;
+}
+.background-bar2{
+    position: absolute;
+    top: 800px;
+    width: 100%;
+    height: 30px;
+    background-color: #337ab7;
+    z-index:0;
+}
+/* .background-bar3{
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 100px;
+    background-color: #578ab7;
+    z-index:0;
+} */
+
+/* GRID */
+
+@supports (display:grid) { /*tells the bowser that if it can support it, display this property*/
+
+    .grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 25px;
+        margin: 0 100px;
+    }
+.grid__item {
+    padding:20px;   
+    text-align: center;
+    width: auto; /*makes browser take up as much space as given*/
+    height: 350px;
+    margin: 0;
+    border: 6px solid #337ab7;
+    background-color: #fff;
+    border-radius: 5%;
+    position: relative;
+}
+.grid__item:hover {
+    border: 6px solid #e3e5ef;
+    transition: 800ms;
+}
+
+}
 
 /* MODAL */
 
 .modal-image {
     max-width: 500px;
     max-height: 500px;
-    display: inline;
+    display: flex;
+    margin: 0 auto;
 }
 
 .modal-title {
@@ -243,27 +297,18 @@ button,
 .project-description {
     margin: 30px 15px 15px;
 }
-@supports (display:grid) { /*tells the bowser that if it can support it, display this property*/
-
-    .grid{
-        display:grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 25px;
-        margin: 0 100px;
-        border: 6px solid #d3d3d3;
-    }
-.grid__item {
-    padding:20px;   
+.modal-links{
+    margin: 0 auto;
     text-align: center;
-    width: auto; /*makes browser take up as much space as given*/
-    min-height: auto;
-    margin: 0;
-    border: 3px solid #3e4c9e;
-    background-color: #fff;
-    border-radius: 5%;
-}
 
 }
+.modal-github-link {
+    display: block;
+}
+.live-link {
+    display: block;
+}
+/* RESPONSIVE BREAKPOINTS */
 @media all and (max-width:500px){
     .grid {
         grid-template-columns: 1fr;
