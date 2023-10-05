@@ -91,7 +91,7 @@ function addProject(project) {
     projectList.appendChild(projectItem)
 
     //add title to each project
-    let projectTitle = document.createElement('h2');
+    let projectTitle = document.createElement('h4');
     projectTitle.classList.add('card-title');
 
     let t = document.createTextNode(project.name);
@@ -106,7 +106,7 @@ function addProject(project) {
 
     //adds short description for each project
 
-    let shortDescription = document.createElement('h5');
+    let shortDescription = document.createElement('p');
     shortDescription.classList.add('short-description');
     let sd = document.createTextNode(project.shortDescription);
     shortDescription.appendChild(sd);
