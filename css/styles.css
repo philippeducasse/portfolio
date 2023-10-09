@@ -23,21 +23,17 @@
 * {
     box-sizing: border-box;
 }
+
 .shortcut-icon{
     max-width: auto;
     height: auto;
-}
-html{
-    width: 100%;
-    margin: 0;
-    padding:0;
 }
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
-    margin: 0
+    margin: 0;
 }
 
 h1 {
@@ -75,7 +71,7 @@ button,
     /* takes the font from the outer container */
     font-family: inherit;
     /* styles the button */
-    background-color:var(--primary-color);
+    background-color:#337ab7;
     color:var(--text-color);
     text-decoration: none;
     padding:10px;
@@ -95,16 +91,17 @@ button,
     opacity: 0.8;
 }
 .button_secondary {
-  background-color: var(--secondary-color);
-  color: var(--dark-grey);
+  background-color: #337ab7;
+  color: #337ab7;
 }
+
 
 /* HEADER */
 .page-header{
     display: flex;
     width: 100%;
-    padding: 20px;
-    margin: 0;
+    height: 105px;
+    padding: 20px 100px;
     border-bottom: 30px solid #337ab7;
     background-color: #fffF;
 }
@@ -124,26 +121,31 @@ button,
 }
 .navigation-list{
     list-style-type: none;
+
 }
 .navigation-list li{
     display: inline-block;
     margin-left: 15px;
 }
+.navigation-list__item{
+    text-decoration: none;
+
+}
 /* INDEX PAGE */
 
 .profile {
-    max-width: 700px;
-    margin:0 auto;
-    margin-top: auto;
+    margin:50px 200px;
+    display: flex;
+    justify-content: center;
 }
 .profile__portrait {
     width: 250px;
+    height: 250px;
+    margin-right: 70px;
     float:left;
-    margin-right: 40px;
     border-radius: 50%;
 }
 .profile__description {
-    margin-top: 30; /*this doesn´t work */
 }
 #profile__span {
     font-style: italic;
@@ -152,7 +154,7 @@ button,
 /* ABOUT PAGE */
 .about {
     text-align: center;
-    margin-top: auto;
+    margin-top: 50px;
 }
 .about-table {
     margin:0 auto; /*this doesn´t do anything */
@@ -160,12 +162,20 @@ button,
 .about-table__item {
     padding: 15px;
 }
+.skills {
+    margin-top: 30px;
+}
+.skills img {
+    width: 50px;
+    height:50px;
+    margin: 10px;
+}
 
 /* CONTACT PAGE */
 
 .contact{
     text-align: center;
-    margin-top: 100px;
+    margin: 30px;
 }
 .contact__form{
     margin:50px
@@ -183,9 +193,11 @@ button,
     flex-direction:column;
     text-align: center;
     padding-bottom: 30px;
+    border-top: 30px solid #337ab7;
 }
 .social-media img{
     padding: 10px;
+    margin-top: 20px;
 }
 .social-media a:hover{
     text-decoration: none;
@@ -206,15 +218,14 @@ button,
 }
     /* start grid fallback */
 .my-work{
-    display: inline-block;
     background-color: #fff;
     padding: 30px 0 50px;
-    border-bottom: 30px solid #337ab7;
 }
 /* end grid fallback */
 .screenshot{
     width: 300px;
     height: 150px;
+    margin-top: 20px;
 }
 .btn {
     margin: 10px;
@@ -227,6 +238,7 @@ button,
     position: absolute;
     bottom: 0;
     left: 115px;
+    background-color: #337ab7;
 }
 .background-bar1{
     position: absolute;
@@ -267,7 +279,7 @@ button,
     padding:20px;   
     text-align: center;
     width: auto; /*makes browser take up as much space as given*/
-    height: 350px;
+    height: 370px;
     margin: 0;
     border: 6px solid #337ab7;
     background-color: #fff;
@@ -284,23 +296,33 @@ button,
 /* MODAL */
 
 .modal-image {
-    max-width: 500px;
+    max-width: 400px;
     max-height: 500px;
     display: flex;
     margin: 0 auto;
+    transition: transform .2s; /* Animation */
 }
-
+.modal-image:hover {
+    transform: scale(2);
+}
+.modal-content {
+    border: 6px solid #337ab7;
+}
 .modal-title {
     text-align: center;
 }
-
+.modal-header{
+    border-bottom: 5px solid #337ab7;
+}
+.modal-footer{
+    border-top: 5px solid #337ab7;
+}
 .project-description {
     margin: 30px 15px 15px;
 }
 .modal-links{
     margin: 0 auto;
     text-align: center;
-
 }
 .modal-github-link {
     display: block;
@@ -309,17 +331,47 @@ button,
     display: block;
 }
 /* RESPONSIVE BREAKPOINTS */
-@media all and (max-width:500px){
+@media only screen and (max-width:500px){
+    .profile{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile__portrait{
+        margin: 0 0 30px;
+    }
+    .profile__description{
+        width: 300px;
+    }
     .grid {
         grid-template-columns: 1fr;
+        margin: 0;
+        
         }
+        .grid__item{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .grid__item img {
+            max-width: 200px;
+        }
+    .modal-image {
+        max-width: 250px;
     }
-@media all and (min-width:500px) and (max-width:750px){
+    .page-header{
+        margin:0;
+        padding: 20px
+    }
+    }
+    .about{
+        padding: 0 20px;
+    }
+@media (min-width:500px) and (max-width:750px){
     .grid{
         grid-template-columns: 1fr 1fr;
         }
         }
-@media all and (max-width:750){
+@media (min-width:750){
     .grid{
         grid-gap: 10px;
     }
@@ -329,5 +381,8 @@ button,
     }
     h1{
     font-size: 22px;
+    }
+    .page-header{
+        margin: 0 50px
     }
 }
