@@ -173,7 +173,7 @@ article{
     margin-top: 50px;
 }
 .about-table {
-    margin:0 auto; /*this doesn´t do anything */
+    margin:0 auto; 
 }
 .about-table__item {
     padding: 15px;
