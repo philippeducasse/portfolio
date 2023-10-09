@@ -8,7 +8,7 @@ let projects = [
         technologies: ['React', 'React Bootstrap', 'Redux (state management)', 'Parcel (build tool)'],
         image: './img/ss_fletnix.png',
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
-        link: 'https://fletnix-s949.onrender.com'
+        link: 'https://flet-nix.netlify.app/'
     },
     {
         id: 2,
@@ -148,11 +148,14 @@ function showModal(project) {
     projectGithubLink.setAttribute('href', project.githubLink);
     projectGithubLink.textContent ='View the repository on GitHub';
 
-    let projectLink = document.createElement('a');
-    projectLink.textContent = 'See the app live';
-    projectLink.setAttribute('href', project.link);
-    projectLink.setAttribute('target', '_blank');
-    projectLink.classList.add('live-link');
+    let projectLink = null // define var outside conditional to make it accessible to all conditions
+    if (project.link !== ''){
+        projectLink = document.createElement('a');
+        projectLink.textContent = 'See the app live';
+        projectLink.classList.add('live-link');
+        projectLink.setAttribute('href', project.link);
+        projectLink.setAttribute('target', '_blank');
+    } 
 
     let modalLinks = document.createElement('div');
     modalLinks.classList.add('modal-links')
@@ -161,7 +164,9 @@ function showModal(project) {
     modalBody.append(projectDescription);
     modalBody.append(technologiesList);
     modalLinks.append(projectGithubLink);
-    modalLinks.append(projectLink);
+    if (projectLink){
+        modalLinks.append(projectLink);
+    }  
     modalTitle.append(projectName);
     modalBody.append(modalLinks);
 }

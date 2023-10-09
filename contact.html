@@ -14,28 +14,30 @@
 
 <body>
     <header class="page-header">
-        <img class="page-header__item page-header__logo" src="img/PDname_inline.png" alt="philippe ducasse">
-        <nav class="page-header__item">
-            <!--<a href="#">Default Link</a>
-                <button type="button">Default Button</button>
-                <button class="button_secondary">Secondary Button</button> -->
-            <ul role="menubar" class="navigation-list">
-                <li role="presentation">
-                    <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
+        <a href="index.html">
+            <img class="page-header__item page-header__logo" src="img/PDname_inline.png" alt="philippe ducasse" >
+        </a>
+        <nav class="navbar navbar-expand-md page-header__item">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link navigation-list__item" href="index.html" id="nav-home">Home</a>
+                  </li>
+                <li class="nav-item active">
+                  <a class="nav-link navigation-list__item" href="about.html">About </a>
                 </li>
-                <li role="presentation">
-                    <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
-                </li>
-                <li role="presentation">
-                    <a href="contact.html" role="menuitem"
-                        class="navigation-list__item navigation-list__item--active">Contact</a>
-                </li>
-                <li role="presentation">
-                    <a href="work.html" role="menuitem" class="navigation-list__item">Work</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                <li class="nav-item">
+                    <a class="nav-link navigation-list__item" href="work.html">Work</a>
+                  </li>
+                
+              </ul>
+            </div>
+          </nav>
+    </header> 
     <div class="contact">
         <h1>Contact</h1>
         <br>
@@ -74,6 +76,11 @@
             </a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>  
     <script src="js/tota11y.min.js"></script>
 </body>
 
