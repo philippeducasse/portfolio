@@ -85,8 +85,16 @@ let projects = [
 
 function addProject(project) {
     let projectList = document.querySelector('.grid');
-    let projectItem = document.createElement('div')
-    projectItem.classList.add('grid__item')
+    let projectItem = document.createElement('div');
+    projectItem.classList.add('grid__item', 'hidden');
+    const index = projectList.children.length;
+    if (index < 2) {
+        projectItem.classList.add('left');
+    } else if (index < 4) {
+        projectItem.classList.add('right');
+    } else {
+        projectItem.classList.add('bottom');
+    }
 
     projectList.appendChild(projectItem)
 

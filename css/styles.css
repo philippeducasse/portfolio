@@ -7,7 +7,7 @@
             #e0b354 
             #eeeeee */
 :root {
-    --primary-color:#357b70;
+    --primary-color:#337ab7;
     --secondary-color:#e0b354;
     --tertiary-color:#05676e;
     --fourth-color:#489c79;
@@ -23,7 +23,10 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
 .shortcut-icon{
     max-width: auto;
     height: auto;
@@ -37,6 +40,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+   
+}
+
+section{
+    min-height:80vh;
 }
 
 h1 {
@@ -68,34 +76,23 @@ a:active {
 }
 button,
 .button{
-    /* overwrites browser defaults and resets the border */
     border: none;
     display: inline-block;
-    /* takes the font from the outer container */
     font-family: inherit;
-    /* styles the button */
-    background-color:#337ab7;
+    background-color:var(--primary-color);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.34);
     color:var(--text-color);
     text-decoration: none;
     padding:10px;
     border-radius: 3px;
-    /* width of the border, type, color */
-    border-bottom: 2px solid var(--dark-grey);
-    /*adds transition fx; this is the shorthand version*/
-    transition:opacity .5s; /*this isn´t working, VSCode doesn´t seem to recognise "opacity" */
+    transition:500ms;
     margin: 30px;
 }
 
 .button:hover,
 .button:focus{
-    /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
-    /* reduces the opacity of the button to 80% */
     opacity: 0.8;
-}
-.button_secondary {
-  background-color: #337ab7;
-  color: #337ab7;
 }
 
 
@@ -105,7 +102,7 @@ button,
     width: 100%;
     height: 105px;
     padding: 20px 100px;
-    border-bottom: 35px solid #337ab7;
+    border-bottom: 35px solid var(--primary-color);
     background-color: #fffF;
 }
 .page-header__logo{
@@ -147,9 +144,9 @@ button,
 /* INDEX PAGE */
 
 .profile {
-    margin: 50px;
     display: flex;
     justify-content: center;
+    margin:7% 20%
 }
 .profile__portrait {
     width: 250px;
@@ -158,8 +155,7 @@ button,
     float:left;
     border-radius: 50%;
 }
-.profile__description {
-}
+
 #profile__span {
     font-style: italic;
 }
@@ -209,7 +205,7 @@ article{
     flex-direction:column;
     text-align: center;
     padding-bottom: 30px;
-    border-top: 30px solid #337ab7;
+    border-top: 30px solid var(--primary-color);
     margin-top: auto;
 }
 .social-media img{
@@ -253,22 +249,18 @@ article{
      align-items: center;
      justify-content: center;
      margin: 0 auto;
-    background-color: #337ab7;
+    background-color: var(--primary-color);
 }
 .background-bar1{
-    position: absolute;
-    top: 300px;
     width: 100%;
     height: 30px;
-    background-color: #337ab7;
+    background-color: var(--primary-color);
     z-index:0;
 }
 .background-bar2{
-    position: absolute;
-    top: 800px;
     width: 100%;
     height: 30px;
-    background-color: #337ab7;
+    background-color: var(--primary-color);
     z-index:0;
 }
 /* .background-bar3{
@@ -300,11 +292,28 @@ article{
     min-width: 200px;
     height: 370px;
     margin: 0;
-    border: 6px solid #337ab7;
+    border: 6px solid var(--primary-color);
     background-color: #fff;
     border-radius: 10px;
     position: relative;
 }
+.grid__item:nth-child(2){
+    transition-delay: 200ms;
+}
+.grid__item:nth-child(3){
+    transition-delay: 400ms;
+}
+.grid__item:nth-child(4){
+    transition-delay: 600ms;
+}
+.grid__item:nth-child(5){
+    transition-delay: 200ms;
+}
+.grid__item:nth-child(6){
+    transition-delay: 400ms;
+}
+
+
 .grid__item:hover {
     border: 6px solid #e3e5ef;
     transition: 800ms;
@@ -325,18 +334,18 @@ article{
     transform: scale(1.2);
 }
 .modal-content {
-    border: 6px solid #337ab7;
+    border: 6px solid var(--primary-color);
 }
 .modal-title {
     text-align: center;
 }
 .modal-header{
-    border-bottom: 5px solid #337ab7;
+    border-bottom: 5px solid var(--primary-color);
     justify-content: center;
     padding-bottom: 0;
 }
 .modal-footer{
-    border-top: 5px solid #337ab7;
+    border-top: 5px solid var(--primary-color);
 }
 .project-description {
     margin: 30px 15px 15px;
@@ -360,17 +369,43 @@ article{
         transition:none
     }
 }
-
-.hidden {
+.slide-in {
     opacity:0;
     filter:blur(5px);
-    transform: translateX(-100%);
     transition: all 1s;
+}
+.hidden{
+    opacity:0;
+    filter:blur(5px);
+    transition: all 1s;
+
+}
+.hidden.left {
+    transform: translateX(-10vw);
+}
+
+.hidden.right {
+    transform: translateX(10vw);
+}
+.hidden.bottom {
+    transform: translateY(10vh);
+} 
+.slide-in.left {
+    transform: translateX(-10vw);
+}
+
+.slide-in.right {
+    transform: translateX(10vw);
+}
+.slide-in.bottom {
+    transform: translateY(10vh);
 }
 .show {
     opacity: 1 ;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translateX(0) !important;
+    transform: translate(0) !important;
+    transition: all 1s;
 }
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width:500px){
@@ -535,9 +570,6 @@ article{
     .grid {
         grid-gap: 50px;
         margin: 0 100px;
-    }
-    .profile {
-        margin: 50px 200px
     }
     .profile h1 {
         display: block;
