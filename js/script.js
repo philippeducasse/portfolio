@@ -127,12 +127,13 @@ function addProject(project) {
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '#projectModalCenter');
     button.setAttribute('type', 'button');
-    button.addEventListener('click', function () { showModal(project) });
+    button.addEventListener('click', function () {showModal(project) });
     projectItem.appendChild(button);
 }
 
 // displays modal for each project
 function showModal(project) {
+    console.log('clicked')
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
     modalTitle.innerHTML = '';

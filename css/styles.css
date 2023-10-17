@@ -220,6 +220,7 @@ article{
 }
 
 /* WORK PAGE */
+
 .work-title{
     text-align: center;
     padding-bottom: 30px;
@@ -295,7 +296,6 @@ article{
     border: 6px solid var(--primary-color);
     background-color: #fff;
     border-radius: 10px;
-    position: relative;
 }
 .grid__item:nth-child(2){
     transition-delay: 200ms;
