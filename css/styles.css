@@ -8,8 +8,8 @@
             #eeeeee */
 :root {
     --primary-color:#337ab7;
-    --secondary-color:#e0b354;
-    --tertiary-color:#05676e;
+    --secondary-color:#05676e;
+    --tertiary-color:#60c3ca;
     --fourth-color:#489c79;
     --dark-grey: #2b2b2b;
     --background-color:#eeeeee;
@@ -44,12 +44,14 @@ body {
 }
 
 section{
-    min-height:80vh;
+    min-height:50vh;
+    margin:7% 20%;
 }
 
 h1 {
     font-size: 30px;
     font-weight: var(--font-weight-1);
+    color: var(--secondary-color)
 }
 h2 {
     margin-top: 0;
@@ -65,14 +67,14 @@ a {
     color: var(--primary-color);
   }
 a:visited {
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
 }
 a:hover, a:focus {
     text-decoration: none;
 }
 
 a:active {
-    color: var(--fourth-color);
+    color: var(--secondary-color);
 }
 button,
 .button{
@@ -146,7 +148,10 @@ button,
 .profile {
     display: flex;
     justify-content: center;
-    margin:7% 20%
+    
+}
+.profile-title{
+    width: 120%;
 }
 .profile__portrait {
     width: 250px;
@@ -154,10 +159,6 @@ button,
     margin-right: 70px;
     float:left;
     border-radius: 50%;
-}
-
-#profile__span {
-    font-style: italic;
 }
 
 /* ABOUT PAGE */
@@ -168,14 +169,12 @@ article{
     text-align: center;
     margin-top: 50px;
 }
-.about-table {
-    margin:0 auto; 
-}
-.about-table__item {
-    padding: 15px;
-}
+
 .skills {
     margin-top: 30px;
+}
+.skills-text{
+    margin: 30px 0;
 }
 .skills img {
     width: 50px;
@@ -187,7 +186,6 @@ article{
 
 .contact{
     text-align: center;
-    margin: 30px;
 }
 .contact__form{
     margin:50px
@@ -223,7 +221,7 @@ article{
 
 .work-title{
     text-align: center;
-    padding-bottom: 30px;
+    padding: 30px 0;
     
 }
 
@@ -257,11 +255,12 @@ article{
     height: 30px;
     background-color: var(--primary-color);
     z-index:0;
+    transition: 3s!important;
 }
 .background-bar2{
     width: 100%;
     height: 30px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     z-index:0;
 }
 /* .background-bar3{
@@ -296,6 +295,8 @@ article{
     border: 6px solid var(--primary-color);
     background-color: #fff;
     border-radius: 10px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
+
 }
 .grid__item:nth-child(2){
     transition-delay: 200ms;
@@ -315,8 +316,10 @@ article{
 
 
 .grid__item:hover {
-    border: 6px solid #e3e5ef;
+    border: 6px solid var(--tertiary-color);
     transition: 800ms;
+    box-shadow: none;
+
 }
 
 }
@@ -400,12 +403,12 @@ article{
 .slide-in.bottom {
     transform: translateY(10vh);
 }
-.show {
+.shows {
     opacity: 1 ;
     filter: blur(0);
     transform: translateX(0) !important;
     transform: translate(0) !important;
-    transition: all 1s;
+    transition: all 1.5s;
 }
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width:500px){

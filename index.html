@@ -28,10 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link navigation-list__item" href="#home" id="nav-home">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link navigation-list__item" href="#about">About </a>
+                        <a class="nav-link navigation-list__item" href="#about" id="nav-home">About </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navigation-list__item" href="#contact">Contact</a>
@@ -47,85 +44,73 @@
     <section class="profile" id="home">
         <img src="img/portrait.jpg" alt="portrait of Philippe Ducasse" class="profile__portrait slide-in left">
         <div class="profile__description">
-            <h1 class="slide-in right">Hello! My name is Philippe Ducasse</h1>
+            <h1 class="slide-in right profile-title">Hello! My name&nbsp;is Philippe&nbsp;Ducasse</h1>
             <br>
             <p class="profile__description--summary slide-in bottom">
-                I am an aspiring web developer, primarily focused on Javascript and React.js. After a 5 year career in
-                circus and performance arts, I have decided to switch to web development.
-                The experience I have acquired through performing arts, in particular my discipline and commitment to
-                hard work, attention to detail, and ability to
-                think outside the box give me unique skills in the field of software development.
+                I am a <span>full-stack Javascript web-developer with a background in circus and performance arts.</span>
+                <br>
+                <br>
+                Currently based in Berlin, Germany
             </p>
         </div>
     </section>
+    <div class="background-bar2 hidden left"></div>
     <section class="about" id="about">
         <div class="hidden right">
             <h1>About</h1>
             <article>
-                I am a circus artist living in Berlin, looking to become a junior web developer.
+                <p class="profile__description--summary hidden bottom">
+                    I am an aspiring web developer, primarily focused on Javascript and ReactJS. After almost 10 years in the field of
+                    contemporary circus and performance arts, I have decided to switch to web development.
+                    The experience I have acquired through performing arts, in particular my discipline and commitment to
+                    hard work, attention to detail, and ability to
+                    think outside the box give me unique skills in the field of software development.
+                </p>
             </article>
-            <br>
-            <table class="about-table" >
-                <thead>
-                    <tr>
-                        <th class="about-table__item">Skills</th>
-                        <th class="about-table__item">Years of Experience</th>
-                        <th class="about-table__item">Level of Expertise</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Web Development</td>
-                        <td>0.1</td>
-                        <td>Beginner</td>
-                    </tr>
-                    <tr>
-                        <td>Video Editing</td>
-                        <td>2</td>
-                        <td>Intermediate</td>
-                    </tr>
-                    <tr>
-                        <td>Circus</td>
-                        <td>12</td>
-                        <td>Advanced</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-        <div class="skills hidden left">
-            <h3>I am well versed in the following languages and frameworks:</h3>
-            <img src="img/Languages_logos/html.svg" alt="HTML logo" title="HTML">
-            <img src="img/Languages_logos/css.svg" alt="css logo">
-            <img src="img/Languages_logos/javascript.svg" alt="javascript logo">
-            <img src="img/Languages_logos/react.svg" alt="react logo">
-            <img src="img/Languages_logos/node-js.svg" alt="node-js logo">
-            <img src="img/Languages_logos/angular.svg" alt="angular logo">
-            <img src="img/Languages_logos/typescript.svg" alt="typescript logo">
-            <img src="img/Languages_logos/git-icon-logo-svg-vector.svg" alt="git logo">
-            <img src="img/Languages_logos/aws.svg" alt="aws logo">
+        <div class="skills">
+            <h3 class="skills-text  hidden left"> I am well versed in the following languages and frameworks:</h3>
+            <img class="hidden left" src="img/Languages_logos/html.svg" alt="HTML logo" title="HTML">
+            <img class= "hidden right" src="img/Languages_logos/css_logo.png" alt="css logo">
+            <img class= "hidden bottom" src="img/Languages_logos/javascript.svg" alt="javascript logo">
+            <img class= "hidden left" src="img/Languages_logos/react.svg" alt="react logo">
+            <img class= "hidden right" src="img/Languages_logos/react-native.svg" alt="react native logo">
+            <img class= "hidden bottom" src="img/Languages_logos/node_logo.png" alt="node js logo">
+            <img class= "hidden left" src="img/Languages_logos/angular.svg" alt="angular logo">
+            <img class= "hidden right" src="img/Languages_logos/jquery.png" alt="Jquery logo">
+            <img class= "hidden bottom" src="img/Languages_logos/bootstrap_logo.png" alt="bootstrap logo">
+            <img class= "hidden left" src="img/Languages_logos/mongodb_logo.png" alt="mongoDB logo">
+            <img class= "hidden right" src="img/Languages_logos/typescript.svg" alt="typescript logo">
+            <img class= "hidden bottom" src="img/Languages_logos/git-icon-logo-svg-vector.svg" alt="git logo">
+            <img class= "hidden left" src="img/Languages_logos/firebase_logo.PNG" alt="firebase logo">
+            <img class= "hidden right" src="img/Languages_logos/heroku.svg" alt="heroku logo">
+            <img class= "hidden bottom" src="img/Languages_logos/aws.svg" alt="aws logo">
+            <img class= "hidden left" src="img/Languages_logos/python.png" alt="python logo">
         </div>
-        <a href="files/cv.pdf" class="button" download>Download my CV</a>
+        <a href="files/cv.pdf" class="button hidden left" download>Download my CV</a>
     </section>
+    <div class="background-bar1 hidden right"></div>
     <section class="contact hidden right" id="contact">
-        <h1>Contact</h1>
+        <h1 class="contact hidden right">Contact</h1>
         <br>
-        <h3>Philippe Ducasse </h3>
+        <p class="hidden left"> Want me on your team? Feel free to reach out to me on your prefered platform. I'm also very open for any collaborations.</p>
         <br>
+        <div class="hidden right">
         <h5>
             Telephone: <a href="tel:+4915203723752"> +4915203723752</a>
         </h5>
         <br>
         <h5>
-            Email: <a href="mailto:ducassephi@hotmail.fr">ducassephi@hotmail.fr</a><br>
+            Email: <a href="mailto:ducassephi@hotmail.fr">info@philippeducasse.com</a><br>
         </h5>
+        </div>
     </section>
-    <section class="my-work" id="work">
-        <div class="background-bar1 hidden right"></div>
-        <div class="background-bar2 hidden left"></div>
+    <div class="my-work" id="work">
+        <div class="background-bar2 hidden right"></div>
         <h1 class="work-title hidden left ">My Work</h1>
         <container class="grid">
         </container>
-    </section>
+    </div>
 
         <!-- Modal -->
         <div class="modal fade" id="projectModalCenter" tabindex="-1" role="dialog"
@@ -138,7 +123,7 @@
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

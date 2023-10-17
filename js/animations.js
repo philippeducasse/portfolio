@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
     slider_init.forEach((box, index) => {
         setTimeout(() => {
             box.classList.remove('slide-in')
-            box.classList.add('show');
+            box.classList.add('shows');
         }, 500 * index);
     });
 });
@@ -14,10 +14,10 @@ window.addEventListener("load", () => {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show'); 
+            entry.target.classList.add('shows'); 
         }
         else {
-            entry.target.classList.remove('show');
+            entry.target.classList.remove('shows');
         }
     })
 })
