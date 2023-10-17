@@ -116,8 +116,8 @@ function addProject(project) {
     let button = document.createElement('button');
     button.innerText = 'See details';
     button.classList.add('btn', 'btn-primary', 'modal-button');
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#projectModalCenter');
+    button.setAttribute('data-bs-toggle', 'modal');
+    button.setAttribute('data-bs-target', '#projectModalCenter');
     button.setAttribute('type', 'button');
     button.addEventListener('click', function () { showModal(project) });
     projectItem.appendChild(button);
