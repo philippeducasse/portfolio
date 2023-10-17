@@ -85,8 +85,16 @@ let projects = [
 
 function addProject(project) {
     let projectList = document.querySelector('.grid');
-    let projectItem = document.createElement('div')
-    projectItem.classList.add('grid__item')
+    let projectItem = document.createElement('div');
+    projectItem.classList.add('grid__item', 'hidden');
+    const index = projectList.children.length;
+    if (index < 2) {
+        projectItem.classList.add('left');
+    } else if (index < 4) {
+        projectItem.classList.add('right');
+    } else {
+        projectItem.classList.add('bottom');
+    }
 
     projectList.appendChild(projectItem)
 
@@ -116,10 +124,10 @@ function addProject(project) {
     let button = document.createElement('button');
     button.innerText = 'See details';
     button.classList.add('btn', 'btn-primary', 'modal-button');
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#projectModalCenter');
+    button.setAttribute('data-bs-toggle', 'modal');
+    button.setAttribute('data-bs-target', '#projectModalCenter');
     button.setAttribute('type', 'button');
-    button.addEventListener('click', function () { showModal(project) });
+    button.addEventListener('click', function () {showModal(project) });
     projectItem.appendChild(button);
 }
 

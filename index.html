@@ -15,51 +15,125 @@
 <body>
 
     <header class="page-header">
-        <a href="index.html">
+        <a href="#home">
             <img class="page-header__item page-header__logo" src="img/PDname_inline.png" alt="philippe ducasse">
         </a>
         <nav class="navbar navbar-expand-md page-header__item">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link navigation-list__item" href="about.html" id="nav-home">About </a>
+                        <a class="nav-link navigation-list__item" href="#about" id="nav-home">About </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navigation-list__item" href="contact.html">Contact</a>
+                        <a class="nav-link navigation-list__item" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navigation-list__item" href="work.html">Work</a>
+                        <a class="nav-link navigation-list__item" href="#work">Work</a>
                     </li>
 
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="profile">
-        <img src="img/portrait.jpg" alt="portrait of Philippe Ducasse" class="profile__portrait">
-        <section class="profile__description">
-            <h1>Hello! My name is Philippe Ducasse</h1>
+    <section class="profile" id="home">
+        <img src="img/portrait.jpg" alt="portrait of Philippe Ducasse" class="profile__portrait slide-in left">
+        <div class="profile__description">
+            <h1 class="slide-in right profile-title">Hello! My name&nbsp;is Philippe&nbsp;Ducasse</h1>
             <br>
-            <p class="profile__description--summary">
-                I am an aspiring web developer, primarily focused on Javascript and React.js. After a 5 year career in
-                circus and performance arts, I have decided to switch to web development.
-                The experience I have acquired through performing arts, in particular my discipline and commitment to
-                hard work, attention to detail, and ability to
-                think outside the box give me unique skills in the field of software development.
+            <p class="profile__description--summary slide-in bottom">
+                I am a <span>full-stack Javascript web-developer with a background in circus and performance arts.</span>
+                <br>
+                <br>
+                Currently based in Berlin, Germany
             </p>
-        </section>
+        </div>
+    </section>
+    <div class="background-bar2 hidden left"></div>
+    <section class="about" id="about">
+        <div class="hidden right">
+            <h1>About</h1>
+            <article>
+                <p class="profile__description--summary hidden bottom">
+                    I am an aspiring web developer, primarily focused on Javascript and ReactJS. After almost 10 years in the field of
+                    contemporary circus and performance arts, I have decided to switch to web development.
+                    The experience I have acquired through performing arts, in particular my discipline and commitment to
+                    hard work, attention to detail, and ability to
+                    think outside the box give me unique skills in the field of software development.
+                </p>
+            </article>
+        </div>
+        <div class="skills">
+            <h3 class="skills-text  hidden left"> I am well versed in the following languages and frameworks:</h3>
+            <img class="hidden left" src="img/Languages_logos/html.svg" alt="HTML logo" title="HTML">
+            <img class= "hidden right" src="img/Languages_logos/css_logo.png" alt="css logo">
+            <img class= "hidden bottom" src="img/Languages_logos/javascript.svg" alt="javascript logo">
+            <img class= "hidden left" src="img/Languages_logos/react.svg" alt="react logo">
+            <img class= "hidden right" src="img/Languages_logos/react-native.svg" alt="react native logo">
+            <img class= "hidden bottom" src="img/Languages_logos/node_logo.png" alt="node js logo">
+            <img class= "hidden left" src="img/Languages_logos/angular.svg" alt="angular logo">
+            <img class= "hidden right" src="img/Languages_logos/jquery.png" alt="Jquery logo">
+            <img class= "hidden bottom" src="img/Languages_logos/bootstrap_logo.png" alt="bootstrap logo">
+            <img class= "hidden left" src="img/Languages_logos/mongodb_logo.png" alt="mongoDB logo">
+            <img class= "hidden right" src="img/Languages_logos/typescript.svg" alt="typescript logo">
+            <img class= "hidden bottom" src="img/Languages_logos/git-icon-logo-svg-vector.svg" alt="git logo">
+            <img class= "hidden left" src="img/Languages_logos/firebase_logo.PNG" alt="firebase logo">
+            <img class= "hidden right" src="img/Languages_logos/heroku.svg" alt="heroku logo">
+            <img class= "hidden bottom" src="img/Languages_logos/aws.svg" alt="aws logo">
+            <img class= "hidden left" src="img/Languages_logos/python.png" alt="python logo">
+        </div>
+        <a href="files/cv.pdf" class="button hidden left" download>Download my CV</a>
+    </section>
+    <div class="background-bar1 hidden right"></div>
+    <section class="contact hidden right" id="contact">
+        <h1 class="contact hidden right">Contact</h1>
+        <br>
+        <p class="hidden left"> Want me on your team? Feel free to reach out to me on your prefered platform. I'm also very open for any collaborations.</p>
+        <br>
+        <div class="hidden right">
+        <h5>
+            Telephone: <a href="tel:+4915203723752"> +4915203723752</a>
+        </h5>
+        <br>
+        <h5>
+            Email: <a href="mailto:ducassephi@hotmail.fr">info@philippeducasse.com</a><br>
+        </h5>
+        </div>
+    </section>
+    <div class="my-work" id="work">
+        <div class="background-bar2 hidden right"></div>
+        <h1 class="work-title hidden left ">My Work</h1>
+        <container class="grid">
+        </container>
     </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="projectModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="projectModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLongTitle"></h5>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <footer class="page-footer">
         <div class="social-media">
             <a href="https://github.com/philippeducasse" target="_blank">
                 <img src="img/github_icon.svg" alt="Githublogo">
             </a>
-            <a href="https://twitter.com/PhiDucasse" target="_blank">
+            <a href="https://twitter.com/PhiDucasse" target="_blank ">
                 <img src="img/twitter_icon.svg" alt="Twitterlogo">
             </a>
             <a href="https://linkedin.com/in/philippe-ducasse-817494294" target="_blank">
@@ -68,9 +142,10 @@
         </div>
     </footer>
     <script src="js/tota11y.min.js"></script>
+    <script defer src="js/animations.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
