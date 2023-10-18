@@ -8,8 +8,8 @@
             #eeeeee */
 :root {
     --primary-color:#337ab7;
-    --secondary-color:#05676e;
-    --tertiary-color:#60c3ca;
+    --secondary-color:#107d85;
+    --tertiary-color:#94b1cf;
     --fourth-color:#489c79;
     --dark-grey: #2b2b2b;
     --background-color:#eeeeee;
@@ -154,9 +154,7 @@ button,
     position: relative;
     
 }
-.profile-title{
-    width: 120%;
-}
+
 .profile__portrait {
     width: 250px;
     height: 250px;
@@ -371,6 +369,12 @@ article{
 }
 .live-link {
     display: block;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+}
+.btn-primary:hover{
+    background-color: var(--secondary-color);
 }
 
 /* ANIMATIONS */
@@ -588,5 +592,8 @@ article{
     }
     .profile h1 {
         display: block;
+    }
+    .profile-title{
+        width: 120%;
     }
 }

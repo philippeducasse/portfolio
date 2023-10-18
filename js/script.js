@@ -6,7 +6,7 @@ let projects = [
         shortDescription: 'An app for displaying a list of movies built with the React.js',
         description: 'For this project I built the frontend for a single page application (SPA) using the React.js framework and React Bootstrap, a UI library. After signing up and logging in, users can browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile. The app also allows users to view similar movies from the list based on their genre. This app makes API requests to an API which I created previously, making this a full-stack project.',
         technologies: ['React', 'React Bootstrap', 'Redux (state management)', 'Parcel (build tool)'],
-        image: './img/ss_fletnix.png',
+        image: './img/fletnix.png',
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
         link: 'https://flet-nix.netlify.app/'
     },
