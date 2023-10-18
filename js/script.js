@@ -28,7 +28,7 @@ let projects = [
         technologies: [
             'React', 'React Testing Library', 'Jest testing framework', 'AWS serverless hosting', 'Google OAuth authentication', 'Progressive Web Application and service workers', 'Recharts Data Visualisation'
         ],
-        image: './img/Screenshot_meet.png',
+        image: './img/ss_meet.png',
         githubLink: 'https://github.com/philippeducasse/meet',
         link: 'https://philippeducasse.github.io/meet//'
     },
