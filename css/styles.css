@@ -8,8 +8,8 @@
             #eeeeee */
 :root {
     --primary-color:#337ab7;
-    --secondary-color:#05676e;
-    --tertiary-color:#60c3ca;
+    --secondary-color:#107d85;
+    --tertiary-color:#94b1cf;
     --fourth-color:#489c79;
     --dark-grey: #2b2b2b;
     --background-color:#eeeeee;
@@ -45,7 +45,7 @@ body {
 
 section{
     min-height:50vh;
-    margin:7% 20%;
+    margin:4.5% 20%;
 }
 
 h1 {
@@ -70,11 +70,11 @@ a:visited {
     color: var(--secondary-color);
 }
 a:hover, a:focus {
-    text-decoration: none;
+    color: var(--tertiary-color)
 }
 
 a:active {
-    color: var(--secondary-color);
+    color: var(--tertiary-color);
 }
 button,
 .button{
@@ -105,6 +105,9 @@ button,
     height: 105px;
     padding: 20px 100px;
     border-bottom: 35px solid var(--primary-color);
+    /* border-image: linear-gradient(45deg,var(--primary-color),var(--tertiary-color))1; */
+    border-bottom-width: 35px;
+    border-style: solid;
     background-color: #fffF;
 }
 .page-header__logo{
@@ -148,11 +151,10 @@ button,
 .profile {
     display: flex;
     justify-content: center;
+    position: relative;
     
 }
-.profile-title{
-    width: 120%;
-}
+
 .profile__portrait {
     width: 250px;
     height: 250px;
@@ -253,15 +255,20 @@ article{
 .background-bar1{
     width: 100%;
     height: 30px;
+    /* background-image: linear-gradient(45deg, var(--primary-color),var(--tertiary-color)); */
     background-color: var(--primary-color);
+
     z-index:0;
     transition: 3s!important;
+     
 }
 .background-bar2{
     width: 100%;
     height: 30px;
+    /* background-image: linear-gradient(45deg,var(--tertiary-color), var(--primary-color)); */
     background-color: var(--secondary-color);
     z-index:0;
+    transition: 3s!important;
 }
 /* .background-bar3{
     position: absolute;
@@ -362,6 +369,12 @@ article{
 }
 .live-link {
     display: block;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+}
+.btn-primary:hover{
+    background-color: var(--secondary-color);
 }
 
 /* ANIMATIONS */
@@ -475,6 +488,9 @@ article{
     #nav-home{
         color: #fff;
     }
+    .nav-link:hover{
+        color: var(--tertiary-color);
+    }
 }
 @media (min-width:500px) and (max-width:650px){
     .grid{
@@ -576,5 +592,8 @@ article{
     }
     .profile h1 {
         display: block;
+    }
+    .profile-title{
+        width: 120%;
     }
 }
