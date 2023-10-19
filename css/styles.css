@@ -129,6 +129,10 @@ button,
 .nav-item{
     z-index: 5;
 }
+#nav-home{
+    padding-top: 25px;
+    color: #fff;
+}
 .collapse{
     justify-content: right;
 }
@@ -559,9 +563,7 @@ article{
         font-size: 22px;
         padding: 0;
     }
-    #nav-home{
-        color: #fff;
-    }
+   
     .nav-link:hover{
         color: var(--tertiary-color);
     }
@@ -610,9 +612,7 @@ article{
             font-size: 20px;
             padding: 0;
         }
-        #nav-home{
-            color: #fff;
-        }
+        
         #about{
             margin: 0 30px;
         }
@@ -652,9 +652,7 @@ article{
         font-size: 22px;
         padding: 0;
     }
-    #nav-home{
-        color: #fff;
-    }
+   
     #about{
         margin: 0 50px;
     }
