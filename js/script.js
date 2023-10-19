@@ -8,7 +8,8 @@ let projects = [
         technologies: ['React', 'React Bootstrap', 'Redux (state management)', 'Parcel (build tool)'],
         image: './img/fletnix.png',
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
-        link: 'https://flet-nix.netlify.app/'
+        link: 'https://flet-nix.netlify.app/',
+        caseStudy: './case-study.html', 
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ let projects = [
         technologies: ['NodeJs', 'Express', 'Passport', 'Postman', 'MongoDB', 'Render', 'SQL', 'Mongo Atlas'],
         image: './img/sc_movie_api.png',
         githubLink: 'https://github.com/philippeducasse/movie_api',
-        link: ''
+        link: '',
+        caseStudy: './case-study.html',
     },
     {
         id: 3,
@@ -163,7 +165,15 @@ function showModal(project) {
         projectLink.classList.add('live-link');
         projectLink.setAttribute('href', project.link);
         projectLink.setAttribute('target', '_blank');
-    } 
+    }
+    let caseStudyLink = null
+    if (project.caseStudy){
+        caseStudyLink = document.createElement('a');
+        caseStudyLink.textContent = 'View case study';
+        caseStudyLink.classList.add('live-link');
+        caseStudyLink.setAttribute('href', project.caseStudy);
+        caseStudyLink.setAttribute('target', '_blank');
+    }
 
     let modalLinks = document.createElement('div');
     modalLinks.classList.add('modal-links')
@@ -175,8 +185,12 @@ function showModal(project) {
     if (projectLink){
         modalLinks.append(projectLink);
     }  
+     if (caseStudyLink){
+        modalLinks.append(caseStudyLink);
+    }
     modalTitle.append(projectName);
     modalBody.append(modalLinks);
+   
 }
 
 $(document).ready(function () {

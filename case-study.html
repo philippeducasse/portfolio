@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Philippe Ducasse fletNix Case Study</title>
+    <link class="shortcut-icon" rel="shortcut icon" type="image/x-icon" href="img/logo.svg" height="auto">
+    <link rel="normalize" type="text/css" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body class="case-study-body">
+    <main class="case-study">
+        <h1 class="cs-title">Case Study: Fletnix full-stack application</h1>
+        <section class="overview">
+            <div class="text-img">
+                <div class="text-text">
+                    <h2 class=" cs-title cs-subtitle">Overview</h2>
+                    <p class="overview-text">
+                        Fletnix is a single page web app, developed using the MERN stack. The app provides users with
+                        access to
+                        a
+                        small
+                        library of movies, where each entry is composed of an image
+                        and information about movies,
+                        directors, and genres. Users are
+                        able to create an account,
+                        browse through the library,
+                        update their personal data,
+                        and create a list of favourite
+                        movies.
+                    </p>
+                </div>
+                <img src="img/fletnix/search.png" alt="fletnix screenshot">
+            </div>
+        </section>
+        <!-- <section class="purpose">
+            <h2 class="cs-title cs-subtitle">Purpose & Context</h2>
+
+            <p class="purpose-text">
+                Fletnix was a personal project I built as part of my web development course at
+                CareerFoundry to demonstrate my mastery of full-stack JavaScript development.
+                It was my first exposure to server side programming as well as React.
+            </p>
+        </section> -->
+        <section class="objective">
+            <div class="text-img">
+                <img id="purpose-img" src="img/fletnix/signup.png" alt="fletnix singup screenshot">
+                <div class="text-text">
+                    <h2 class="cs-title cs-subtitle">Purpose & Context</h2>
+
+                    <p class="purpose-text">
+                        Fletnix was a personal project I built as part of my web development course at
+                        CareerFoundry to demonstrate my mastery of full-stack JavaScript development.
+                        It was my first exposure to server side programming as well as React.
+                    </p>
+                    <h2 class="cs-title cs-subtitle">Objective</h2>
+                    <p class="objective-text">
+                        The aim of the project was to
+                        create an entire web application,
+                        including the API, the database,
+                        and the front-end from scratch.
+                        This gave me a hands-on
+                        understanding of how web
+                        applications work and how each
+                        component interacts with the
+                        others.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="approach">
+            <div class="text-img">
+                <div class="text-text">
+                    <h2 class="cs-title cs-subtitle">Approach</h2>
+                    <h2 class="cs-title">Server-Side</h2>
+                    <p class="approach-text">
+                        I created a RESTful API using Node.js and
+                        Express, that interacts with a
+                        non-relational database (MongoDB). The
+                        API can be accessed via the CRUD (Create,
+                        Read, Update, Delete) HTTP methods like
+                        GET or POST, and returns information in
+                        JSON format. In addition, I implemented
+                        server side authentication and
+                        authorisation using HTTP authentication
+                        and tokens through the Express library
+                        Passport. All of these endpoints were
+                        thoroughly tested using Postman, and
+                        once functional the database was hosted
+                        on Mongo Atlas, and the API was hosted
+                        with Heroku.
+                    </p>
+                </div>
+                <img src="img/fletnix/postman.png" alt="fletnix postman screenshot">
+            </div>
+            <h2 class="cs-title">Client-Side</h2>
+            <p>
+                Once the backend was ready, I started to build the platform on which users would
+                be able to interact with the API. Fletnix is a single-page application (SPA),
+                developed with React. By making the app an SPA, I had to rely on React
+                components and state in order to navigate the user through the various
+                interfaces the site offers. Users can thus sign-up, login, browse movies, view and
+                update their profile, add and remove movies to a list of favourites; all within a
+                single html file.
+            </p>
+            <img class="cs-favorites" src="img/fletnix/main-view.png" alt="fletnix main-view screenshot">
+        </section>
+        <section class="challenges">
+            <div class="text-img">
+                <img id="challenges-img" src="img/fletnix/delete.png" alt="fletnix delete account screenshot">
+                <div class="text-text">
+                    <h2 class=" cs-title cs-subtitle">Challenges</h2>
+                    <p class="challenges-text">
+                        The most challenging part of this
+                        project for me was the front end
+                        with React. I found it extremely
+                        confusing at first and it was
+                        especially difficult for me to
+                        understand how React props and
+                        state work. In order to
+                        understand the framework
+                        better, I built two or three
+                        smaller, much simpler applications. With regards to the back-end, getting the
+                        endpoints to work properly was also quite challenging.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="conclusion">
+            <div class="text-img">
+                <div class="text-text">
+                    <h2 class=" cs-title cs-subtitle">Conclusion</h2>
+                    <p class="conclusion-text">
+                        The Fletnix project provides
+                        users with a fully functional,
+                        custom made application. This
+                        project was by far the most
+                        ambitious I have yet
+                        undertaken on my journey in
+                        web development. Even though
+                        this project was quite large for a
+                        single programmer to
+                        undertake, it must be
+                        recognised that the
+                        functionalities are still quite
+                        limited. This leaves room for
+                        improvement: perhaps future versions of the film can allow users to enter their
+                        own movies to the database, and add additional features, such as reviews and
+                        rankings? In any case, the experience and knowledge I gained from this project
+                        were invaluable, and I look forward to what comes next in my career as a
+                        developer.
+                    </p>
+                </div>
+                <img src="img/fletnix/movie-view.png" alt="fletnix movie-view screenshot">
+            </div>
+        </section>
+        <section class="credits">
+            <h2 class="cs-title">Credits</h2>
+            <ul>
+                <li>Role: Lead Developer</li>
+                <li>Tutor: Jonathan Nshuti</li>
+                <li>Mentor: Treasure Kabareebe</li>
+            </ul>
+        </section>
+        <section class="cs-links">
+            <a href="https://flet-nix.netlify.app/" target="_blank">Live site</a>
+            <a href="https://github.com/philippeducasse/Fletnix-client" target="_blank">Github (front-end)</a>
+            <a href="https://github.com/philippeducasse/movie_api" target="_blank">Github (back-end)</a>
+        </section>
+    </main>
+</body>
+
+</html>
