@@ -717,3 +717,9 @@ article{
         width: 120%;
     }
 }
+/* chattyApp video */
+
+.video-container{
+    display: flex;
+    align-items: center;
+}
