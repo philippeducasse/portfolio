@@ -49,9 +49,9 @@ let projects = [
             'Firebase cloud storage (for storing images)',
             'Expo ImagePicker & MediaLibrary for integrating communication features'
         ],
-        image: './img/sc_1.jpg',
+        image: './img/chattyApp.jpg',
         githubLink: 'https://github.com/philippeducasse/ChattyApp',
-        link: '',
+        link: './chattyApp.html',
     },
     {
         id: 5,
