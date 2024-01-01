@@ -12,6 +12,16 @@ let projects = [
         caseStudy: './case-study.html', 
     },
     {
+        id: 5,
+        name: 'Recipe App',
+        shortDescription: 'Python Django application for displaying recipes',
+        description: 'This app allows users to create and browse cooking recipes. Registered users can create recipes by providing a name, cooking time, and a list of ingredients. The app then contains functionalities to display all recipes, to search for recipes with specific ingredients, and to modify or delete an existing recipe. Graphs and charts were also included for data visualisation using Matplotlib. The app is hosted on Heroku. ',
+        technologies: ['Python3', 'Django', 'Numpy', 'Pandas', 'Matplotlib', 'Bootstrap', 'Heroku'],
+        image: './img/recipe.png',
+        githubLink: 'https://github.com/philippeducasse/recipe-app',
+        link: 'https://reci-please-8df178786b88.herokuapp.com/',
+    },
+    {
         id: 2,
         name: 'Movie API',
         shortDescription: 'An Api for a movie database built with Node.js',
@@ -54,7 +64,7 @@ let projects = [
         link: './chattyApp.html',
     },
     {
-        id: 5,
+        id: 6,
         name: 'fletNix Angular client',
         shortDescription: 'An app which displays a list of movies using the MEAN webpack.',
         description: 'In this project I revisited the frontend for the fletNix app (see project #2), using Angular instead of React. The backend of the app remains the same.',
@@ -72,16 +82,7 @@ let projects = [
         githubLink: 'https://github.com/philippeducasse/fletNix-Angular-client',
         link: 'https://philippeducasse.github.io/fletNix-Angular-client/',
     },
-    {
-        id: 6,
-        name: 'Pokédex App',
-        shortDescription: 'Vanilla Javascript app which dynamically displays a list of Pokémons',
-        description: 'In this project I designed a simple API using vanilla Javascript and Jquery to create an App that renders a list of Pokémon with specific details and images for each Pokémon. The Pokémon list is fetched from an external API, and the list is displayed dynamically using JS. Each rendered pokemon contains a button that displays a modal with additional information when clicked.',
-        technologies: ['Vanilla Javascript', 'Jquery', 'Rest API', 'Bootstrap', 'AJAX'],
-        image: './img/Screenshot_pokedex.png',
-        githubLink: 'https://github.com/philippeducasse/Pokedex-App',
-        link: 'https://philippeducasse.github.io/Pokedex-App/',
-    },
+   
 
 ]
 

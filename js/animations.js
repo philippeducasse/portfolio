@@ -16,9 +16,10 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('shows'); 
         }
-        else {
-            entry.target.classList.remove('shows');
-        }
+        // if enabled reloads animation all the time
+        // else {
+        //     entry.target.classList.remove('shows');
+        // }
     })
 })
 
