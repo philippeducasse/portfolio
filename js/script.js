@@ -6,9 +6,20 @@ let projects = [
         shortDescription: 'An app for displaying a list of movies built with the React.js',
         description: 'For this project I built the frontend for a single page application (SPA) using the React.js framework and React Bootstrap, a UI library. After signing up and logging in, users can browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile. The app also allows users to view similar movies from the list based on their genre. This app makes API requests to an API which I created previously, making this a full-stack project.',
         technologies: ['React', 'React Bootstrap', 'Redux (state management)', 'Parcel (build tool)'],
-        image: './img/ss_fletnix.png',
+        image: './img/fletnix.png',
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
-        link: 'https://flet-nix.netlify.app/'
+        link: 'https://flet-nix.netlify.app/',
+        caseStudy: './case-study.html', 
+    },
+    {
+        id: 5,
+        name: 'Recipe App',
+        shortDescription: 'Python Django application for displaying recipes',
+        description: 'This app allows users to create and browse cooking recipes. Registered users can create recipes by providing a name, cooking time, and a list of ingredients. The app then contains functionalities to display all recipes, to search for recipes with specific ingredients, and to modify or delete an existing recipe. Graphs and charts were also included for data visualisation using Matplotlib. The app is hosted on Heroku. ',
+        technologies: ['Python3', 'Django', 'Numpy', 'Pandas', 'Matplotlib', 'Bootstrap', 'Heroku'],
+        image: './img/recipe.png',
+        githubLink: 'https://github.com/philippeducasse/recipe-app',
+        link: 'https://reci-please-8df178786b88.herokuapp.com/',
     },
     {
         id: 2,
@@ -18,7 +29,8 @@ let projects = [
         technologies: ['NodeJs', 'Express', 'Passport', 'Postman', 'MongoDB', 'Render', 'SQL', 'Mongo Atlas'],
         image: './img/sc_movie_api.png',
         githubLink: 'https://github.com/philippeducasse/movie_api',
-        link: ''
+        link: '',
+        caseStudy: './case-study.html',
     },
     {
         id: 3,
@@ -28,7 +40,7 @@ let projects = [
         technologies: [
             'React', 'React Testing Library', 'Jest testing framework', 'AWS serverless hosting', 'Google OAuth authentication', 'Progressive Web Application and service workers', 'Recharts Data Visualisation'
         ],
-        image: './img/Screenshot_meet.png',
+        image: './img/ss_meet.png',
         githubLink: 'https://github.com/philippeducasse/meet',
         link: 'https://philippeducasse.github.io/meet//'
     },
@@ -47,12 +59,12 @@ let projects = [
             'Firebase cloud storage (for storing images)',
             'Expo ImagePicker & MediaLibrary for integrating communication features'
         ],
-        image: './img/sc_1.jpg',
+        image: './img/chattyApp.jpg',
         githubLink: 'https://github.com/philippeducasse/ChattyApp',
-        link: '',
+        link: './chattyApp.html',
     },
     {
-        id: 5,
+        id: 6,
         name: 'fletNix Angular client',
         shortDescription: 'An app which displays a list of movies using the MEAN webpack.',
         description: 'In this project I revisited the frontend for the fletNix app (see project #2), using Angular instead of React. The backend of the app remains the same.',
@@ -70,23 +82,22 @@ let projects = [
         githubLink: 'https://github.com/philippeducasse/fletNix-Angular-client',
         link: 'https://philippeducasse.github.io/fletNix-Angular-client/',
     },
-    {
-        id: 6,
-        name: 'Pokédex App',
-        shortDescription: 'Vanilla Javascript app which dynamically displays a list of Pokémons',
-        description: 'In this project I designed a simple API using vanilla Javascript and Jquery to create an App that renders a list of Pokémon with specific details and images for each Pokémon. The Pokémon list is fetched from an external API, and the list is displayed dynamically using JS. Each rendered pokemon contains a button that displays a modal with additional information when clicked.',
-        technologies: ['Vanilla Javascript', 'Jquery', 'Rest API', 'Bootstrap', 'AJAX'],
-        image: './img/Screenshot_pokedex.png',
-        githubLink: 'https://github.com/philippeducasse/Pokedex-App',
-        link: 'https://philippeducasse.github.io/Pokedex-App/',
-    },
+   
 
 ]
 
 function addProject(project) {
     let projectList = document.querySelector('.grid');
-    let projectItem = document.createElement('div')
-    projectItem.classList.add('grid__item')
+    let projectItem = document.createElement('div');
+    projectItem.classList.add('grid__item', 'hidden');
+    const index = projectList.children.length;
+    if (index < 2) {
+        projectItem.classList.add('left');
+    } else if (index < 4) {
+        projectItem.classList.add('right');
+    } else {
+        projectItem.classList.add('bottom');
+    }
 
     projectList.appendChild(projectItem)
 
@@ -119,7 +130,7 @@ function addProject(project) {
     button.setAttribute('data-bs-toggle', 'modal');
     button.setAttribute('data-bs-target', '#projectModalCenter');
     button.setAttribute('type', 'button');
-    button.addEventListener('click', function () { showModal(project) });
+    button.addEventListener('click', function () {showModal(project) });
     projectItem.appendChild(button);
 }
 
@@ -155,7 +166,15 @@ function showModal(project) {
         projectLink.classList.add('live-link');
         projectLink.setAttribute('href', project.link);
         projectLink.setAttribute('target', '_blank');
-    } 
+    }
+    let caseStudyLink = null
+    if (project.caseStudy){
+        caseStudyLink = document.createElement('a');
+        caseStudyLink.textContent = 'View case study';
+        caseStudyLink.classList.add('live-link');
+        caseStudyLink.setAttribute('href', project.caseStudy);
+        caseStudyLink.setAttribute('target', '_blank');
+    }
 
     let modalLinks = document.createElement('div');
     modalLinks.classList.add('modal-links')
@@ -167,8 +186,12 @@ function showModal(project) {
     if (projectLink){
         modalLinks.append(projectLink);
     }  
+     if (caseStudyLink){
+        modalLinks.append(caseStudyLink);
+    }
     modalTitle.append(projectName);
     modalBody.append(modalLinks);
+   
 }
 
 $(document).ready(function () {
