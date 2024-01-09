@@ -67,7 +67,7 @@ let projects = [
         id: 6,
         name: 'fletNix Angular client',
         shortDescription: 'An app which displays a list of movies using the MEAN webpack.',
-        description: 'In this project I revisited the frontend for the fletNix app (see project #2), using Angular instead of React. The backend of the app remains the same.',
+        description: 'In this project I revisited the frontend for the fletNix app, using Angular instead of React. The backend of the app remains the same.',
         technologies: [
             'React Native',
             'Expo (toolchain to write native apps in JS)',
