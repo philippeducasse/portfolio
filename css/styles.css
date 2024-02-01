@@ -56,9 +56,7 @@ h3 {
 a {
     color: var(--primary-color);
   }
-a:visited {
-    color: var(--secondary-color);
-}
+
 a:hover, a:focus {
     color: var(--tertiary-color)
 }
@@ -86,6 +84,8 @@ button,
     cursor: pointer;
     opacity: 0.8;
 }
+
+
 
 
 /* HEADER */
@@ -613,6 +613,10 @@ article{
             margin-top: 32px;
             font-size: 20px;
             padding: 0;
+        }
+        #nav-home{
+            padding-top: 25px;
+            color: #fff;
         }
         
         #about{
