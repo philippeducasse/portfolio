@@ -1,6 +1,16 @@
 let projects = [
 
     {
+        id: 2,
+        name: 'AI-Gram',
+        shortDescription: 'NextJS application for generating, uploading, and browsing images',
+        description: 'Can you tell which images are AI generated? This app allows users to make use of DeepAi\'s API to generate images based on text input. Users can also upload images from their devices and browse images in the gallery. Clicking on a selectted image in the gallery reveals if the image was AI-generated or not.',
+        technologies: ['NextJS', 'Tailwind', 'Firebase Cloud Storage', 'REST-API', 'Vercel', ],
+        image: './img/ai-gram.png',
+        githubLink: 'https://github.com/philippeducasse/cosee',
+        link: 'https://am-i-ai.vercel.app/',
+    },
+    {
         id: 1,
         name: 'fletNix',
         shortDescription: 'An app for displaying a list of movies built with the React.js',
@@ -10,39 +20,6 @@ let projects = [
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
         link: 'https://flet-nix.netlify.app/',
         caseStudy: './case-study.html', 
-    },
-    {
-        id: 5,
-        name: 'Recipe App',
-        shortDescription: 'Python Django application for displaying recipes',
-        description: 'This app allows users to create and browse cooking recipes. Registered users can create recipes by providing a name, cooking time, and a list of ingredients. The app then contains functionalities to display all recipes, to search for recipes with specific ingredients, and to modify or delete an existing recipe. Graphs and charts were also included for data visualisation using Matplotlib. The app is hosted on Heroku. ',
-        technologies: ['Python3', 'Django', 'Numpy', 'Pandas', 'Matplotlib', 'Bootstrap', 'Heroku'],
-        image: './img/recipe.png',
-        githubLink: 'https://github.com/philippeducasse/recipe-app',
-        link: 'https://reci-please-8df178786b88.herokuapp.com/',
-    },
-    {
-        id: 2,
-        name: 'Movie API',
-        shortDescription: 'An Api for a movie database built with Node.js',
-        description: 'For this project I built the backend for an app which displays a list of movies using a REST API. I used the Express library to write the various CRUD API requests in Node.js. I then used the SQL databse MongoDB and Mongo Atlas for storing the data on a server. The API includes authorisation and authentication methods using express Passport, allowing users to signup, login, browse the list of movies, add or remove movies to their list of favorites, and delete or update their profile.',
-        technologies: ['NodeJs', 'Express', 'Passport', 'Postman', 'MongoDB', 'Render', 'SQL', 'Mongo Atlas'],
-        image: './img/sc_movie_api.png',
-        githubLink: 'https://github.com/philippeducasse/movie_api',
-        link: '',
-        caseStudy: './case-study.html',
-    },
-    {
-        id: 3,
-        name: 'Meet App',
-        shortDescription: 'A React app built using a test driven development approach',
-        description: 'In this project I designed an App which displays a list of events for various cities using React and Test Driven Development. Users are authorised through google OAuth, and can then use the search functionality to display events in a list of cities. The app also using Recharts, a React library for data visualisation',
-        technologies: [
-            'React', 'React Testing Library', 'Jest testing framework', 'AWS serverless hosting', 'Google OAuth authentication', 'Progressive Web Application and service workers', 'Recharts Data Visualisation'
-        ],
-        image: './img/ss_meet.png',
-        githubLink: 'https://github.com/philippeducasse/meet',
-        link: 'https://philippeducasse.github.io/meet//'
     },
     {
         id: 4,
@@ -62,6 +39,28 @@ let projects = [
         image: './img/chattyApp.jpg',
         githubLink: 'https://github.com/philippeducasse/ChattyApp',
         link: './chattyApp.html',
+    },
+    {
+        id: 5,
+        name: 'Recipe App',
+        shortDescription: 'Python Django application for displaying recipes',
+        description: 'This app allows users to create and browse cooking recipes. Registered users can create recipes by providing a name, cooking time, and a list of ingredients. The app then contains functionalities to display all recipes, to search for recipes with specific ingredients, and to modify or delete an existing recipe. Graphs and charts were also included for data visualisation using Matplotlib. The app is hosted on Heroku. ',
+        technologies: ['Python3', 'Django', 'Numpy', 'Pandas', 'Matplotlib', 'Bootstrap', 'Heroku'],
+        image: './img/recipe.png',
+        githubLink: 'https://github.com/philippeducasse/recipe-app',
+        link: 'https://reci-please-8df178786b88.herokuapp.com/',
+    },
+    {
+        id: 3,
+        name: 'Meet App',
+        shortDescription: 'A React app built using a test driven development approach',
+        description: 'In this project I designed an App which displays a list of events for various cities using React and Test Driven Development. Users are authorised through google OAuth, and can then use the search functionality to display events in a list of cities. The app also using Recharts, a React library for data visualisation',
+        technologies: [
+            'React', 'React Testing Library', 'Jest testing framework', 'AWS serverless hosting', 'Google OAuth authentication', 'Progressive Web Application and service workers', 'Recharts Data Visualisation'
+        ],
+        image: './img/ss_meet.png',
+        githubLink: 'https://github.com/philippeducasse/meet',
+        link: 'https://philippeducasse.github.io/meet//'
     },
     {
         id: 6,
