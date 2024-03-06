@@ -48,7 +48,7 @@ let projects = [
         technologies: ['Python3', 'Django', 'Numpy', 'Pandas', 'Matplotlib', 'Bootstrap', 'Heroku'],
         image: './img/recipe.png',
         githubLink: 'https://github.com/philippeducasse/recipe-app',
-        link: 'https://reci-please-8df178786b88.herokuapp.com/',
+        link: 'https://recipe-app-zc4m.onrender.com/',
     },
     {
         id: 3,
