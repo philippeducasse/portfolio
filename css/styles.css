@@ -297,7 +297,7 @@ article{
     margin: 0;
     border: 6px solid var(--primary-color);
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
 
 }
