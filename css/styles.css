@@ -297,7 +297,7 @@ article{
     margin: 0;
     border: 6px solid var(--primary-color);
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
 
 }
@@ -501,12 +501,13 @@ article{
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 80%;
     }
     .profile__portrait{
         margin: 0 0 30px;
     }
     .profile__description{
-        width: 300px;
+        width: 50%;
     }
     .profile__description--summary{
         font-size: 14px;
