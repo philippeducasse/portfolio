@@ -16,6 +16,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: #d0deed;
   }
 .shortcut-icon{
     max-width: auto;
@@ -26,10 +27,12 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width: 1800px;
+    background-color: #fff;
    
 }
 
@@ -97,7 +100,6 @@ button,
     border-bottom: 35px solid var(--primary-color);
     /* border-image: linear-gradient(45deg,var(--primary-color),var(--tertiary-color))1; */
     border-bottom-width: 35px;
-    border-style: solid;
     background-color: #fffF;
 }
 .page-header__logo{
@@ -283,7 +285,8 @@ article{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 25px;
-        
+        max-width: 1200px;
+        justify-content: space-evenly;
     }
 .grid__item {
     display: flex;
@@ -299,6 +302,7 @@ article{
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
+    max-width: 300px;
 
 }
 .grid__item:nth-child(2){
