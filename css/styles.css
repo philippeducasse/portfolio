@@ -16,6 +16,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: #d0deed;
   }
 .shortcut-icon{
     max-width: auto;
@@ -24,18 +25,20 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.2em;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width: 1800px;
+    background-color: #fff;
    
 }
 
 section{
     min-height:50vh;
-    margin:4.5% 20%;
+    margin:3rem 8rem;
 }
 
 h1 {
@@ -97,7 +100,6 @@ button,
     border-bottom: 35px solid var(--primary-color);
     /* border-image: linear-gradient(45deg,var(--primary-color),var(--tertiary-color))1; */
     border-bottom-width: 35px;
-    border-style: solid;
     background-color: #fffF;
 }
 .page-header__logo{
@@ -146,24 +148,24 @@ button,
     display: flex;
     justify-content: center;
     position: relative;
-    
+    align-items: center;
 }
 
 .profile__portrait {
     width: 250px;
     height: 250px;
-    margin-right: 70px;
+    margin-right: 3rem;
     float:left;
     border-radius: 50%;
 }
 
 /* ABOUT PAGE */
 article{
-    margin-top: 30px;
+    margin-top: 4rem;
 }
 .about {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3rem;
 }
 
 .skills {
@@ -283,7 +285,7 @@ article{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 25px;
-        
+        place-items: center;
     }
 .grid__item {
     display: flex;
@@ -293,12 +295,13 @@ article{
     text-align: center;
     width: auto; /*makes browser take up as much space as given*/
     min-width: 200px;
-    height: 370px;
+    height: 450px ;
     margin: 0;
     border: 6px solid var(--primary-color);
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
+    max-width: 300px;
 
 }
 .grid__item:nth-child(2){
