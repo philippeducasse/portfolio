@@ -9,7 +9,7 @@ let projects = [
         image: './img/ai-gram.png',
         githubLink: 'https://github.com/philippeducasse/cosee',
         link: 'https://am-i-ai.vercel.app/',
-        tools: ["img/Languages_logos/typescript.svg","img/Languages_logos/react.svg", "img/Languages_logos/firebase_logo.PNG", ]
+        tools: ["img/Languages_logos/typescript.svg","img/Languages_logos/nextjs.svg", "img/Languages_logos/firebase_logo.PNG", "img/Languages_logos/tailwind.png"]
     },
     {
         id: 1,
@@ -21,6 +21,8 @@ let projects = [
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
         link: 'https://flet-nix.netlify.app/',
         caseStudy: './case-study.html', 
+        tools: ["img/Languages_logos/javascript.svg","img/Languages_logos/react.svg", "img/Languages_logos/node-js.svg", "img/languages_logos/mongodb_logo.png", "img/languages_logos/express.png", "img/languages_logos/heroku.svg" ]
+
     },
     {
         id: 4,
@@ -40,6 +42,8 @@ let projects = [
         image: './img/chattyApp.jpg',
         githubLink: 'https://github.com/philippeducasse/ChattyApp',
         link: './chattyApp.html',
+        tools: ["img/Languages_logos/javascript.svg","img/Languages_logos/react-native.svg", "img/Languages_logos/firebase_logo.PNG", ]
+
     },
     {
         id: 5,
@@ -50,6 +54,8 @@ let projects = [
         image: './img/recipe.png',
         githubLink: 'https://github.com/philippeducasse/recipe-app',
         link: 'https://recipe-app-zc4m.onrender.com/',
+        tools: ["img/Languages_logos/python.png","img/Languages_logos/django.svg", "img/Languages_logos/sql.png" ]
+
     },
     {
         id: 3,
@@ -61,7 +67,9 @@ let projects = [
         ],
         image: './img/ss_meet.png',
         githubLink: 'https://github.com/philippeducasse/meet',
-        link: 'https://philippeducasse.github.io/meet//'
+        link: 'https://philippeducasse.github.io/meet//',
+        tools: ["img/Languages_logos/javascript.svg","img/Languages_logos/react.svg", "img/Languages_logos/aws.svg", ]
+
     },
     {
         id: 6,
@@ -69,18 +77,18 @@ let projects = [
         shortDescription: 'An app which displays a list of movies using the MEAN webpack.',
         description: 'In this project I revisited the frontend for the fletNix app, using Angular instead of React. The backend of the app remains the same.',
         technologies: [
-            'React Native',
-            'Expo (toolchain to write native apps in JS)',
-            'React Native Gifted Chat library',
-            'Google Firestore DB',
-            'Google Firebase Authentication',
-            'AsyncStorage caching for offline use',
-            'Firebase cloud storage (for storing images)',
-            'Expo ImagePicker & MediaLibrary for integrating communication features'
+            'Angular',
+            'Material UI',
+            'Typescript',
+            'NodeJs',
+            'ExpressJs',
+            'MongoDB',
         ],
         image: './img/screenshot_Flet_ang.png',
         githubLink: 'https://github.com/philippeducasse/fletNix-Angular-client',
         link: 'https://philippeducasse.github.io/fletNix-Angular-client/',
+        tools: ["img/Languages_logos/typescript.svg","img/Languages_logos/angular.svg", "img/Languages_logos/node-js.svg", "img/Languages_logos/express.png", "img/Languages_logos/mongodb_logo.png" ]
+
     },
    
 
@@ -89,6 +97,10 @@ let projects = [
 function addProject(project) {
     let projectList = document.querySelector('.grid');
     let projectItem = document.createElement('div');
+    projectItem.setAttribute('data-bs-toggle', 'modal');
+    projectItem.setAttribute('data-bs-target', '#projectModalCenter');
+    projectItem.setAttribute('type', 'button');
+    projectItem.addEventListener('click', function () {showModal(project) });
     projectItem.classList.add('grid__item', 'hidden');
     const index = projectList.children.length;
     if (index < 2) {
@@ -123,27 +135,18 @@ function addProject(project) {
     shortDescription.appendChild(sd);
     projectItem.appendChild(shortDescription);
 
-    // let toolsTitle = document.createElement('p');
-    // toolsTitle.classList.add('tools__title');
-    // let toolBox = document.createElement('div');
-    // for(let tool of project.tools){
-    //     let toolLogo = document.createElement('img');
-    //     toolLogo.setAttribute('src', tool);
-    //     toolBox.append(toolLogo);
-    // };
-    // projectItem.append(toolsTitle);
-    // projectItem.append(toolBox);
+    //TOOLBOX
 
+    let toolBox = document.createElement('div');
+    toolBox.classList.add('toolbox')
+    for(let tool of project.tools){
+        let toolLogo = document.createElement('img');
+        toolLogo.classList.add('tools__logo')
+        toolLogo.setAttribute('src', tool);
+        toolBox.append(toolLogo);
+    };
+    projectItem.append(toolBox);
 
-    // adds button to each project
-    let button = document.createElement('button');
-    button.innerText = 'See details';
-    button.classList.add('btn', 'btn-primary', 'modal-button');
-    button.setAttribute('data-bs-toggle', 'modal');
-    button.setAttribute('data-bs-target', '#projectModalCenter');
-    button.setAttribute('type', 'button');
-    button.addEventListener('click', function () {showModal(project) });
-    projectItem.appendChild(button);
 }
 
 // displays modal for each project
@@ -163,7 +166,15 @@ function showModal(project) {
     projectDescription.classList.add('project-description');
     projectDescription.textContent = project.description;
 
+    let toolsUsed = document.createElement('h5');
+    toolsUsed.textContent = 'Tools used: ';
     let technologiesList = document.createElement('ul')
+
+    for(let technogoly of project.technologies){
+        let listItem = document.createElement('li');
+        listItem.textContent= technogoly;
+        technologiesList.append(listItem)
+    }
 
     let projectGithubLink = document.createElement('a');
     projectGithubLink.classList.add('modal-github-logo');
@@ -193,6 +204,7 @@ function showModal(project) {
 
     modalBody.append(projectScreenshot);
     modalBody.append(projectDescription);
+    modalBody.append(toolsUsed);
     modalBody.append(technologiesList);
     modalLinks.append(projectGithubLink);
     if (projectLink){
