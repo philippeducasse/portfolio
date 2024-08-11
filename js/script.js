@@ -21,7 +21,7 @@ let projects = [
         githubLink: 'https://github.com/philippeducasse/Fletnix-client',
         link: 'https://flet-nix.netlify.app/',
         caseStudy: './case-study.html', 
-        tools: ["img/Languages_logos/javascript.svg","img/Languages_logos/react.svg", "img/Languages_logos/node-js.svg", "img/languages_logos/mongodb_logo.png", "img/languages_logos/express.png", "img/languages_logos/heroku.svg" ]
+        tools: ["img/Languages_logos/javascript.svg","img/Languages_logos/react.svg", "img/Languages_logos/node-js.svg", "img/Languages_logos/mongodb_logo.png", "img/Languages_logos/express.png", "img/Languages_logos/heroku.svg" ]
 
     },
     {
