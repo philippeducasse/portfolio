@@ -11,20 +11,31 @@
         @select="handleSelectProject"
       />
     </div>
+    <ProjectModal
+      :project="selectedProject"
+      :isVisible="isModalVisible"
+      @close="handleCloseModal"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { projects } from '../data/projects';
 import type { Project } from '../data/projects';
 import ProjectCard from './ProjectCard.vue';
+import ProjectModal from './ProjectModal.vue';
+
+const selectedProject = ref<Project | null>(null);
+const isModalVisible = ref(false);
 
 const handleSelectProject = (project: Project) => {
-  // Dispatch custom event that ProjectModal listens for
-  const event = new CustomEvent('project-selected', {
-    detail: project
-  });
-  document.dispatchEvent(event);
+  selectedProject.value = project;
+  isModalVisible.value = true;
+};
+
+const handleCloseModal = () => {
+  isModalVisible.value = false;
 };
 </script>
 

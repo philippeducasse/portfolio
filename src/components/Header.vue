@@ -3,29 +3,39 @@
     <a href="#home">
       <img class="page-header__item page-header__logo" src="/img/PDname_inline.png" alt="philippe ducasse" />
     </a>
-    <nav class="navbar navbar-expand-md page-header__item">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav class="page-header__item page-header__nav">
+      <button
+        class="nav-toggle"
+        type="button"
+        :aria-expanded="isOpen"
+        aria-controls="nav-menu"
+        aria-label="Toggle navigation"
+        @click="toggleMenu"
+      >
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link navigation-list__item" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navigation-list__item" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link navigation-list__item" href="#work">Work</a>
-          </li>
-        </ul>
-      </div>
+      <ul id="nav-menu" class="navigation-list" :class="{ 'is-open': isOpen }">
+        <li><a class="navigation-list__item" href="#about" @click="closeMenu">About</a></li>
+        <li><a class="navigation-list__item" href="#contact" @click="closeMenu">Contact</a></li>
+        <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
+      </ul>
     </nav>
   </header>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const isOpen = ref(false);
+const toggleMenu = () => {
+  isOpen.value = !isOpen.value;
+};
+const closeMenu = () => {
+  isOpen.value = false;
+};
+</script>
 
 <style scoped>
 .page-header {
@@ -34,8 +44,8 @@
   height: 125px;
   padding: 20px 100px;
   border-bottom: 35px solid var(--primary-color);
-  border-bottom-width: 35px;
-  background-color: #ffff;
+  background-color: #fff;
+  position: relative;
 }
 
 .page-header__logo {
@@ -54,41 +64,93 @@
   text-align: right;
 }
 
+.page-header__nav {
+  position: relative;
+}
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: background-color 300ms;
+}
+
+/* Nav list — inline on desktop */
 .navigation-list {
-  list-style-type: none;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
 }
 
 .navigation-list li {
   display: inline-block;
-  margin-left: 15px;
 }
 
 .navigation-list__item {
   text-decoration: none;
+  color: var(--primary-color);
 }
 
-.navigation-list__item--active {
-  text-decoration: none;
+.navigation-list__item:hover {
+  color: var(--tertiary-color);
 }
 
-.nav-item {
-  z-index: 5;
-}
+/* Responsive: collapse below 768px */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
 
-.collapse {
-  justify-content: right;
-}
+  .navigation-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    border-top: 3px solid var(--primary-color);
+    padding: 10px 20px 20px;
+    gap: 0;
+    z-index: 100;
+  }
 
-.navbar-toggler {
-  margin: 5px;
-  display: flex;
-  position: absolute;
-  right: 0;
+  .navigation-list.is-open {
+    display: flex;
+  }
+
+  .navigation-list li {
+    display: block;
+    padding: 8px 0;
+  }
 }
 
 @media (max-width: 500px) {
   .page-header {
-    margin: 0;
     padding: 20px;
   }
 
@@ -97,37 +159,11 @@
     min-width: 60%;
     padding: 10px 0 0;
   }
-
-  .navbar-collapse.show {
-    margin-top: 32px;
-    font-size: 22px;
-    padding: 0;
-  }
-
-  #nav-home {
-    padding-top: 25px;
-    color: #fff;
-  }
-
-  .nav-link:hover {
-    color: var(--tertiary-color);
-  }
 }
 
 @media (min-width: 500px) and (max-width: 650px) {
   .page-header {
     padding: 20px 50px;
-  }
-
-  .navbar-collapse.show {
-    margin-top: 32px;
-    font-size: 20px;
-    padding: 0;
-  }
-
-  #nav-home {
-    padding-top: 25px;
-    color: #fff;
   }
 }
 </style>

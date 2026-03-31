@@ -1,5 +1,5 @@
 <template>
-  <div class="grid__item hidden" :class="animationClass" @click="handleClick" role="button" data-bs-toggle="modal" data-bs-target="#projectModalCenter">
+  <div class="grid__item hidden" :class="animationClass" @click="handleClick" role="button">
     <h4 class="card-title">{{ project.name }}</h4>
     <img :src="project.image" :alt="project.name" class="screenshot" />
     <p class="short-description">{{ project.shortDescription }}</p>
