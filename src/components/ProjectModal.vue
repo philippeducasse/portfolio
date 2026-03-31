@@ -51,4 +51,65 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.modal-image {
+  max-width: 400px;
+  max-height: 500px;
+  display: flex;
+  margin: 10px auto;
+  transition: transform 0.2s;
+}
+
+.modal-image:hover {
+  transform: scale(1.2);
+}
+
+.modal-content {
+  border: 6px solid var(--primary-color);
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-header {
+  border-bottom: 5px solid var(--primary-color);
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 5px solid var(--primary-color);
+}
+
+.project-description {
+  margin: 30px 15px 15px;
+}
+
+.modal-links {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.modal-github-link {
+  display: block;
+}
+
+.live-link {
+  display: block;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 500px) {
+  .modal-image {
+    max-width: 250px;
+  }
+}
+</style>

@@ -14,4 +14,40 @@
 
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+.contact {
+  text-align: center;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 1s;
+}
+
+.hidden.left {
+  transform: translateX(-10vw);
+}
+
+.hidden.right {
+  transform: translateX(10vw);
+}
+
+.hidden.bottom {
+  transform: translateY(10vh);
+}
+
+.shows {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0) !important;
+  transform: translate(0) !important;
+  transition: all 1.5s;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+</style>

@@ -13,4 +13,27 @@
 
 <script setup></script>
 
-<style scoped></style>
+<style scoped>
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 30px;
+  border-top: 30px solid var(--primary-color);
+  margin-top: auto;
+}
+
+.social-media img {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.social-media a:hover {
+  text-decoration: none;
+}
+
+.social-media a {
+  text-decoration: none;
+}
+</style>
