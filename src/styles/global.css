@@ -35,30 +35,60 @@ body {
 section {
   min-height: 50vh;
   margin: 3rem 8rem;
+  width: 100%;
 }
 
 article {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.75rem 0;
 }
 
 /* TYPOGRAPHY */
 
-h1 {
-  font-size: 30px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
   font-weight: var(--font-weight-1);
-  margin: 15px 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  margin-top: 0;
-  margin-bottom: 25px;
-  font-size: 24px;
-  font-weight: var(--font-weight-1);
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 h3 {
-  font-size: 18px;
-  font-weight: var(--font-weight-1);
+  font-size: 1.5rem;
+  margin-bottom: 1.125rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  margin-bottom: 0.875rem;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 a {
@@ -82,13 +112,14 @@ button,
   display: inline-block;
   font-family: inherit;
   background-color: var(--primary-color);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.34);
+  box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.34);
   color: var(--text-color);
   text-decoration: none;
-  padding: 10px;
-  border-radius: 3px;
+  padding: 0.625rem 1rem;
+  border-radius: 0.1875rem;
   transition: 500ms;
-  margin: 30px;
+  margin: 1.875rem;
+  font-size: 1rem;
 }
 
 .button:hover,
@@ -99,8 +130,18 @@ button,
 
 /* RESPONSIVE */
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   section {
-    margin: 3rem 1rem;
+    margin: 2rem 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 1rem;
+  }
+
+  section {
+    margin: 2rem 0.5rem;
   }
 }
