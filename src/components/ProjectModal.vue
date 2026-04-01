@@ -10,9 +10,12 @@
           <img :src="project.image" :alt="project.name" class="modal-image" />
           <p class="project-description">{{ project.description }}</p>
           <h5>Tools used:</h5>
-          <ul>
-            <li v-for="tech in project.technologies" :key="tech">{{ tech }}</li>
-          </ul>
+          <div class="tools-list">
+            <div v-for="tool in project.tools" :key="tool.name" class="tool-item">
+              <img :src="tool.image" :alt="tool.name" class="tool-image" />
+              <span>{{ tool.name }}</span>
+            </div>
+          </div>
           <div class="modal-links">
             <a :href="project.githubLink" target="_blank" class="modal-github-logo">View the repository on GitHub</a>
             <a v-if="project.link" :href="project.link" target="_blank" class="live-link">See the app live</a>
@@ -171,6 +174,25 @@ onUnmounted(() => {
 
 .close-btn:hover {
   background-color: var(--secondary-color);
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-image {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 @media (max-width: 500px) {

@@ -1,7 +1,7 @@
 <template>
   <section class="my-work" id="work">
     <div class="background-bar2 hidden right"></div>
-    <h2 class="work-title section-title hidden left">My Work</h2>
+    <h2 class="work-title section-title hidden left">My Projects</h2>
     <div class="grid">
       <ProjectCard
         v-for="(project, index) in projects"
@@ -20,11 +20,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { projects } from '../data/projects';
-import type { Project } from '../data/projects';
-import ProjectCard from './ProjectCard.vue';
-import ProjectModal from './ProjectModal.vue';
+import { ref } from "vue";
+import { projects } from "../data/projects";
+import type { Project } from "../data/projects";
+import ProjectCard from "./ProjectCard.vue";
+import ProjectModal from "./ProjectModal.vue";
 
 const selectedProject = ref<Project | null>(null);
 const isModalVisible = ref(false);

@@ -4,6 +4,7 @@
   --tertiary-color: #94b1cf;
   --fourth-color: #489c79;
   --text-color: #fff;
+  --text-secondary: #8a8989;
   --font-weight-1: 700;
 }
 
@@ -37,12 +38,15 @@ main {
 }
 
 section {
-  min-height: 50vh;
-  padding: 4rem 8rem;
+  max-width: 1200px;
+  min-height: 40vh;
+  margin: auto;
 }
 
 article {
-  margin-top: 2rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 p {

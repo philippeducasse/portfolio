@@ -1,18 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.vue';
-import About from '../components/About.vue';
-import Skills from '../components/Skills.vue';
-import Contact from '../components/Contact.vue';
-import Work from '../components/Work.vue';
-import ProjectModal from '../components/ProjectModal.vue';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.vue";
+import Contact from "../components/Contact.vue";
+import Work from "../components/Work.vue";
 ---
 
 <Layout title="Philippe Ducasse Portfolio">
   <Hero client:load />
-  <About client:load />
-  <Skills client:load />
   <Contact client:load />
   <Work client:load />
-  <ProjectModal client:load />
 </Layout>

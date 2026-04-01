@@ -6,18 +6,30 @@
       class="profile__portrait hidden left"
     />
     <div class="profile__description">
-      <h1 class="hidden right profile-title">Hello! My name is Philippe Ducasse</h1>
-      <br />
+      <h1 class="hidden right profile-title">Philippe Ducasse</h1>
+      <p class="hidden left location">
+        <svg
+          class="location-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        Berlin Germany
+      </p>
       <div class="profile__description--summary hidden bottom">
-        <h5>
-          I am a Typescript and Python web-developer with a background in circus and performance
-          arts.
-        </h5>
         <p>
-          I am currently working as a full-stack developer for
+          I am a Typescript and Python web-developer with a background in circus and performance
+          arts. I am currently working as a full-stack developer for
           <a href="https://vdpresearch.de/" target="_blank">vdpResearch</a>.
         </p>
-        <p>Based in Berlin, Germany.</p>
+        <p>
+          During my free time i like to code circus related things. I also love learning how
+          computers and the internet work. And hulahoop.
+        </p>
       </div>
     </div>
   </section>
@@ -57,6 +69,20 @@
 
 .profile p {
   font-size: 1rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.location-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 .profile-title {

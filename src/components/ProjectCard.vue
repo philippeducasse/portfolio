@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import type { Project } from '../data/projects';
+import { computed } from "vue";
+import type { Project } from "../data/projects";
 
 interface Props {
   project: Project;
@@ -25,13 +25,13 @@ const emit = defineEmits<{
 }>();
 
 const animationClass = computed(() => {
-  if (props.index < 2) return 'left';
-  if (props.index < 4) return 'right';
-  return 'bottom';
+  if (props.index < 2) return "left";
+  if (props.index < 4) return "right";
+  return "bottom";
 });
 
 const handleClick = () => {
-  emit('select', props.project);
+  emit("select", props.project);
 };
 </script>
 
@@ -39,12 +39,9 @@ const handleClick = () => {
 .grid__item {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   padding: 20px;
-  text-align: center;
   width: auto;
   min-width: 200px;
-  height: 450px;
   margin: 0;
   border: 6px solid var(--primary-color);
   background-color: #fff;
