@@ -43,17 +43,23 @@
 
 <style scoped>
 .skills {
-  margin-top: 30px;
+  margin-top: 2rem;
+}
+
+.skills h3,
+.skills h5 {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .skills img {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
+  width: 3.125rem;
+  height: 3.125rem;
+  margin: 0.625rem;
 }
 
 .skills-text {
-  margin: 30px 0;
+  margin: 2rem 0;
 }
 
 .hidden {

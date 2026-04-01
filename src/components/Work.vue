@@ -42,26 +42,20 @@ const handleCloseModal = () => {
 <style scoped>
 .my-work {
   background-color: #fff;
-  padding: 30px 0 50px;
+  padding: 2rem 0 3rem;
 }
 
 .work-title {
   text-align: center;
-  padding: 30px 0;
-}
-
-.background-bar2 {
-  width: 100%;
-  height: 30px;
-  background-color: var(--secondary-color);
-  z-index: 0;
-  transition: 3s !important;
+  padding: 2rem 0;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 25px;
+  grid-gap: 1.5625rem;
   place-items: center;
 }
 
@@ -69,17 +63,17 @@ const handleCloseModal = () => {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   width: auto;
-  min-width: 200px;
-  height: 450px;
+  min-width: 12.5rem;
+  height: 28.125rem;
   margin: 0;
-  border: 6px solid var(--primary-color);
+  border: 0.375rem solid var(--primary-color);
   background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
-  max-width: 300px;
+  border-radius: 0.1875rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.34);
+  max-width: 18.75rem;
 }
 
 .grid__item:nth-child(2) {
@@ -103,7 +97,7 @@ const handleCloseModal = () => {
 }
 
 .grid__item:hover {
-  border: 6px solid var(--tertiary-color);
+  border: 0.375rem solid var(--tertiary-color);
   transition: 800ms;
   box-shadow: none;
 }
@@ -136,10 +130,9 @@ const handleCloseModal = () => {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .grid {
     grid-template-columns: 1fr;
-    margin: 0;
   }
 
   .grid__item {
@@ -148,43 +141,20 @@ const handleCloseModal = () => {
   }
 
   .grid__item img {
-    max-width: 200px;
+    max-width: 12.5rem;
   }
 }
 
-@media (min-width: 500px) and (max-width: 650px) {
+@media (min-width: 650px) and (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    margin: 0 20px;
-  }
-}
-
-@media (min-width: 650px) and (max-width: 750px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    margin: 0 25px;
-  }
-}
-
-@media (min-width: 750px) and (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-    margin: 0 50px;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 1100px) {
-  .grid {
-    grid-gap: 30px;
-    margin: 0 50px;
+    grid-gap: 3.125rem;
   }
 }
 
 @media (min-width: 1100px) {
   .grid {
-    grid-gap: 50px;
-    margin: 0 100px;
+    grid-gap: 3.125rem;
   }
 }
 </style>

@@ -1,12 +1,22 @@
 <template>
   <section class="profile" id="home">
-    <img src="/img/portrait.jpg" alt="portrait of Philippe Ducasse" class="profile__portrait slide-in left" />
+    <img
+      src="/img/portrait.jpg"
+      alt="portrait of Philippe Ducasse"
+      class="profile__portrait slide-in left"
+    />
     <div class="profile__description">
-      <h1 class="slide-in right profile-title">Hello! My&nbsp;name&nbsp;is Philippe&nbsp;Ducasse</h1>
+      <h1 class="slide-in right profile-title">Hello! My name is Philippe Ducasse</h1>
       <br />
       <div class="profile__description--summary slide-in bottom">
-        <h5>I am a Typescript and Python web-developer with a background in circus and performance arts.</h5>
-        <p>I am currently working as a full-stack developer for <a href="https://vdpresearch.de/" target="_blank">vdpResearch</a>.</p>
+        <h5>
+          I am a Typescript and Python web-developer with a background in circus and performance
+          arts.
+        </h5>
+        <p>
+          I am currently working as a full-stack developer for
+          <a href="https://vdpresearch.de/" target="_blank">vdpResearch</a>.
+        </p>
         <p>Based in Berlin, Germany.</p>
       </div>
     </div>
@@ -24,8 +34,8 @@
 }
 
 .profile__portrait {
-  width: 250px;
-  height: 250px;
+  width: 15.625rem;
+  height: 15.625rem;
   margin-right: 3rem;
   float: left;
   border-radius: 50%;
@@ -36,16 +46,17 @@
 }
 
 .profile__description--summary {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .profile h1 {
-  font-size: 30px;
+  font-size: 2rem;
   display: block;
+  margin-bottom: 1.5rem;
 }
 
 .profile p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .profile-title {
@@ -84,45 +95,15 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .profile {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 80%;
   }
 
   .profile__portrait {
-    margin: 0 0 30px;
-  }
-
-  .profile__description {
-    width: 90%;
-  }
-
-  .profile__description--summary {
-    font-size: 14px;
-  }
-
-  .profile h1 {
-    font-size: 22px;
-  }
-
-  .profile p {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 500px) and (max-width: 650px) {
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 50px;
-  }
-
-  .profile__portrait {
-    margin: 0 0 30px;
+    margin: 0 0 1.875rem;
   }
 
   .profile__description {
@@ -130,66 +111,11 @@
   }
 
   .profile h1 {
-    font-size: 22px;
-  }
-
-  .profile p {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 650px) and (max-width: 750px) {
-  .profile h1 {
-    font-size: 22px;
-  }
-
-  .profile p {
-    font-size: 14px;
-  }
-
-  .profile {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 50px;
-  }
-
-  .profile__portrait {
-    margin: 0 0 30px;
-  }
-
-  .profile__description--summary {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 750px) and (max-width: 900px) {
-  .profile p {
-    font-size: 14px;
-  }
-
-  .profile h1 {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 900px) and (max-width: 1100px) {
-  h1 {
-    font-size: 30px;
-  }
-
-  .profile h1 {
-    display: block;
-  }
-}
-
-@media (min-width: 1100px) {
-  .profile h1 {
-    display: block;
+    font-size: 1.5rem;
   }
 
   .profile-title {
-    width: 120%;
+    width: 100%;
   }
 }
 </style>
