@@ -1,6 +1,8 @@
-export function useAnimations() {
-  // Initialize slide-in animations on mount
-  const initSlideInAnimations = () => {
+import { onMounted } from 'vue';
+
+export function useAnimations(): void {
+  onMounted(() => {
+    // Slide-in animations
     const sliderInit = document.querySelectorAll('.slide-in');
     sliderInit.forEach((box, index) => {
       setTimeout(() => {
@@ -8,10 +10,8 @@ export function useAnimations() {
         box.classList.add('shows');
       }, 500 * index);
     });
-  };
 
-  // Initialize intersection observer for visibility-based animations
-  const initIntersectionObserver = () => {
+    // Intersection Observer for visibility animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -28,10 +28,5 @@ export function useAnimations() {
     gridItems.forEach((gridItem) => {
       observer.observe(gridItem);
     });
-  };
-
-  return {
-    initSlideInAnimations,
-    initIntersectionObserver
-  };
+  });
 }

@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import AnimationInit from "../components/AnimationInit.vue";
 
 interface Props {
   title?: string;
@@ -24,42 +25,8 @@ const { title = "Philippe Ducasse Dev Portfolio" } = Astro.props;
   </head>
   <body>
     <Header client:load />
+    <AnimationInit client:load />
     <slot />
     <Footer client:load />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"></script>
-    <script>
-      // Initialize animations after page load
-      window.addEventListener("load", () => {
-        // Slide-in animations
-        const sliderInit = document.querySelectorAll(".slide-in");
-        sliderInit.forEach((box, index) => {
-          setTimeout(() => {
-            box.classList.remove("slide-in");
-            box.classList.add("shows");
-          }, 500 * index);
-        });
-
-        // Intersection Observer for visibility animations
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("shows");
-            }
-          });
-        });
-
-        const hiddenElements = document.querySelectorAll(".hidden");
-        hiddenElements.forEach((el) => observer.observe(el));
-
-        // Also observe grid items
-        const gridItems = document.querySelectorAll(".grid__item.hidden");
-        gridItems.forEach((gridItem) => {
-          observer.observe(gridItem);
-        });
-      });
-    </script>
   </body>
 </html>
