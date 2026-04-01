@@ -3,12 +3,12 @@
     <img
       src="/img/portrait.jpg"
       alt="portrait of Philippe Ducasse"
-      class="profile__portrait slide-in left"
+      class="profile__portrait hidden left"
     />
     <div class="profile__description">
-      <h1 class="slide-in right profile-title">Hello! My name is Philippe Ducasse</h1>
+      <h1 class="hidden right profile-title">Hello! My name is Philippe Ducasse</h1>
       <br />
-      <div class="profile__description--summary slide-in bottom">
+      <div class="profile__description--summary hidden bottom">
         <h5>
           I am a Typescript and Python web-developer with a background in circus and performance
           arts.
@@ -61,38 +61,6 @@
 
 .profile-title {
   width: 120%;
-}
-
-.slide-in {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-
-.slide-in.left {
-  transform: translateX(-10vw);
-}
-
-.slide-in.right {
-  transform: translateX(10vw);
-}
-
-.slide-in.bottom {
-  transform: translateY(10vh);
-}
-
-.shows {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0) !important;
-  transform: translate(0) !important;
-  transition: all 1.5s;
-}
-
-@media (prefers-reduced-motion) {
-  .slide-in {
-    transition: none;
-  }
 }
 
 @media (max-width: 650px) {

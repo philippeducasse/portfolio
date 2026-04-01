@@ -1,5 +1,6 @@
 <template>
-  <div class="skills">
+  <section class="skills" id="skills">
+    <h2 class="section-title hidden left">Skills</h2>
     <h3 class="skills-text hidden left">I am well versed in the following languages and frameworks:</h3>
 
     <!-- Programming Languages & Frameworks -->
@@ -36,16 +37,12 @@
     <img class="hidden bottom" src="/img/country_flags/spain.svg" alt="spanish flag" />
 
     <a href="/files/Ducasse_Philippe_CV.pdf" class="button hidden left" download>Download my CV</a>
-  </div>
+  </section>
 </template>
 
 <script setup></script>
 
 <style scoped>
-.skills {
-  margin-top: 2rem;
-}
-
 .skills h3,
 .skills h5 {
   font-size: 1.25rem;
@@ -60,41 +57,5 @@
 
 .skills-text {
   margin: 2rem 0;
-}
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-
-.hidden.left {
-  transform: translateX(-10vw);
-}
-
-.hidden.right {
-  transform: translateX(10vw);
-}
-
-.hidden.bottom {
-  transform: translateY(10vh);
-}
-
-.hidden.top {
-  transform: translateY(-10vh);
-}
-
-.shows {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0) !important;
-  transform: translate(0) !important;
-  transition: all 1.5s;
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
 }
 </style>

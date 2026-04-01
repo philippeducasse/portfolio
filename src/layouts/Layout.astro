@@ -26,7 +26,9 @@ const { title = "Philippe Ducasse Dev Portfolio" } = Astro.props;
   <body>
     <Header client:load />
     <AnimationInit client:load />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer client:load />
   </body>
 </html>

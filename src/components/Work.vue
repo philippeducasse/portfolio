@@ -1,7 +1,7 @@
 <template>
-  <div class="my-work" id="work">
+  <section class="my-work" id="work">
     <div class="background-bar2 hidden right"></div>
-    <h1 class="work-title hidden left">My Work</h1>
+    <h2 class="work-title section-title hidden left">My Work</h2>
     <div class="grid">
       <ProjectCard
         v-for="(project, index) in projects"
@@ -16,7 +16,7 @@
       :isVisible="isModalVisible"
       @close="handleCloseModal"
     />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -40,16 +40,8 @@ const handleCloseModal = () => {
 </script>
 
 <style scoped>
-.my-work {
-  background-color: #fff;
-  padding: 2rem 0 3rem;
-}
-
 .work-title {
-  text-align: center;
   padding: 2rem 0;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
 }
 
 .grid {
@@ -100,34 +92,6 @@ const handleCloseModal = () => {
   border: 0.375rem solid var(--tertiary-color);
   transition: 800ms;
   box-shadow: none;
-}
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-
-.hidden.left {
-  transform: translateX(-10vw);
-}
-
-.hidden.right {
-  transform: translateX(10vw);
-}
-
-.shows {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0) !important;
-  transform: translate(0) !important;
-  transition: all 1.5s;
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
 }
 
 @media (max-width: 650px) {
