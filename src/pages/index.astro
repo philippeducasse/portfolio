@@ -3,10 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.vue";
 import Contact from "../components/Contact.vue";
 import Work from "../components/Work.vue";
+import Separator from "../components/Separator.vue";
 ---
 
 <Layout title="Philippe Ducasse Portfolio">
   <Hero client:load />
-  <Contact client:load />
+  <Separator />
   <Work client:load />
 </Layout>

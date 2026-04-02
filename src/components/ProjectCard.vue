@@ -4,7 +4,13 @@
     <img :src="project.image" :alt="project.name" class="screenshot" />
     <p class="short-description">{{ project.shortDescription }}</p>
     <div class="toolbox">
-      <img v-for="tool in project.tools" :key="tool.name" :src="tool.image" :alt="tool.name" class="tools__logo" />
+      <img
+        v-for="tool in project.tools"
+        :key="tool.name"
+        :src="tool.image"
+        :alt="tool.name"
+        class="tools__logo"
+      />
     </div>
   </div>
 </template>
@@ -39,42 +45,75 @@ const handleClick = () => {
 .grid__item {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 1.5rem;
   width: auto;
   min-width: 200px;
   margin: 0;
-  border: 6px solid var(--primary-color);
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.34);
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 300px;
+  cursor: pointer;
+  transition:
+    box-shadow 250ms ease,
+    transform 250ms ease;
 }
 
 .grid__item:hover {
-  border: 6px solid var(--tertiary-color);
-  transition: 800ms;
-  box-shadow: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  line-height: 1.4;
 }
 
 .screenshot {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 0 1rem 0;
 }
 
 .short-description {
-  padding: 0 10px;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4a5568;
+  flex-grow: 1;
 }
 
 .toolbox {
-  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 .tools__logo {
-  width: 45px;
-  max-height: 45px;
-  margin: 0.5rem;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  transition: background-color 200ms ease;
+}
+
+.tools__logo:hover {
+  background-color: #edf2f7;
 }
 
 .tools__logo::after {
@@ -83,13 +122,15 @@ const handleClick = () => {
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 6px 8px;
+  border-radius: 4px;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 12px;
   display: none;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .tools__logo:hover::after {
@@ -122,12 +163,8 @@ const handleClick = () => {
     margin: 0 auto;
   }
 
-  .grid__item img {
-    max-width: 200px;
-  }
-
-  .modal-image {
-    max-width: 250px;
+  .screenshot {
+    height: 150px;
   }
 }
 </style>

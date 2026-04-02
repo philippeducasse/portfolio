@@ -15,7 +15,7 @@ export const projects: Project[] = [
       "I've always hated sending out emails trying to get performances. So I built an entire app to help me with the process.",
     description:
       "Clapp helps freelance performance manage and enhance their careers by streamlining the application process.",
-    image: "/img/fletnix.png",
+    image: "/img/clapp.png",
     link: "https://clap.ovh",
     tools: [
       { name: "Next.js", image: "/img/logos/next.svg" },
@@ -29,7 +29,7 @@ export const projects: Project[] = [
       "I'm the core maintainer of the Zirkusmond website, a thriving circus located in the heart of berlin.",
     description:
       "Zirkusmond is one of Berlin's top underground performance venues. Handles about 20.000 ticket sales a year.",
-    image: "/img/fletnix.png",
+    image: "/img/zm.png",
     link: "https://zirkusmond.de",
     tools: [
       { name: "Vue", image: "/img/logos/vue.svg" },
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     shortDescription: "Gotta plug my circus work somewhere.",
     description:
       "My circus portfolio. I also added an entire Dagster pipeline leveraging some HuggingFace models. Overkill? Absolutely.",
-    image: "/img/fletnix.png",
+    image: "/img/pd.png",
     link: "https://philippeducasse.com",
     tools: [
       { name: "Nuxt", image: "/img/logos/nuxt.svg" },

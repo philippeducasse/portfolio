@@ -5,7 +5,7 @@
     <div class="grid">
       <ProjectCard
         v-for="(project, index) in projects"
-        :key="project.id"
+        :key="project.name"
         :project="project"
         :index="index"
         @select="handleSelectProject"

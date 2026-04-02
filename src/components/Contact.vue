@@ -42,6 +42,7 @@
 <style scoped>
 .contact {
   text-align: center;
+  min-height: fit-content;
 }
 
 .contact h5 {
