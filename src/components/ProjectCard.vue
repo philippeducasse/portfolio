@@ -4,7 +4,7 @@
     <img :src="project.image" :alt="project.name" class="screenshot" />
     <p class="short-description">{{ project.shortDescription }}</p>
     <div class="toolbox">
-      <img v-for="tool in project.tools" :key="tool" :src="tool" :alt="tool" class="tools__logo" />
+      <img v-for="tool in project.tools" :key="tool.name" :src="tool.image" :alt="tool.name" class="tools__logo" />
     </div>
   </div>
 </template>

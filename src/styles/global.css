@@ -35,12 +35,13 @@ body {
 
 main {
   flex: 1;
+  margin: 2em 0;
 }
 
 section {
   max-width: 1200px;
   min-height: 40vh;
-  margin: auto;
+  margin: 1em auto;
 }
 
 article {
