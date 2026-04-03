@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     name: "Clapp",
     shortDescription:
-      "I've always hated sending out emails trying to get performances. So I built an entire app to help me with the process.",
+      "I've always hated sending out emails trying to get gigs. So I built an entire app to help me with the process.",
     description:
       "Clapp helps freelance performance manage and enhance their careers by streamlining the application process.",
     image: "/img/clapp.png",

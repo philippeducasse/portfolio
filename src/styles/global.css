@@ -29,7 +29,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1800px;
   background-color: #fff;
 }
 
@@ -42,6 +41,7 @@ section {
   max-width: 1200px;
   min-height: 70vh;
   margin: 3em auto;
+  padding: 0 2em;
 }
 
 article {
