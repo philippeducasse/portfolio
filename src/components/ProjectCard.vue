@@ -4,13 +4,15 @@
     <img :src="project.image" :alt="project.name" class="screenshot" />
     <p class="short-description">{{ project.shortDescription }}</p>
     <div class="toolbox">
-      <img
-        v-for="tool in project.tools"
-        :key="tool.name"
-        :src="tool.image"
-        :alt="tool.name"
-        class="tools__logo"
-      />
+      <a v-for="tool in project.tools" href="#" :title="tool.name">
+        <img
+          :key="tool.name"
+          :src="tool.image"
+          :alt="tool.name"
+          :title="tool.name"
+          class="tools__logo"
+        />
+      </a>
     </div>
   </div>
 </template>
@@ -107,34 +109,8 @@ const handleClick = () => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7fafc;
   border-radius: 8px;
   transition: background-color 200ms ease;
-}
-
-.tools__logo:hover {
-  background-color: #edf2f7;
-}
-
-.tools__logo::after {
-  content: attr(alt);
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
-  padding: 6px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  font-size: 12px;
-  display: none;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.tools__logo:hover::after {
-  display: block;
 }
 
 .hidden {
