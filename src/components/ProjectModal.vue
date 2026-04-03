@@ -19,11 +19,7 @@
           <div class="modal-links">
             <a :href="project.githubLink" target="_blank" class="modal-github-logo">View the repository on GitHub</a>
             <a v-if="project.link" :href="project.link" target="_blank" class="live-link">See the app live</a>
-            <a v-if="project.caseStudy" :href="project.caseStudy" target="_blank" class="live-link">View case study</a>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="close-btn" @click="close">Close</button>
         </div>
       </div>
     </div>
@@ -123,12 +119,6 @@ onUnmounted(() => {
 
 .modal-body {
   padding: 20px;
-}
-
-.modal-footer {
-  border-top: 5px solid var(--primary-color);
-  padding: 20px;
-  text-align: right;
 }
 
 .modal-image {

@@ -5,8 +5,10 @@ export interface Project {
   image: string;
   githubLink?: string;
   link: string;
-  tools: { name: string; image: string }[];
+  tools: Tool[];
 }
+
+ interface Tool { name: string; image: string, mainTool?:boolean }
 
 export const projects: Project[] = [
   {
@@ -18,9 +20,10 @@ export const projects: Project[] = [
     image: "/img/clapp.png",
     link: "https://clap.ovh",
     tools: [
-      { name: "Next.js", image: "/img/logos/next.svg" },
-      { name: "Django", image: "/img/logos/django.svg" },
-      { name: "Mistral", image: "/img/logos/mistral.png" },
+      { name: "Next.js", image: "/img/logos/next.svg", mainTool: true },
+      { name: "Django", image: "/img/logos/django.svg", mainTool: true },
+      { name: "Mistral", image: "/img/logos/mistral.png", mainTool: true },
+      // {name: ""}
     ],
   },
   {
@@ -32,9 +35,9 @@ export const projects: Project[] = [
     image: "/img/zm.png",
     link: "https://zirkusmond.de",
     tools: [
-      { name: "Vue", image: "/img/logos/vue.svg" },
-      { name: "Django", image: "/img/logos/django.svg" },
-      { name: "Stripe", image: "/img/logos/stripe.svg" },
+      { name: "Vue", image: "/img/logos/vue.svg", mainTool: true },
+      { name: "Django", image: "/img/logos/django.svg", mainTool: true },
+      { name: "Stripe", image: "/img/logos/stripe.svg", mainTool: true },
     ],
   },
   {
@@ -46,9 +49,9 @@ export const projects: Project[] = [
     link: "https://philippeducasse.com",
     tools: [
       { name: "Nuxt", image: "/img/logos/nuxt.svg" },
-      { name: "FastAPI", image: "/img/logos/fastapi.svg" },
-      { name: "Hugging Face", image: "/img/logos/hf.svg" },
-      { name: "Dagster", image: "/img/logos/dagster.svg" },
+      { name: "FastAPI", image: "/img/logos/fastapi.svg", mainTool: true },
+      { name: "Hugging Face", image: "/img/logos/hf.svg", mainTool: true },
+      { name: "Dagster", image: "/img/logos/dagster.svg", mainTool: true },
     ],
   },
 ];

@@ -4,13 +4,14 @@
     <img :src="project.image" :alt="project.name" class="screenshot" />
     <p class="short-description">{{ project.shortDescription }}</p>
     <div class="toolbox">
-      <img
-        v-for="tool in project.tools"
-        :key="tool.name"
-        :src="tool.image"
-        :alt="tool.name"
-        class="tools__logo"
-      />
+      <template v-for="tool in project.tools" :key="tool.name">
+        <img
+          v-if="tool.mainTool"
+          :src="tool.image"
+          :alt="tool.name"
+          class="tools__logo"
+        />
+      </template>
     </div>
   </div>
 </template>
