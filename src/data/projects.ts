@@ -23,7 +23,7 @@ export const projects: Project[] = [
       { name: "Next.js", image: "/img/logos/next.svg", mainTool: true },
       { name: "Django", image: "/img/logos/django.svg", mainTool: true },
       { name: "Mistral", image: "/img/logos/mistral.png", mainTool: true },
-      // {name: ""}
+      {name: "Docker", image: "/img/logos/docker.svg"}
     ],
   },
   {
@@ -38,6 +38,8 @@ export const projects: Project[] = [
       { name: "Vue", image: "/img/logos/vue.svg", mainTool: true },
       { name: "Django", image: "/img/logos/django.svg", mainTool: true },
       { name: "Stripe", image: "/img/logos/stripe.svg", mainTool: true },
+      {name: "Docker", image: "/img/logos/docker.svg"}
+
     ],
   },
   {
@@ -52,6 +54,7 @@ export const projects: Project[] = [
       { name: "FastAPI", image: "/img/logos/fastapi.svg", mainTool: true },
       { name: "Hugging Face", image: "/img/logos/hf.svg", mainTool: true },
       { name: "Dagster", image: "/img/logos/dagster.svg", mainTool: true },
+      {name: "Docker", image: "/img/logos/docker.svg"}
     ],
   },
 ];
