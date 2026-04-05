@@ -3,12 +3,12 @@ export interface Project {
   shortDescription: string;
   description: string;
   image: string;
-  githubLink?: string;
+  githubLinks?: string[];
   link: string;
   tools: Tool[];
 }
 
- interface Tool { name: string; image: string, mainTool?:boolean }
+ interface Tool { name: string; image: string }
 
 export const projects: Project[] = [
   {
@@ -18,12 +18,11 @@ export const projects: Project[] = [
     description:
       "Clapp helps freelance performance manage and enhance their careers by streamlining the application process.",
     image: "/img/clapp.png",
-    link: "https://clap.ovh",
+    link: "https://clapp.ovh",
     tools: [
-      { name: "Next.js", image: "/img/logos/next.svg", mainTool: true },
-      { name: "Django", image: "/img/logos/django.svg", mainTool: true },
-      { name: "Mistral", image: "/img/logos/mistral.png", mainTool: true },
-      {name: "Docker", image: "/img/logos/docker.svg"}
+      { name: "Next.js", image: "/img/logos/next.svg" },
+      { name: "Django", image: "/img/logos/django.svg" },
+      { name: "Mistral", image: "/img/logos/mistral.png" },
     ],
   },
   {
@@ -35,11 +34,9 @@ export const projects: Project[] = [
     image: "/img/zm.png",
     link: "https://zirkusmond.de",
     tools: [
-      { name: "Vue", image: "/img/logos/vue.svg", mainTool: true },
-      { name: "Django", image: "/img/logos/django.svg", mainTool: true },
-      { name: "Stripe", image: "/img/logos/stripe.svg", mainTool: true },
-      {name: "Docker", image: "/img/logos/docker.svg"}
-
+      { name: "Vue", image: "/img/logos/vue.svg" },
+      { name: "Django", image: "/img/logos/django.svg" },
+      { name: "Stripe", image: "/img/logos/stripe.svg" },
     ],
   },
   {
@@ -49,12 +46,15 @@ export const projects: Project[] = [
       "My circus portfolio. I also added an entire Dagster pipeline leveraging some HuggingFace models. Overkill? Absolutely.",
     image: "/img/pd.png",
     link: "https://philippeducasse.com",
+    githubLinks: [
+      "https://github.com/philippeducasse/circus_portfolio_frontend",
+      "https://github.com/philippeducasse/circus_portfolio_backend",
+    ],
     tools: [
       { name: "Nuxt", image: "/img/logos/nuxt.svg" },
-      { name: "FastAPI", image: "/img/logos/fastapi.svg", mainTool: true },
-      { name: "Hugging Face", image: "/img/logos/hf.svg", mainTool: true },
-      { name: "Dagster", image: "/img/logos/dagster.svg", mainTool: true },
-      {name: "Docker", image: "/img/logos/docker.svg"}
+      { name: "FastAPI", image: "/img/logos/fastapi.svg" },
+      { name: "Hugging Face", image: "/img/logos/hf.svg" },
+      { name: "Dagster", image: "/img/logos/dagster.svg" },
     ],
   },
 ];

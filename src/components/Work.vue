@@ -8,35 +8,14 @@
         :key="project.name"
         :project="project"
         :index="index"
-        @select="handleSelectProject"
       />
     </div>
-    <ProjectModal
-      :project="selectedProject"
-      :isVisible="isModalVisible"
-      @close="handleCloseModal"
-    />
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { projects } from "../data/projects";
-import type { Project } from "../data/projects";
 import ProjectCard from "./ProjectCard.vue";
-import ProjectModal from "./ProjectModal.vue";
-
-const selectedProject = ref<Project | null>(null);
-const isModalVisible = ref(false);
-
-const handleSelectProject = (project: Project) => {
-  selectedProject.value = project;
-  isModalVisible.value = true;
-};
-
-const handleCloseModal = () => {
-  isModalVisible.value = false;
-};
 </script>
 
 <style scoped>

@@ -1,18 +1,25 @@
 <template>
-  <div class="grid__item hidden" :class="animationClass" @click="handleClick" role="button">
-    <h4 class="card-title">{{ project.name }}</h4>
-    <img :src="project.image" :alt="project.name" class="screenshot" />
-    <p class="short-description">{{ project.shortDescription }}</p>
+  <div class="grid__item hidden" :class="animationClass">
+    <a class="card-link" :href="project.link" target="_blank" rel="noopener noreferrer">
+      <h4 class="card-title">{{ project.name }}</h4>
+      <img :src="project.image" :alt="project.name" class="screenshot" />
+      <p class="short-description">{{ project.shortDescription }}</p>
+    </a>
     <div class="toolbox">
-      <template v-for="tool in project.tools" :key="tool.name">
-        <img
-          v-if="tool.mainTool"
-          :src="tool.image"
-          :alt="tool.name"
-          class="tools__logo"
-        />
-      </template>
+      <img
+        v-for="tool in project.tools"
+        :key="tool.name"
+        :src="tool.image"
+        :alt="tool.name"
+        class="tools__logo"
+      />
     </div>
+    <p v-if="project.githubLinks" class="github-links">
+      check out the code on github for the
+      <a :href="project.githubLinks[0]" target="_blank" rel="noopener noreferrer">frontend</a>
+      and
+      <a :href="project.githubLinks[1]" target="_blank" rel="noopener noreferrer">backend</a>
+    </p>
   </div>
 </template>
 
@@ -27,19 +34,11 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const emit = defineEmits<{
-  select: [project: Project];
-}>();
-
 const animationClass = computed(() => {
   if (props.index < 2) return "left";
   if (props.index < 4) return "right";
   return "bottom";
 });
-
-const handleClick = () => {
-  emit("select", props.project);
-};
 </script>
 
 <style scoped>
@@ -66,6 +65,14 @@ const handleClick = () => {
   transform: translateY(-2px);
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .card-title {
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
@@ -87,7 +94,23 @@ const handleClick = () => {
   font-size: 0.9375rem;
   line-height: 1.6;
   color: #4a5568;
-  flex-grow: 1;
+}
+
+.github-links {
+  margin: 0.75rem 0 0;
+  font-size: 0.8125rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.github-links a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.github-links a:hover {
+  text-decoration: none;
 }
 
 .toolbox {
