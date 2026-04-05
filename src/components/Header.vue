@@ -1,7 +1,7 @@
 <template>
   <header class="page-header">
-    <a href="#home">
-      <img class="page-header__item page-header__logo" src="/img/PDname_inline.png" alt="philippe ducasse" />
+    <a href="#home" class="page-header__item page-header__logo">
+      <h1>philippe ducasse</h1>
     </a>
     <nav class="page-header__item page-header__nav">
       <button
@@ -48,9 +48,23 @@ const closeMenu = () => {
   position: relative;
 }
 
+.page-header__logo h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 100;
+  font-family: inherit;
+  color: inherit;
+}
+
 .page-header__logo {
-  width: 220px;
-  padding-bottom: 15px;
+  font-family: "Amatic SC", "Amatic SC Fallback: BlinkMacSystemFont", "Amatic SC Fallback: Segoe UI", "Amatic SC Fallback: Helvetica Neue", "Amatic SC Fallback: Arial", "Amatic SC Fallback: Noto Sans", sans-serif;
+  font-weight: 100;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .page-header__item {
@@ -155,9 +169,7 @@ const closeMenu = () => {
   }
 
   .page-header__logo {
-    max-width: 100%;
-    min-width: 60%;
-    padding: 10px 0 0;
+    font-size: 4.5rem;
   }
 }
 
