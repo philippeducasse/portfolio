@@ -4,4 +4,6 @@ import vue from '@astrojs/vue';
 export default defineConfig({
   integrations: [vue()],
   strict: true,
+  site: 'https://philippeducasse.github.io',
+  base: '/',
 });
