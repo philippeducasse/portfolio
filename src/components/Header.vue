@@ -17,8 +17,7 @@
         <span class="nav-toggle__bar"></span>
       </button>
       <ul id="nav-menu" class="navigation-list" :class="{ 'is-open': isOpen }">
-        <li><a class="navigation-list__item" href="#about" @click="closeMenu">About</a></li>
-        <li><a class="navigation-list__item" href="#contact" @click="closeMenu">Contact</a></li>
+        <li><a class="navigation-list__item" href="#home" @click="closeMenu">Home</a></li>
         <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
       </ul>
     </nav>
