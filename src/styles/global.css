@@ -1,3 +1,5 @@
+@import './themes.css';
+
 :root {
   --primary-color: #337ab7;
   --secondary-color: #107d85;

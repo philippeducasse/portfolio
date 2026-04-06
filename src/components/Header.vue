@@ -1,7 +1,7 @@
 <template>
   <header class="page-header">
     <a href="#home" class="page-header__item page-header__logo">
-      <h1>philippe ducasse</h1>
+      <h1>Philippe Ducasse</h1>
     </a>
     <nav class="page-header__item page-header__nav">
       <button
@@ -18,7 +18,15 @@
       </button>
       <ul id="nav-menu" class="navigation-list" :class="{ 'is-open': isOpen }">
         <li><a class="navigation-list__item" href="#home" @click="closeMenu">Home</a></li>
-        <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
+        <li><a class="navigation-list__item" href="#work" @click="closeMenu">Projects</a></li>
+        <li>
+          <button class="nav-theme-btn" aria-label="Change viewing mode" @click="openModal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -26,8 +34,11 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useTheme } from '../utils/useTheme';
 
 const isOpen = ref(false);
+const { openModal } = useTheme();
+
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
@@ -113,6 +124,7 @@ const closeMenu = () => {
 .navigation-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 15px;
   margin: 0;
   padding: 0;
@@ -176,5 +188,22 @@ const closeMenu = () => {
   .page-header {
     padding: 20px 50px;
   }
+}
+
+.nav-theme-btn {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 4px 6px;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.nav-theme-btn:hover {
+  opacity: 1;
 }
 </style>

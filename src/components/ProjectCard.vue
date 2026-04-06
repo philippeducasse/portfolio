@@ -1,5 +1,34 @@
 <template>
-  <div class="grid__item hidden" :class="animationClass">
+  <!-- Minimalist: plain text entry, no images, no card -->
+  <div v-if="isMinimalist" class="project-minimal">
+    <h4 class="project-minimal__title">
+      <a :href="project.link" target="_blank" rel="noopener noreferrer">{{ project.name }}</a>
+    </h4>
+    <p class="project-minimal__desc">{{ project.shortDescription }}</p>
+    <p class="project-minimal__long-desc">{{ project.description }}</p>
+    <p class="project-minimal__tools">Built with: {{ project.tools.map((t) => t.name).join(', ') }}</p>
+    <div class="project-minimal__links">
+      <template v-if="project.githubLinks">
+        <p>View the repositories: </p>
+        <a :href="project.githubLinks[0]" target="_blank" rel="noopener noreferrer"> frontend</a>
+        <a
+          v-if="project.githubLinks[1]"
+          :href="project.githubLinks[1]"
+          target="_blank"
+          rel="noopener noreferrer"
+        >backend</a>
+      </template>
+    </div>
+  </div>
+
+  <!-- Default / frontend / nostalgic: full card -->
+  <div
+    v-else
+    class="grid__item hidden"
+    :class="animationClass"
+    @mousemove="onMouseMove"
+    @mouseleave="onMouseLeave"
+  >
     <a class="card-link" :href="project.link" target="_blank" rel="noopener noreferrer">
       <h4 class="card-title">{{ project.name }}</h4>
       <img :src="project.image" :alt="project.name" class="screenshot" />
@@ -26,6 +55,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import type { Project } from "../data/projects";
+import { useTheme } from "../utils/useTheme";
 
 interface Props {
   project: Project;
@@ -33,15 +63,33 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+const { currentTheme } = useTheme();
+
+const isMinimalist = computed(() => currentTheme.value === 'minimalist');
 
 const animationClass = computed(() => {
   if (props.index < 2) return "left";
   if (props.index < 4) return "right";
   return "bottom";
 });
+
+function onMouseMove(e: MouseEvent) {
+  if (currentTheme.value !== 'frontend') return;
+  const el = e.currentTarget as HTMLElement;
+  const rect = el.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width - 0.5;
+  const y = (e.clientY - rect.top) / rect.height - 0.5;
+  el.style.transform = `perspective(700px) rotateY(${x * 16}deg) rotateX(${-y * 10}deg) translateY(-10px)`;
+}
+
+function onMouseLeave(e: MouseEvent) {
+  if (currentTheme.value !== 'frontend') return;
+  (e.currentTarget as HTMLElement).style.transform = '';
+}
 </script>
 
 <style scoped>
+/* ── Default card ── */
 .grid__item {
   display: flex;
   flex-direction: column;
@@ -164,5 +212,67 @@ const animationClass = computed(() => {
   .screenshot {
     height: 150px;
   }
+}
+
+/* ── Minimalist project entry ── */
+.project-minimal {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.project-minimal__title {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 0.375rem 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.project-minimal__title a {
+  color: #6b8fa3;
+  text-decoration: none;
+}
+
+.project-minimal__title a:hover {
+  text-decoration: underline;
+}
+
+.project-minimal__desc {
+  margin: 0 0 0.375rem 0;
+  color: #888;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  line-height: 1.5;
+}
+
+.project-minimal__long-desc {
+  margin: 0 0 0.375rem 0;
+  color: #888;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  line-height: 1.5;
+}
+
+.project-minimal__tools {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.75rem;
+  color: #555;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  margin-top: 1em;
+}
+
+.project-minimal__links {
+  display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.project-minimal__links a {
+  color: #6b8fa3;
+  text-decoration: none;
+}
+
+.project-minimal__links a:hover {
+  text-decoration: underline;
 }
 </style>
