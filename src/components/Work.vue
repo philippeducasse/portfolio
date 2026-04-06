@@ -1,7 +1,7 @@
 <template>
   <section class="my-work" id="work">
     <div class="background-bar2 hidden right"></div>
-    <h2 class="work-title section-title words-animate">My Projects</h2>
+    <h2 class="work-title section-title">My Projects</h2>
     <div class="grid">
       <ProjectCard
         v-for="(project, index) in projects"
@@ -27,7 +27,7 @@ import ProjectCard from "./ProjectCard.vue";
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1.5625rem;
-  place-items: center;
+  align-items: stretch;
 }
 
 .grid__item {
@@ -38,7 +38,7 @@ import ProjectCard from "./ProjectCard.vue";
   text-align: center;
   width: auto;
   min-width: 12.5rem;
-  height: 28.125rem;
+  min-height: 28.125rem;
   margin: 0;
   border: 0.375rem solid var(--primary-color);
   background-color: #fff;

@@ -20,12 +20,7 @@
         <li><a class="navigation-list__item" href="#home" @click="closeMenu">Home</a></li>
         <li><a class="navigation-list__item" href="#work" @click="closeMenu">Projects</a></li>
         <li>
-          <button class="nav-theme-btn" aria-label="Change viewing mode" @click="openModal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-            </svg>
-          </button>
+          <a class="navigation-list__item" @click="openModal">Change mode</a>
         </li>
       </ul>
     </nav>
@@ -162,6 +157,7 @@ const closeMenu = () => {
     padding: 10px 20px 20px;
     gap: 0;
     z-index: 100;
+    justify-content: center;
   }
 
   .navigation-list.is-open {
@@ -195,15 +191,16 @@ const closeMenu = () => {
   border: none;
   box-shadow: none;
   margin: 0;
-  padding: 4px 6px;
+  padding: 0;
   color: var(--primary-color);
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  opacity: 0.7;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: none;
 }
 
 .nav-theme-btn:hover {
-  opacity: 1;
+  color: var(--tertiary-color);
 }
 </style>

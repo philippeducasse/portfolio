@@ -119,15 +119,6 @@ html[data-theme="minimalist"] .navigation-list {
   border-top-color: #2a2a2a;
 }
 
-/* Buttons (the theme-switcher FAB) */
-html[data-theme="minimalist"] button,
-html[data-theme="minimalist"] .button {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  box-shadow: none;
-  border: 1px solid #333;
-}
-
 /* Work section */
 html[data-theme="minimalist"] .my-work {
   min-height: unset;
@@ -238,9 +229,6 @@ html[data-theme="frontend"] .shows {
 /* Project cards: deep 3D hover */
 html[data-theme="frontend"] .grid__item {
   transform-style: preserve-3d;
-  transition:
-    box-shadow 300ms ease,
-    transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 html[data-theme="frontend"] .grid__item:hover {
@@ -258,57 +246,6 @@ html[data-theme="frontend"] .card-title {
   background-clip: text;
 }
 
-/* Glitch effect on section headings */
-html[data-theme="frontend"] .section-title {
-  animation: frontend-glitch 6s infinite;
-  position: relative;
-}
-
-@keyframes frontend-glitch {
-  0%,
-  88%,
-  100% {
-    clip-path: none;
-    transform: none;
-    color: inherit;
-  }
-
-  89% {
-    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
-    transform: translateX(-4px);
-    color: #ff2d55;
-  }
-
-  90% {
-    clip-path: polygon(0 35%, 100% 35%, 100% 70%, 0 70%);
-    transform: translateX(4px);
-    color: #0ff;
-  }
-
-  91% {
-    clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
-    transform: translateX(-2px);
-    color: inherit;
-  }
-
-  92% {
-    clip-path: none;
-    transform: none;
-    color: inherit;
-  }
-}
-
-/* Neon link glow */
-html[data-theme="frontend"] a {
-  transition:
-    color 200ms,
-    text-shadow 200ms;
-}
-
-html[data-theme="frontend"] a:hover,
-html[data-theme="frontend"] a:focus {
-  text-shadow: 0 0 16px rgba(51, 122, 183, 0.7);
-}
 
 /* Pulsing portrait ring */
 html[data-theme="frontend"] .profile__portrait {
@@ -327,23 +264,6 @@ html[data-theme="frontend"] .profile__portrait {
     box-shadow:
       0 0 0 6px #107d85,
       0 0 50px rgba(16, 125, 133, 0.55);
-  }
-}
-
-/* Glow on buttons */
-html[data-theme="frontend"] button,
-html[data-theme="frontend"] .button {
-  animation: frontend-btn-pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes frontend-btn-pulse {
-  0%,
-  100% {
-    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.34);
-  }
-
-  50% {
-    box-shadow: 0 0 20px rgba(51, 122, 183, 0.55);
   }
 }
 

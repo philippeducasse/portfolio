@@ -6,7 +6,7 @@
       class="profile__portrait hidden left"
     />
     <div class="profile__description">
-      <h1 class="words-animate profile-title">Philippe Ducasse</h1>
+      <h1 class="hidden top profile-title">Philippe Ducasse</h1>
       <p class="hidden left location">
         <svg
           class="location-icon"
@@ -21,12 +21,12 @@
         Berlin Germany
       </p>
       <div class="profile__description--summary">
-        <p class="hidden bottom">
+        <p class="hidden right">
           I am a Typescript and Python web-developer with a background in circus and performance
           arts. I am currently working as a full-stack developer for
           <a href="https://vdpresearch.de/" target="_blank">vdpResearch</a>.
         </p>
-        <p class="words-animate">
+        <p class="hidden bottom">
           During my free time i like to code circus related things. I also love learning how
           computers and the internet work. And hulahoop.
         </p>

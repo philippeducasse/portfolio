@@ -1,7 +1,7 @@
 <template>
   <section class="contact" id="contact">
-    <h2 class="section-title words-animate">Contact</h2>
-    <p class="words-animate">Feel free to reach out to me on your preferred platform.</p>
+    <h2 class="section-title hidden right">Contact</h2>
+    <p class="hidden left">Feel free to reach out to me on your preferred platform.</p>
     <div class="contact-info hidden right">
       <div class="social-links">
         <a href="mailto:info@philippeducasse.com" class="social-link" aria-label="Email">

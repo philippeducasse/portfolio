@@ -25,9 +25,7 @@
   <div
     v-else
     class="grid__item hidden"
-    :class="animationClass"
-    @mousemove="onMouseMove"
-    @mouseleave="onMouseLeave"
+    :class="animationDir"
   >
     <a class="card-link" :href="project.link" target="_blank" rel="noopener noreferrer">
       <h4 class="card-title">{{ project.name }}</h4>
@@ -67,25 +65,8 @@ const { currentTheme } = useTheme();
 
 const isMinimalist = computed(() => currentTheme.value === 'minimalist');
 
-const animationClass = computed(() => {
-  if (props.index < 2) return "left";
-  if (props.index < 4) return "right";
-  return "bottom";
-});
-
-function onMouseMove(e: MouseEvent) {
-  if (currentTheme.value !== 'frontend') return;
-  const el = e.currentTarget as HTMLElement;
-  const rect = el.getBoundingClientRect();
-  const x = (e.clientX - rect.left) / rect.width - 0.5;
-  const y = (e.clientY - rect.top) / rect.height - 0.5;
-  el.style.transform = `perspective(700px) rotateY(${x * 16}deg) rotateX(${-y * 10}deg) translateY(-10px)`;
-}
-
-function onMouseLeave(e: MouseEvent) {
-  if (currentTheme.value !== 'frontend') return;
-  (e.currentTarget as HTMLElement).style.transform = '';
-}
+const DIRS = ['left', 'bottom', 'right'];
+const animationDir = computed(() => DIRS[props.index % 3]);
 </script>
 
 <style scoped>
@@ -94,18 +75,24 @@ function onMouseLeave(e: MouseEvent) {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  width: auto;
-  min-width: 200px;
+  width: 100%;
   margin: 0;
   background-color: #ffffff;
   border: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
   cursor: pointer;
   transition:
     box-shadow 250ms ease,
     transform 250ms ease;
+}
+
+.grid__item.hidden {
+  transition: all 1s;
+}
+
+.grid__item.shows {
+  transition: all 1.5s;
 }
 
 .grid__item:hover {
@@ -120,6 +107,7 @@ function onMouseLeave(e: MouseEvent) {
   flex-direction: column;
   flex-grow: 1;
 }
+
 
 .card-title {
   margin: 0 0 1rem 0;
@@ -157,9 +145,6 @@ function onMouseLeave(e: MouseEvent) {
   text-underline-offset: 2px;
 }
 
-.github-links a:hover {
-  text-decoration: none;
-}
 
 .toolbox {
   display: flex;
@@ -183,25 +168,6 @@ function onMouseLeave(e: MouseEvent) {
   transition: background-color 200ms ease;
 }
 
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s;
-}
-
-.shows {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0) !important;
-  transform: translate(0) !important;
-  transition: all 1.5s;
-}
-
-@media (prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
-}
 
 @media (max-width: 500px) {
   .grid__item {
