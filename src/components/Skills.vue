@@ -1,7 +1,7 @@
 <template>
   <section class="skills" id="skills">
-    <h2 class="section-title hidden left">Skills</h2>
-    <h3 class="skills-text hidden left">
+    <h2 class="section-title words-animate">Skills</h2>
+    <h3 class="skills-text words-animate">
       I am well versed in the following languages and frameworks:
     </h3>
 
@@ -31,7 +31,7 @@
     <img class="hidden bottom" src="/img/logos/aws.svg" alt="aws logo" />
 
     <!-- Languages -->
-    <h5 class="skills-text hidden left">
+    <h5 class="skills-text words-animate">
       Apart from a variety of programming languages, I am also fluent in 5 regular languages!
     </h5>
     <img class="hidden bottom" src="/img/country_flags/uk.svg" alt="english flag" />

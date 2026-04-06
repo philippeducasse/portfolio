@@ -37,10 +37,8 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue';
 import { useTheme } from '../utils/useTheme';
-import { useFrontendEffects } from '../utils/useFrontendEffects';
 
 const { modalOpen, currentTheme, setTheme, openModal, closeModal } = useTheme();
-const { init: initFx, destroy: destroyFx } = useFrontendEffects();
 
 const modes = [
   {
@@ -65,16 +63,11 @@ function select(theme: string) {
   closeModal();
 }
 
-watch(currentTheme, (next, prev) => {
-  if (prev === 'frontend') destroyFx();
-  if (next === 'frontend') initFx();
-});
 
 onMounted(() => {
   const saved = localStorage.getItem('viewingMode');
   if (saved) {
     setTheme(saved);
-    if (saved === 'frontend') initFx();
   } else {
     openModal();
   }
