@@ -14,8 +14,8 @@ html[data-theme="minimalist"] body {
 }
 
 /* Unified off-white — use !important to beat scoped component styles */
-html[data-theme="minimalist"] h1,
-html[data-theme="minimalist"] h2,
+html[data-theme="minimalist"] h1:not(.modal-heading),
+html[data-theme="minimalist"] h2:not(.modal-heading),
 html[data-theme="minimalist"] h3,
 html[data-theme="minimalist"] h4,
 html[data-theme="minimalist"] h5,
@@ -23,7 +23,7 @@ html[data-theme="minimalist"] h6,
 html[data-theme="minimalist"] p,
 html[data-theme="minimalist"] a,
 html[data-theme="minimalist"] li,
-html[data-theme="minimalist"] span {
+html[data-theme="minimalist"] span:not(.mode-btn__name):not(.mode-btn__subtitle):not(.modal-heading) {
   color: #d4d4d4 !important;
   font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
   font-weight: 400 !important;
@@ -36,16 +36,25 @@ html[data-theme="minimalist"] a:focus {
   text-decoration: underline;
 }
 
+/* Preserve modal button individual theme styling */
+html[data-theme="minimalist"] .mode-btn__name,
+html[data-theme="minimalist"] .mode-btn__subtitle {
+  font-family: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
 /* Remove section min-height — no giant empty gaps */
 html[data-theme="minimalist"] section {
   min-height: unset;
   margin: 1.5em auto;
 }
 
-/* Kill all animations and transitions */
-html[data-theme="minimalist"] *,
-html[data-theme="minimalist"] *::before,
-html[data-theme="minimalist"] *::after {
+/* Kill all animations and transitions (except modal buttons) */
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *),
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::before,
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::after {
   animation: none !important;
   transition: none !important;
 }

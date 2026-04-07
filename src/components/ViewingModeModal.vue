@@ -125,9 +125,7 @@ onMounted(() => {
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+  transition: all 1.2s ease;
   margin: 0;
 }
 
@@ -178,14 +176,17 @@ onMounted(() => {
 }
 
 .mode-btn--frontend .mode-btn__name {
-  background: linear-gradient(90deg, #337ab7, #107d85);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: linear-gradient(90deg, #5ca3e0, #9aecf1) !important;
+  font-family: "Lato", sans-serif !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 .mode-btn--frontend .mode-btn__subtitle {
-  color: #94b1cf;
+  color: #b1c2d4 !important;
+  font-family: "Lato", sans-serif !important;
+  font-style: normal !important;
 }
 
 /* Nostalgic card */
@@ -203,14 +204,14 @@ onMounted(() => {
 }
 
 .mode-btn--nostalgic .mode-btn__name {
-  color: #000080;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #000080 !important;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
 }
 
 .mode-btn--nostalgic .mode-btn__subtitle {
-  color: #333;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  font-style: normal;
+  color: #333 !important;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+  font-style: normal !important;
 }
 
 /* ── Nostalgic marquee ── */
