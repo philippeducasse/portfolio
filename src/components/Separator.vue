@@ -8,5 +8,6 @@
   background-color: var(--secondary-color);
   z-index: 0;
   transition: 3s !important;
+  margin: 2rem auto;
 }
 </style>

@@ -9,7 +9,7 @@
         aria-label="Choose viewing mode"
       >
         <div class="modal-card">
-          <h2 class="modal-heading">How would you like to experience this?</h2>
+          <h2 class="modal-heading">Please select your viewing mode</h2>
           <div class="modal-options">
             <button
               v-for="mode in modes"
@@ -28,33 +28,36 @@
 
     <div v-if="currentTheme === 'nostalgic'" class="nostalgic-marquee" role="marquee">
       <span class="nostalgic-marquee__inner">
-        ★ UNDER CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO NOT STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★ UNDER CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO NOT STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★
+        ★ UNDER CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO
+        NOT STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★ UNDER
+        CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO NOT
+        STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★
       </span>
     </div>
   </Teleport>
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
-import { useTheme } from '../utils/useTheme';
+import { onMounted, watch } from "vue";
+import { useTheme } from "../utils/useTheme";
 
 const { modalOpen, currentTheme, setTheme, openModal, closeModal } = useTheme();
 
 const modes = [
   {
-    id: 'minimalist',
-    name: 'The Minimalist',
-    subtitle: "Elegant, simple. And because css isn't real programming.",
+    id: "minimalist",
+    name: "The Minimalist",
+    subtitle: "Elegant, simple. If you think css isn't real programming, this is for you",
   },
   {
-    id: 'frontend',
-    name: 'The Latte Sipping MacBook Pro Frontend Dev',
-    subtitle: "Because if your portfolio doesn't have a particle background, are you even a frontend dev?",
+    id: "frontend",
+    name: "The Frontend Dev",
+    subtitle: "If you like animations and drink fancy coffee",
   },
   {
-    id: 'nostalgic',
-    name: 'The Nostalgic',
-    subtitle: 'For those who miss the early days of the web.',
+    id: "nostalgic",
+    name: "The Nostalgic",
+    subtitle: "For those who miss the early days of the web.",
   },
 ];
 
@@ -63,9 +66,8 @@ function select(theme: string) {
   closeModal();
 }
 
-
 onMounted(() => {
-  const saved = localStorage.getItem('viewingMode');
+  const saved = localStorage.getItem("viewingMode");
   if (saved) {
     setTheme(saved);
   } else {
@@ -98,7 +100,7 @@ onMounted(() => {
 
 .modal-heading {
   color: #e8e8e8;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.375rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -129,22 +131,21 @@ onMounted(() => {
   margin: 0;
 }
 
-.mode-btn:hover {
+.mode-btn--frontend:hover {
   transform: translateY(-4px);
 }
 
 .mode-btn__name {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.3;
   display: block;
 }
 
 .mode-btn__subtitle {
-  font-size: 0.8125rem;
+  font-size: 1rem;
   line-height: 1.5;
-  font-style: italic;
   display: block;
 }
 
@@ -161,8 +162,8 @@ onMounted(() => {
 }
 
 .mode-btn--minimalist .mode-btn__subtitle {
-  color: #555;
-  font-family: 'Courier New', monospace;
+  color: #dfdede;
+  font-family: "Courier New", monospace;
 }
 
 /* Frontend dev card */
@@ -203,12 +204,12 @@ onMounted(() => {
 
 .mode-btn--nostalgic .mode-btn__name {
   color: #000080;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .mode-btn--nostalgic .mode-btn__subtitle {
   color: #333;
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-style: normal;
 }
 
@@ -222,7 +223,7 @@ onMounted(() => {
   white-space: nowrap;
   background: #000080;
   color: #ffff00;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   font-size: 0.8125rem;
   padding: 3px 0;
   border-top: 2px solid #fff;

@@ -18,7 +18,9 @@
       </button>
       <ul id="nav-menu" class="navigation-list" :class="{ 'is-open': isOpen }">
         <li><a class="navigation-list__item" href="#home" @click="closeMenu">Home</a></li>
-        <li><a class="navigation-list__item" href="#work" @click="closeMenu">Projects</a></li>
+        <li><a class="navigation-list__item" href="#skills" @click="closeMenu">Skills</a></li>
+        <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
+        <li><a class="navigation-list__item" href="#projects" @click="closeMenu">Projects</a></li>
         <li>
           <a class="navigation-list__item" @click="openModal">Change mode</a>
         </li>
@@ -28,8 +30,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useTheme } from '../utils/useTheme';
+import { ref } from "vue";
+import { useTheme } from "../utils/useTheme";
 
 const isOpen = ref(false);
 const { openModal } = useTheme();
@@ -62,7 +64,10 @@ const closeMenu = () => {
 }
 
 .page-header__logo {
-  font-family: "Amatic SC", "Amatic SC Fallback: BlinkMacSystemFont", "Amatic SC Fallback: Segoe UI", "Amatic SC Fallback: Helvetica Neue", "Amatic SC Fallback: Arial", "Amatic SC Fallback: Noto Sans", sans-serif;
+  font-family:
+    "Amatic SC", "Amatic SC Fallback: BlinkMacSystemFont", "Amatic SC Fallback: Segoe UI",
+    "Amatic SC Fallback: Helvetica Neue", "Amatic SC Fallback: Arial",
+    "Amatic SC Fallback: Noto Sans", sans-serif;
   font-weight: 100;
   color: #000;
   text-decoration: none;
@@ -133,6 +138,7 @@ const closeMenu = () => {
 .navigation-list__item {
   text-decoration: none;
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 .navigation-list__item:hover {

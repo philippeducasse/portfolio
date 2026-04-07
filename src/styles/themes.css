@@ -10,7 +10,7 @@ html[data-theme="minimalist"] {
 html[data-theme="minimalist"] body {
   background-color: #111;
   color: #d4d4d4;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
 }
 
 /* Unified off-white — use !important to beat scoped component styles */
@@ -25,7 +25,7 @@ html[data-theme="minimalist"] a,
 html[data-theme="minimalist"] li,
 html[data-theme="minimalist"] span {
   color: #d4d4d4 !important;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
   font-weight: 400 !important;
   -webkit-text-fill-color: unset !important;
 }
@@ -119,13 +119,6 @@ html[data-theme="minimalist"] .navigation-list {
   border-top-color: #2a2a2a;
 }
 
-/* Work section */
-html[data-theme="minimalist"] .my-work {
-  min-height: unset;
-  margin-top: 0;
-  padding-top: 0;
-}
-
 /* Flatten grid to a plain list */
 html[data-theme="minimalist"] .grid {
   display: block;
@@ -136,25 +129,11 @@ html[data-theme="minimalist"] .grid > *:last-child {
   padding-bottom: 0;
 }
 
-html[data-theme="minimalist"] .work-title {
-  font-size: 1.25rem;
-  color: #d4d4d4;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 400;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0;
-}
-
 /* Footer */
 html[data-theme="minimalist"] .page-footer {
   background-color: #0d0d0d;
   border-top: 1px solid #2a2a2a;
 }
-
-
 
 /* ═══════════════════════════════════════════
    THEME: FRONTEND DEV  (data-theme="frontend")
@@ -162,7 +141,6 @@ html[data-theme="minimalist"] .page-footer {
 /* ═══════════════════════════════════════════ */
 
 /* Animated gradient background */
-
 
 /* html[data-theme="frontend"] body {
   background: linear-gradient(135deg, #fff 0%, #eef4ff 30%, #f0fffd 70%, #fff 100%);
@@ -188,15 +166,20 @@ html[data-theme="minimalist"] .page-footer {
 html[data-theme="frontend"] .page-header {
   border-bottom: 35px solid transparent;
   background-color: #fff;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, #337ab7, #107d85, #489c79, #94b1cf, #337ab7);
+  background-image:
+    linear-gradient(#fff, #fff), linear-gradient(90deg, #337ab7, #107d85, #489c79, #94b1cf, #337ab7);
   background-origin: padding-box, border-box;
-  background-size: auto, 200% auto;
+  background-size:
+    auto,
+    200% auto;
   animation: frontend-border-flow 4s linear infinite;
 }
 
 @keyframes frontend-border-flow {
   to {
-    background-position: auto, -200% center;
+    background-position:
+      auto,
+      -200% center;
   }
 }
 
@@ -246,7 +229,6 @@ html[data-theme="frontend"] .card-title {
   background-clip: text;
 }
 
-
 /* Pulsing portrait ring */
 html[data-theme="frontend"] .profile__portrait {
   animation: frontend-portrait-ring 3s ease-in-out infinite;
@@ -285,7 +267,6 @@ html[data-theme="frontend"] .background-bar2 {
   opacity: 0.4;
 }
 
-
 /* ═══════════════════════════════════════════
    THEME: NOSTALGIC  (data-theme="nostalgic")
    Early web, circa 1998. We had style.
@@ -296,7 +277,7 @@ html[data-theme="nostalgic"] {
 }
 
 html[data-theme="nostalgic"] body {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
   background-color: #c0c0c0;
   color: #000;
 }
@@ -307,7 +288,7 @@ html[data-theme="nostalgic"] h3,
 html[data-theme="nostalgic"] h4,
 html[data-theme="nostalgic"] h5,
 html[data-theme="nostalgic"] h6 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   color: #000080;
   text-decoration: underline;
 }
@@ -348,14 +329,14 @@ html[data-theme="nostalgic"] .page-header {
 
 html[data-theme="nostalgic"] .page-header__logo {
   color: #ffff00;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
 }
 
 html[data-theme="nostalgic"] .page-header__logo h1 {
   color: #ffff00;
   text-decoration: none;
   text-shadow: 2px 2px #000;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
 }
 
 html[data-theme="nostalgic"] .navigation-list__item {
@@ -384,7 +365,7 @@ html[data-theme="nostalgic"] .button {
   color: #000;
   box-shadow: none;
   border-radius: 0;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
 }
 
 html[data-theme="nostalgic"] button:hover,
@@ -412,7 +393,7 @@ html[data-theme="nostalgic"] .background-bar {
 html[data-theme="nostalgic"] .section-title {
   animation: nostalgic-blink 1.2s step-end infinite;
   color: #cc0000;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   text-decoration: underline;
 }
 
@@ -438,7 +419,7 @@ html[data-theme="nostalgic"] .grid__item:hover {
 
 html[data-theme="nostalgic"] .card-title {
   color: #000080;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   -webkit-text-fill-color: unset;
   background: none;
 }
@@ -446,7 +427,7 @@ html[data-theme="nostalgic"] .card-title {
 html[data-theme="nostalgic"] .short-description,
 html[data-theme="nostalgic"] .github-links {
   color: #000;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
 }
 
 html[data-theme="nostalgic"] .github-links a {
@@ -486,4 +467,3 @@ html[data-theme="nostalgic"] .background-bar2 {
 html[data-theme="nostalgic"] main {
   margin-top: 26px;
 }
-

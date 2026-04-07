@@ -1,65 +1,183 @@
 <template>
   <section class="skills" id="skills">
-    <h2 class="section-title hidden left">Skills</h2>
-    <h3 class="skills-text hidden right">
-      I am well versed in the following languages and frameworks:
-    </h3>
-
-    <!-- Programming Languages & Frameworks -->
-    <img class="hidden left" src="/img/logos/html.svg" alt="HTML logo" title="HTML" />
-    <img class="hidden right" src="/img/logos/css_logo.png" alt="css logo" />
-    <img class="hidden bottom" src="/img/logos/javascript.svg" alt="javascript logo" />
-    <img class="hidden right" src="/img/logos/typescript.svg" alt="typescript logo" />
-    <img class="hidden left" src="/img/logos/python.png" alt="python logo" />
-    <img class="hidden bottom" src="/img/logos/react.svg" alt="react logo" />
-    <img class="hidden right" src="/img/logos/nextjs.svg" alt="nextjs logo" />
-    <img class="hidden left" src="/img/logos/GitHub.png" alt="github logo" />
-    <img class="hidden right" src="/img/logos/react-native.svg" alt="react native logo" />
-    <img class="hidden bottom" src="/img/logos/node_logo.png" alt="node js logo" />
-    <img class="hidden bottom" src="/img/logos/express.png" alt="express js logo" />
-    <img class="hidden left" src="/img/logos/angular.svg" alt="angular logo" />
-    <img class="hidden right" src="/img/logos/jquery.png" alt="jquery logo" />
-    <img class="hidden right" src="/img/logos/django.svg" alt="django logo" />
-    <img class="hidden left" src="/img/logos/java.svg" alt="java logo" />
-    <img class="hidden left" src="/img/logos/wordpress.svg" alt="wordpress logo" />
-    <img class="hidden right" src="/img/logos/docker.svg" alt="docker logo" />
-    <img class="hidden bottom" src="/img/logos/bootstrap_logo.png" alt="bootstrap logo" />
-    <img class="hidden left" src="/img/logos/mongodb_logo.png" alt="mongoDB logo" />
-    <img class="hidden bottom" src="/img/logos/git-icon-logo-svg-vector.svg" alt="git logo" />
-    <img class="hidden left" src="/img/logos/firebase_logo.PNG" alt="firebase logo" />
-    <img class="hidden right" src="/img/logos/heroku.svg" alt="heroku logo" />
-    <img class="hidden bottom" src="/img/logos/aws.svg" alt="aws logo" />
-
-    <!-- Languages -->
-    <h5 class="skills-text hidden bottom">
-      Apart from a variety of programming languages, I am also fluent in 5 regular languages!
-    </h5>
-    <img class="hidden bottom" src="/img/country_flags/uk.svg" alt="english flag" />
-    <img class="hidden top" src="/img/country_flags/germany.png" alt="german flag" />
-    <img class="hidden left" src="/img/country_flags/france.png" alt="french flag" />
-    <img class="hidden right" src="/img/country_flags/italy.png" alt="italian flag" />
-    <img class="hidden bottom" src="/img/country_flags/spain.svg" alt="spanish flag" />
-
-    <a href="/files/Ducasse_Philippe_CV.pdf" class="button hidden left" download>Download my CV</a>
+    <h2 class="section-title hidden right">Skills</h2>
+    <div class="skills-groups">
+      <div v-for="group in skillGroups" :key="group.name" class="skill-group">
+        <h3 class="skill-group-title">{{ group.name }}</h3>
+        <div class="skills-container">
+          <div v-for="skill in group.skills" :key="skill.name" class="skill-item hidden left">
+            <div class="skill-content">
+              <img
+                v-if="skill.logo"
+                :src="skill.logo"
+                :alt="skill.name"
+                class="skill-logo"
+                :title="skill.name"
+              />
+              <span class="skill-name">{{ skill.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+const skillGroups = [
+  {
+    name: "Frontend",
+    skills: [
+      { name: "TypeScript", logo: "/img/logos/typescript.svg" },
+      { name: "JavaScript", logo: "/img/logos/javascript.svg" },
+      { name: "React / Next.js", logo: "/img/logos/react.svg" },
+      { name: "Vue.js / Nuxt", logo: "/img/logos/vue.svg" },
+      { name: "HTML & CSS", logo: null },
+      { name: "SCSS, Tailwind, Bootstrap", logo: null },
+    ],
+  },
+  {
+    name: "Backend",
+    skills: [
+      { name: "Python", logo: "/img/logos/python.svg" },
+      { name: "Django", logo: "/img/logos/django.svg" },
+      { name: "Node.js", logo: "/img/logos/nodejs.svg" },
+      { name: "SQL, Postgres, MySQL", logo: null },
+      { name: "DynamoDB, Elasticsearch", logo: null },
+      { name: "Claude Code, OpenAI, Agentic workflows", logo: null },
+    ],
+  },
+  {
+    name: "DevOps & Tools",
+    skills: [
+      { name: "Docker, Terraform", logo: "/img/logos/docker.svg" },
+      { name: "Git", logo: "/img/logos/git.svg" },
+      { name: "Linux", logo: null },
+      { name: "Cloud Technologies (AWS & Firebase)", logo: null },
+      { name: "Vitest, Pytest, Jest, Playwright", logo: null },
+      { name: "Dagster", logo: null },
+    ],
+  },
+];
+</script>
 
 <style scoped>
-.skills h3,
-.skills h5 {
-  font-size: 1.25rem;
+.skills {
+  min-height: fit-content;
+  padding-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
-.skills img {
-  width: 3.125rem;
-  height: 3.125rem;
-  margin: 0.625rem;
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
 }
 
-.skills-text {
-  margin: 2rem 0;
+.skill-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-group-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.skill-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 80px;
+}
+
+.skill-logo {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Default (Dev/Frontend theme): hide skill names */
+.skill-name {
+  display: none;
+}
+
+/* Show text for skills without image logos */
+.skill-item:not(:has(img)) .skill-name {
+  display: block;
+  font-size: 1rem;
+}
+
+/* Minimalist theme: show all text, hide logos, compact grid */
+:global(html[data-theme="minimalist"] .skills-container) {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+:global(html[data-theme="minimalist"] .skill-logo) {
+  display: none;
+}
+
+:global(html[data-theme="minimalist"] .skill-item) {
+  padding: 0.75rem 0.5rem;
+}
+
+:global(html[data-theme="minimalist"] .skill-content) {
+  min-height: auto;
+}
+
+:global(html[data-theme="minimalist"] .skill-group-title) {
+  color: currentColor;
+}
+
+:global(html[data-theme="minimalist"] .skill-name) {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 650px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-item {
+    padding: 0.75rem;
+  }
+
+  .skill-content {
+    min-height: 60px;
+  }
+
+  :global(html[data-theme="minimalist"] .skills-container) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
 }
 </style>

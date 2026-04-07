@@ -1,4 +1,4 @@
-@import './themes.css';
+@import "./themes.css";
 
 :root {
   --primary-color: #337ab7;
@@ -115,8 +115,7 @@ a:active {
 }
 
 .section-title {
-  text-align: center;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 /* ANIMATIONS */

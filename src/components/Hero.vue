@@ -74,6 +74,7 @@
 .location {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
@@ -86,7 +87,8 @@
 }
 
 .profile-title {
-  width: 120%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 650px) {
