@@ -1,7 +1,7 @@
 <template>
   <section class="my-work" id="projects">
     <div class="background-bar2 hidden right"></div>
-    <h2 class="work-title section-title">My Projects</h2>
+    <h2 class="work-title section-title hidden left">My Projects</h2>
     <div class="grid">
       <ProjectCard
         v-for="(project, index) in projects"

@@ -5,7 +5,11 @@
       <div v-for="group in skillGroups" :key="group.name" class="skill-group">
         <h3 class="skill-group-title">{{ group.name }}</h3>
         <div class="skills-container">
-          <div v-for="skill in group.skills" :key="skill.name" class="skill-item hidden left">
+          <div
+            v-for="skill in group.skills"
+            :key="skill.name"
+            class="skill-item hidden"
+          >
             <div class="skill-content">
               <img
                 v-if="skill.logo"

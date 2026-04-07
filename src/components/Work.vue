@@ -2,75 +2,54 @@
   <section class="work" id="work">
     <h2 class="section-title hidden right">Professional Experience</h2>
     <div class="work-list">
-      <div class="work-item hidden left">
+      <div
+        v-for="item in workItems"
+        :key="item.company"
+        class="work-item hidden"
+      >
         <div class="work-header">
           <div class="work-title-group">
-            <h3 class="job-title">Full-stack Developer</h3>
-            <p class="company">VDP Research</p>
+            <h3 class="job-title">{{ item.title }}</h3>
+            <p class="company">{{ item.company }}</p>
           </div>
-          <p class="date">September 2025 - Present</p>
+          <p class="date">{{ item.date }}</p>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Dagster</span>
-          <span class="tech-tag">Vue.js</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">Claude</span>
-        </div>
-      </div>
-
-      <div class="work-item hidden left">
-        <div class="work-header">
-          <div class="work-title-group">
-            <h3 class="job-title">Full-stack Developer</h3>
-            <p class="company">CampNerd GmbH</p>
-          </div>
-          <p class="date">August 2024 - September 2024 (freelance)</p>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">Vue.js</span>
-          <span class="tech-tag">Javascript</span>
-          <span class="tech-tag">Stripe</span>
-        </div>
-      </div>
-
-      <div class="work-item hidden left">
-        <div class="work-header">
-          <div class="work-title-group">
-            <h3 class="job-title">Full-stack Developer</h3>
-            <p class="company">Souljourney GmbH</p>
-          </div>
-          <p class="date">June 2024 - September 2024</p>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Next</span>
-          <span class="tech-tag">NodeJs</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">OpenAi, Claude</span>
-        </div>
-      </div>
-
-      <div class="work-item hidden left">
-        <div class="work-header">
-          <div class="work-title-group">
-            <h3 class="job-title">Full-stack Developer</h3>
-            <p class="company">Freelancer</p>
-          </div>
-          <p class="date">September 2023 - June 2024</p>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">Django</span>
-          <span class="tech-tag">Wordpress</span>
+          <span v-for="tech in item.tags" :key="tech" class="tech-tag">{{ tech }}</span>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+const workItems = [
+  {
+    title: 'Full-stack Developer',
+    company: 'VDP Research',
+    date: 'September 2025 - Present',
+    tags: ['Django', 'Docker', 'Dagster', 'Vue.js', 'TypeScript', 'Claude'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company: 'CampNerd GmbH',
+    date: 'August 2024 - September 2024 (freelance)',
+    tags: ['Django', 'Vue.js', 'Javascript', 'Stripe'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company: 'Souljourney GmbH',
+    date: 'June 2024 - September 2024',
+    tags: ['Next', 'NodeJs', 'AWS', 'OpenAi, Claude'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company: 'Freelancer',
+    date: 'September 2023 - June 2024',
+    tags: ['React', 'Django', 'Wordpress'],
+  },
+];
+</script>
 
 <style scoped>
 .work {
