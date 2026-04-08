@@ -28,10 +28,9 @@
 
     <div v-if="currentTheme === 'nostalgic'" class="nostalgic-marquee" role="marquee">
       <span class="nostalgic-marquee__inner">
-        ★ UNDER CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO
-        NOT STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★ UNDER
-        CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO NOT
-        STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★
+        ★ PHP IS THE BEST ★ I LOVE NETSCAPE 4.0 ★ 1024×768 ★ COBOL ★ Y2K ★ RUNESCAPE USERNAME:
+        MR.SNUFFLES ★ I CAN HAZ CHEEZBURGER? ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★ UNDER
+        CONSTRUCTION ★
       </span>
     </div>
   </Teleport>
@@ -217,7 +216,7 @@ onMounted(() => {
 /* ── Nostalgic marquee ── */
 .nostalgic-marquee {
   position: fixed;
-  top: 160px;
+  bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
@@ -225,15 +224,18 @@ onMounted(() => {
   background: #000080;
   color: #ffff00;
   font-family: "Times New Roman", serif;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   padding: 3px 0;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #808080;
   z-index: 500;
+  height: 50px;
+  width: 100%;
 }
 
 .nostalgic-marquee__inner {
   display: inline-block;
+  margin: auto 0;
   animation: marquee-scroll 25s linear infinite;
 }
 
