@@ -5,7 +5,7 @@
       <div v-for="group in skillGroups" :key="group.name" class="skill-group">
         <h3 class="skill-group-title">{{ group.name }}</h3>
         <div class="skills-container">
-          <div v-for="(skill, index) in group.skills" :key="skill.name" :class="['skill-item', 'hidden', getAnimationDirection(index)]">
+          <div v-for="(skill, index) in group.skills" :key="skill.name" :class="['skill-item', 'hidden', getAnimationDirection(index)]" data-stagger-step="100">
             <div class="skill-content">
               <div v-if="skill.logo" class="skill-logos">
                 <img

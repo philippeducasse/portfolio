@@ -3,9 +3,9 @@
     <h2 class="section-title hidden right">Professional Experience</h2>
     <div class="work-list">
       <div
-        v-for="item in workItems"
+        v-for="(item, index) in workItems"
         :key="item.company"
-        class="work-item hidden"
+        :class="['work-item', 'hidden', getAnimationDirection(index)]"
       >
         <div class="work-header">
           <div class="work-title-group">
@@ -23,30 +23,32 @@
 </template>
 
 <script setup lang="ts">
+import { getAnimationDirection } from "../utils/useAnimations";
+
 const workItems = [
   {
-    title: 'Full-stack Developer',
-    company: 'VDP Research',
-    date: 'September 2025 - Present',
-    tags: ['Django', 'Docker', 'Dagster', 'Vue.js', 'TypeScript', 'Claude'],
+    title: "Full-stack Developer",
+    company: "VDP Research",
+    date: "September 2025 - Present",
+    tags: ["Django", "Docker", "Dagster", "Vue.js", "TypeScript", "Claude"],
   },
   {
-    title: 'Full-stack Developer',
-    company: 'CampNerd GmbH',
-    date: 'August 2024 - September 2024 (freelance)',
-    tags: ['Django', 'Vue.js', 'Javascript', 'Stripe'],
+    title: "Full-stack Developer",
+    company: "CampNerd GmbH",
+    date: "August 2024 - September 2024 (freelance)",
+    tags: ["Django", "Vue.js", "Javascript", "Stripe"],
   },
   {
-    title: 'Full-stack Developer',
-    company: 'Souljourney GmbH',
-    date: 'June 2024 - September 2024',
-    tags: ['Next', 'NodeJs', 'AWS', 'OpenAi, Claude'],
+    title: "Full-stack Developer",
+    company: "Souljourney GmbH",
+    date: "June 2024 - September 2024",
+    tags: ["Next", "NodeJs", "AWS", "OpenAi, Claude"],
   },
   {
-    title: 'Full-stack Developer',
-    company: 'Freelancer',
-    date: 'September 2023 - June 2024',
-    tags: ['React', 'Django', 'Wordpress'],
+    title: "Full-stack Developer",
+    company: "Freelancer",
+    date: "September 2023 - June 2024",
+    tags: ["React", "Django", "Wordpress"],
   },
 ];
 </script>

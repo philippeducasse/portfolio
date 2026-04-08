@@ -21,9 +21,7 @@
         <li><a class="navigation-list__item" href="#skills" @click="closeMenu">Skills</a></li>
         <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
         <li><a class="navigation-list__item" href="#projects" @click="closeMenu">Projects</a></li>
-        <li>
-          <a class="navigation-list__item" @click="openModal">Change mode</a>
-        </li>
+        <li><a class="navigation-list__item" @click="openModal">Change mode</a></li>
       </ul>
     </nav>
   </header>

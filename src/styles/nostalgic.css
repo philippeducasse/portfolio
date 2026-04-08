@@ -29,10 +29,6 @@ html[data-theme="nostalgic"] a {
   text-decoration: underline;
 }
 
-html[data-theme="nostalgic"] a:visited {
-  color: #551a8b;
-}
-
 html[data-theme="nostalgic"] a:hover,
 html[data-theme="nostalgic"] a:focus {
   color: #0000cc;
@@ -72,6 +68,7 @@ html[data-theme="nostalgic"] .page-header__logo h1 {
 
 html[data-theme="nostalgic"] .navigation-list__item {
   color: #ffff00;
+  font-family: Times New Roman;
   text-decoration: underline;
 }
 
@@ -84,7 +81,6 @@ html[data-theme="nostalgic"] .nav-toggle__bar {
 }
 
 html[data-theme="nostalgic"] .navigation-list {
-  background: linear-gradient(90deg, #000080, #1084d0);
   border-top-color: #fff;
 }
 
@@ -108,16 +104,7 @@ html[data-theme="nostalgic"] .button:hover {
 
 /* Separator: animated rainbow */
 html[data-theme="nostalgic"] .background-bar {
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
-  background-size: 200% auto;
-  animation: nostalgic-rainbow 2s linear infinite;
-  height: 8px;
-}
-
-@keyframes nostalgic-rainbow {
-  to {
-    background-position: -200% center;
-  }
+  display: none;
 }
 
 /* Blinking section title */

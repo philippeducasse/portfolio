@@ -2,7 +2,7 @@ import { onMounted, watch } from "vue";
 import { useTheme } from "./useTheme";
 
 export function getAnimationDirection(index: number): string {
-  const directions = ['left', 'right', 'top', 'bottom'];
+  const directions = ["left", "right", "top", "bottom"];
   return directions[index % 4];
 }
 
@@ -11,6 +11,7 @@ export function useAnimations(): void {
   let observer: IntersectionObserver | null = null;
   const animatedElements = new Set<Element>();
   let intersectionCounter = 0;
+  let lastIntersectionTime = 0;
 
   function initializeObserver() {
     // Clean up existing observer
@@ -20,6 +21,7 @@ export function useAnimations(): void {
 
     animatedElements.clear();
     intersectionCounter = 0;
+    lastIntersectionTime = 0;
 
     // Slide-in animations
     const sliderInit = document.querySelectorAll(".slide-in");
@@ -36,11 +38,21 @@ export function useAnimations(): void {
         if (entry.isIntersecting && !animatedElements.has(entry.target)) {
           animatedElements.add(entry.target);
 
-          // Stagger the animation with 500ms * counter delay
+          // Reset counter if scrolling after a gap (new batch)
+          const now = Date.now();
+          if (now - lastIntersectionTime > 1000) {
+            intersectionCounter = 0;
+          }
+          lastIntersectionTime = now;
+
+          // Read per-element stagger step (default 200ms)
+          const step = parseInt((entry.target as HTMLElement).dataset.staggerStep ?? "500");
+
+          // Stagger the animation with configurable step delay
           // Elements animate in the order they come into view
           setTimeout(() => {
             entry.target.classList.add("shows");
-          }, 500 * intersectionCounter);
+          }, step * intersectionCounter);
 
           intersectionCounter++;
         }
