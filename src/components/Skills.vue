@@ -5,7 +5,7 @@
       <div v-for="group in skillGroups" :key="group.name" class="skill-group">
         <h3 class="skill-group-title">{{ group.name }}</h3>
         <div class="skills-container">
-          <div v-for="skill in group.skills" :key="skill.name" class="skill-item hidden">
+          <div v-for="(skill, index) in group.skills" :key="skill.name" :class="['skill-item', 'hidden', getAnimationDirection(index)]">
             <div class="skill-content">
               <div v-if="skill.logo" class="skill-logos">
                 <img
@@ -27,14 +27,16 @@
 </template>
 
 <script setup lang="ts">
+import { getAnimationDirection } from '../utils/useAnimations';
+
 const skillGroups = [
   {
     name: "Frontend",
     skills: [
       { name: "TypeScript", logo: "/img/logos/typescript.svg" },
       { name: "JavaScript", logo: "/img/logos/js.svg" },
-      { name: "React / Next.js", logo: "/img/logos/react.svg" },
-      { name: "Vue.js / Nuxt", logo: "/img/logos/vue.svg" },
+      { name: "React / Next.js", logo: ["/img/logos/react.svg", "img/logos/next.svg"] },
+      { name: "Vue.js / Nuxt", logo: ["/img/logos/vue.svg", "img/logos/nuxt.svg"] },
       { name: "HTML & CSS", logo: ["/img/logos/html.svg", "/img/logos/css.svg"] },
       { name: "Tailwind", logo: "/img/logos/tailwind.svg" },
     ],
@@ -113,23 +115,25 @@ const skillGroups = [
 .skill-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 1rem;
 }
 
 .skill-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  min-height: 80px;
+  gap: 0.5rem;
+  height: 100%;
 }
 
 .skill-logos {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
 }
 
@@ -151,13 +155,10 @@ const skillGroups = [
 }
 
 .skill-name {
-  display: none;
-}
-
-/* Show text for skills without image logos */
-.skill-item:not(:has(.skill-logos)) .skill-name {
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 /* Minimalist theme: show all text, hide logos, compact grid */

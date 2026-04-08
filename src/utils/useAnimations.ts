@@ -1,6 +1,11 @@
 import { onMounted, watch } from "vue";
 import { useTheme } from "./useTheme";
 
+export function getAnimationDirection(index: number): string {
+  const directions = ['left', 'right', 'top', 'bottom'];
+  return directions[index % 4];
+}
+
 export function useAnimations(): void {
   const { currentTheme } = useTheme();
   let observer: IntersectionObserver | null = null;
