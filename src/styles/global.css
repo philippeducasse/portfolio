@@ -1,4 +1,6 @@
-@import "./themes.css";
+@import "./nostalgic.css";
+@import "./frontend.css";
+@import "./minimal.css";
 
 :root {
   --primary-color: #337ab7;

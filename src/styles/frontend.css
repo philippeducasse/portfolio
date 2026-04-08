@@ -1,0 +1,132 @@
+/* ═══════════════════════════════════════════
+   THEME: FRONTEND DEV  (data-theme="frontend")
+   Current design, but on steroids.
+/* ═══════════════════════════════════════════ */
+
+/* Animated gradient background */
+
+/* html[data-theme="frontend"] body {
+  background: linear-gradient(135deg, #fff 0%, #eef4ff 30%, #f0fffd 70%, #fff 100%);
+  background-size: 400% 400%;
+  animation: frontend-bg-shift 10s ease infinite;
+}
+
+@keyframes frontend-bg-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* Header: animated rainbow border */
+html[data-theme="frontend"] .page-header {
+  border-bottom: 35px solid transparent;
+  background-color: #fff;
+  background-image:
+    linear-gradient(#fff, #fff), linear-gradient(90deg, #337ab7, #107d85, #489c79, #94b1cf, #337ab7);
+  background-origin: padding-box, border-box;
+  background-size:
+    auto,
+    200% auto;
+  animation: frontend-border-flow 4s linear infinite;
+}
+
+@keyframes frontend-border-flow {
+  to {
+    background-position:
+      auto,
+      -200% center;
+  }
+}
+
+/* Enhanced animations: springy cubic-bezier + bigger travel */
+/* html[data-theme="frontend"] .hidden {
+  filter: blur(8px);
+  transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+html[data-theme="frontend"] .hidden.left {
+  transform: translateX(-22vw) scale(0.88) !important;
+}
+
+html[data-theme="frontend"] .hidden.right {
+  transform: translateX(22vw) scale(0.88) !important;
+}
+
+html[data-theme="frontend"] .hidden.bottom {
+  transform: translateY(22vh) scale(0.88) !important;
+}
+
+html[data-theme="frontend"] .hidden.top {
+  transform: translateY(-22vh) scale(0.88) !important;
+}
+*/
+
+html[data-theme="frontend"] .shows {
+  transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Project cards: deep 3D hover */
+html[data-theme="frontend"] .grid__item {
+  transform-style: preserve-3d;
+}
+
+html[data-theme="frontend"] .grid__item:hover {
+  box-shadow:
+    0 24px 48px rgba(51, 122, 183, 0.25),
+    0 8px 16px rgba(16, 125, 133, 0.15);
+  transform: translateY(-10px) perspective(700px) rotateY(4deg);
+}
+
+/* Gradient card titles */
+html[data-theme="frontend"] .card-title {
+  background: linear-gradient(90deg, #337ab7, #107d85);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulsing portrait ring */
+html[data-theme="frontend"] .profile__portrait {
+  animation: frontend-portrait-ring 3s ease-in-out infinite;
+}
+
+@keyframes frontend-portrait-ring {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px #337ab7,
+      0 0 30px rgba(51, 122, 183, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 6px #107d85,
+      0 0 50px rgba(16, 125, 133, 0.55);
+  }
+}
+
+/* Separator: animated gradient bar */
+html[data-theme="frontend"] .background-bar {
+  background: linear-gradient(90deg, #337ab7, #107d85, #489c79, #94b1cf, #337ab7);
+  background-size: 200% auto;
+  animation: frontend-separator-flow 3s linear infinite;
+}
+
+@keyframes frontend-separator-flow {
+  to {
+    background-position: -200% center;
+  }
+}
+
+/* Work section background accent */
+html[data-theme="frontend"] .background-bar2 {
+  opacity: 0.4;
+}
