@@ -1,10 +1,9 @@
 <template>
   <div v-if="currentTheme === 'nostalgic'" class="nostalgic-marquee" role="marquee">
     <span class="nostalgic-marquee__inner">
-      ★ UNDER CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO
-      NOT STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;★ UNDER
-      CONSTRUCTION ★ BEST VIEWED IN NETSCAPE 4.0 ★ 1024×768 ★ YOU ARE VISITOR #000847 ★ DO NOT
-      STEAL THIS DESIGN ★ GUESTBOOK COMING SOON ★
+        ★ PHP IS THE BEST ★ I LOVE NETSCAPE 4.0 ★ 1024×768 ★ COBOL ★ Y2K ★ RUNESCAPE USERNAME:
+        MR.SNUFFLES ★ I CAN HAZ CHEEZBURGER? ★ UNDER
+        CONSTRUCTION ★
     </span>
   </div>
 </template>
@@ -18,7 +17,7 @@ const { currentTheme } = useTheme();
 <style scoped>
 .nostalgic-marquee {
   position: fixed;
-  top: 160px;
+  bottom: 0;
   left: 0;
   right: 0;
   overflow: hidden;
@@ -26,11 +25,12 @@ const { currentTheme } = useTheme();
   background: #000080;
   color: #ffff00;
   font-family: "Times New Roman", serif;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   padding: 3px 0;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #808080;
   z-index: 500;
+  width: 100%;
 }
 
 .nostalgic-marquee__inner {
