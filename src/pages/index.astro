@@ -1,18 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.vue";
-import Skills from "../components/Skills.vue";
-import Projects from "../components/Projects.vue";
-import Work from "../components/Work.vue";
-import Separator from "../components/Separator.vue";
+import AppShell from "../components/AppShell.vue";
 ---
 
 <Layout title="Philippe Ducasse Portfolio">
-  <Hero client:load />
-  <Separator />
-  <Skills client:load />
-  <Separator />
-  <Work client:load />
-  <Separator />
-  <Projects client:load />
+  <AppShell client:load />
 </Layout>
