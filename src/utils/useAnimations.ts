@@ -35,7 +35,7 @@ export function useAnimations(): void {
           // Elements animate in the order they come into view
           setTimeout(() => {
             entry.target.classList.add("shows");
-          }, 200 * intersectionCounter);
+          }, 200);
 
           intersectionCounter++;
         }
