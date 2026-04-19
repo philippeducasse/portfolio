@@ -1,7 +1,7 @@
 <template>
   <section class="profile" id="home">
     <img
-      src="/img/portrait.jpg"
+      :src="currentTheme === 'nostalgic' ? '/img/nos_portrait.png' : '/img/portrait.jpg'"
       alt="portrait of Philippe Ducasse"
       class="profile__portrait hidden left"
     />
@@ -35,7 +35,11 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { useTheme } from '../utils/useTheme';
+
+const { currentTheme } = useTheme();
+</script>
 
 <style scoped>
 .profile {
