@@ -12,6 +12,7 @@
       <Work />
       <Separator />
       <Projects />
+      <NostalgicWinner v-if="currentTheme === 'nostalgic'" />
     </main>
     <Footer />
   </template>
@@ -29,6 +30,7 @@ import Skills from "./Skills.vue";
 import Work from "./Work.vue";
 import Projects from "./Projects.vue";
 import Footer from "./Footer.vue";
+import NostalgicWinner from "./NostalgicWinner.vue";
 
 const { currentTheme, clearTheme } = useTheme();
 </script>
