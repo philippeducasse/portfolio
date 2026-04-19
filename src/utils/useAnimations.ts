@@ -13,8 +13,16 @@ export function useAnimations(): void {
   let intersectionCounter = 0;
   let lastIntersectionTime = 0;
 
+  function revealAll() {
+    if (observer) observer.disconnect();
+    document.querySelectorAll(".slide-in").forEach((el) => {
+      el.classList.remove("slide-in");
+      el.classList.add("shows");
+    });
+    document.querySelectorAll(".hidden").forEach((el) => el.classList.add("shows"));
+  }
+
   function initializeObserver() {
-    // Clean up existing observer
     if (observer) {
       observer.disconnect();
     }
@@ -22,6 +30,11 @@ export function useAnimations(): void {
     animatedElements.clear();
     intersectionCounter = 0;
     lastIntersectionTime = 0;
+
+    if (currentTheme.value === "nostalgic" || currentTheme.value === "minimalist") {
+      revealAll();
+      return;
+    }
 
     // Slide-in animations
     const sliderInit = document.querySelectorAll(".slide-in");
