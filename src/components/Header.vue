@@ -22,7 +22,7 @@
         <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
         <li><a class="navigation-list__item" href="#projects" @click="closeMenu">Projects</a></li>
         <li>
-          <a class="navigation-list__item" @click="openModal">Change mode</a>
+          <a class="navigation-list__item" @click="emit('change-mode')">Change mode</a>
         </li>
       </ul>
     </nav>
@@ -31,10 +31,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useTheme } from "../utils/useTheme";
 
+const emit = defineEmits<{ "change-mode": [] }>();
 const isOpen = ref(false);
-const { openModal } = useTheme();
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
