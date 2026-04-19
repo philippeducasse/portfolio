@@ -7,8 +7,29 @@ html[data-theme="nostalgic"] {
   background-color: #c0c0c0;
 }
 
+/* Kill all animations and transitions (except modal buttons) */
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *),
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::before,
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::after {
+  animation: none !important;
+  transition: none !important;
+}
+/* Hidden elements: show immediately, no effects */
+html[data-theme="minimalist"] .hidden {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+html[data-theme="minimalist"] .shows {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+
 html[data-theme="nostalgic"] body {
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Neue", "Comic Neue", "Comic Sans MS", "Comic Sans";
   background-color: #c0c0c0;
   color: #000;
 }
@@ -92,7 +113,7 @@ html[data-theme="nostalgic"] .button {
   color: #000;
   box-shadow: none;
   border-radius: 0;
-  font-family: "Comic Sans MS", cursive;
+  font-family: "Comic Neue", "Comic Sans MS";
 }
 
 html[data-theme="nostalgic"] button:hover,
@@ -145,7 +166,7 @@ html[data-theme="nostalgic"] .card-title {
 html[data-theme="nostalgic"] .short-description,
 html[data-theme="nostalgic"] .github-links {
   color: #000;
-  font-family: "Comic Sans MS", cursive;
+  font-family: "Comic Neue", "Comic Sans MS";
 }
 
 html[data-theme="nostalgic"] .github-links a {
@@ -185,3 +206,4 @@ html[data-theme="nostalgic"] .background-bar2 {
 html[data-theme="nostalgic"] main {
   margin-top: 26px;
 }
+
