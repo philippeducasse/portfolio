@@ -1,0 +1,141 @@
+html[data-theme="minimalist"] {
+  background-color: #0d0d0d;
+}
+
+html[data-theme="minimalist"] body {
+  background-color: #111;
+  color: #d4d4d4;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+}
+
+/* Unified off-white — use !important to beat scoped component styles */
+html[data-theme="minimalist"] h1:not(.modal-heading),
+html[data-theme="minimalist"] h2:not(.modal-heading),
+html[data-theme="minimalist"] h3,
+html[data-theme="minimalist"] h4,
+html[data-theme="minimalist"] h5,
+html[data-theme="minimalist"] h6,
+html[data-theme="minimalist"] p,
+html[data-theme="minimalist"] a,
+html[data-theme="minimalist"] li,
+html[data-theme="minimalist"]
+  span:not(.mode-btn__name):not(.mode-btn__subtitle):not(.modal-heading) {
+  color: #d4d4d4 !important;
+  font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace !important;
+  font-weight: 400 !important;
+  -webkit-text-fill-color: unset !important;
+}
+
+html[data-theme="minimalist"] a:hover,
+html[data-theme="minimalist"] a:focus {
+  color: #d4d4d4 !important;
+  text-decoration: underline;
+}
+
+/* Preserve modal button individual theme styling */
+html[data-theme="minimalist"] .mode-btn__name,
+html[data-theme="minimalist"] .mode-btn__subtitle {
+  font-family: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* Remove section min-height — no giant empty gaps */
+html[data-theme="minimalist"] section {
+  min-height: unset;
+  margin: 1.5em auto;
+}
+
+/* Kill all animations and transitions (except modal buttons) */
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *),
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::before,
+html[data-theme="minimalist"] *:not(.mode-btn):not(.mode-btn *)::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Hidden elements: show immediately, no effects */
+html[data-theme="minimalist"] .hidden {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+html[data-theme="minimalist"] .shows {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* Hide portrait and all separators */
+html[data-theme="minimalist"] .profile__portrait {
+  display: none;
+}
+
+html[data-theme="minimalist"] .profile__description {
+  width: 100%;
+}
+
+/* Collapse hero section — no portrait means no need for tall section */
+html[data-theme="minimalist"] .profile {
+  min-height: unset;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+html[data-theme="minimalist"] .background-bar,
+html[data-theme="minimalist"] .background-bar2 {
+  display: none;
+}
+
+/* Header — compact, aligned */
+html[data-theme="minimalist"] .page-header {
+  background-color: #0d0d0d;
+  border-bottom: 1px solid #2a2a2a;
+  height: auto;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+html[data-theme="minimalist"] .page-header__logo h1 {
+  font-size: 1rem;
+}
+
+html[data-theme="minimalist"] .page-header__item {
+  font-size: 0.875rem;
+}
+
+html[data-theme="minimalist"] .navigation-list__item {
+  font-size: 1rem;
+}
+
+html[data-theme="minimalist"] .nav-theme-btn {
+  color: #fff;
+}
+
+html[data-theme="minimalist"] .nav-toggle__bar {
+  background-color: #d4d4d4;
+}
+
+/* Navigation mobile panel */
+html[data-theme="minimalist"] .navigation-list {
+  background-color: #0d0d0d;
+  border-top-color: #2a2a2a;
+}
+
+/* Flatten grid to a plain list */
+html[data-theme="minimalist"] .grid {
+  display: block;
+}
+
+html[data-theme="minimalist"] .grid > *:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Footer */
+html[data-theme="minimalist"] .page-footer {
+  background-color: #0d0d0d;
+  border-top: 1px solid #2a2a2a;
+}

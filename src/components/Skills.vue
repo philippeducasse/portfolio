@@ -5,19 +5,18 @@
       <div v-for="group in skillGroups" :key="group.name" class="skill-group">
         <h3 class="skill-group-title">{{ group.name }}</h3>
         <div class="skills-container">
-          <div
-            v-for="skill in group.skills"
-            :key="skill.name"
-            class="skill-item hidden"
-          >
+          <div v-for="(skill, index) in group.skills" :key="skill.name" :class="['skill-item', 'hidden', getAnimationDirection(index)]" data-stagger-step="100">
             <div class="skill-content">
-              <img
-                v-if="skill.logo"
-                :src="skill.logo"
-                :alt="skill.name"
-                class="skill-logo"
-                :title="skill.name"
-              />
+              <div v-if="skill.logo" class="skill-logos">
+                <img
+                  v-for="(logo, idx) in Array.isArray(skill.logo) ? skill.logo : [skill.logo]"
+                  :key="`${skill.name}-${idx}`"
+                  :src="logo"
+                  :alt="skill.name"
+                  class="skill-logo"
+                  :title="skill.name"
+                />
+              </div>
               <span class="skill-name">{{ skill.name }}</span>
             </div>
           </div>
@@ -28,16 +27,18 @@
 </template>
 
 <script setup lang="ts">
+import { getAnimationDirection } from '../utils/useAnimations';
+
 const skillGroups = [
   {
     name: "Frontend",
     skills: [
       { name: "TypeScript", logo: "/img/logos/typescript.svg" },
-      { name: "JavaScript", logo: "/img/logos/javascript.svg" },
-      { name: "React / Next.js", logo: "/img/logos/react.svg" },
-      { name: "Vue.js / Nuxt", logo: "/img/logos/vue.svg" },
-      { name: "HTML & CSS", logo: null },
-      { name: "SCSS, Tailwind, Bootstrap", logo: null },
+      { name: "JavaScript", logo: "/img/logos/js.svg" },
+      { name: "React / Next.js", logo: ["/img/logos/react.svg", "img/logos/next.svg"] },
+      { name: "Vue.js / Nuxt", logo: ["/img/logos/vue.svg", "img/logos/nuxt.svg"] },
+      { name: "HTML & CSS", logo: ["/img/logos/html.svg", "/img/logos/css.svg"] },
+      { name: "Tailwind", logo: "/img/logos/tailwind.svg" },
     ],
   },
   {
@@ -45,10 +46,13 @@ const skillGroups = [
     skills: [
       { name: "Python", logo: "/img/logos/python.svg" },
       { name: "Django", logo: "/img/logos/django.svg" },
-      { name: "Node.js", logo: "/img/logos/nodejs.svg" },
-      { name: "SQL, Postgres, MySQL", logo: null },
-      { name: "DynamoDB, Elasticsearch", logo: null },
-      { name: "Claude Code, OpenAI, Agentic workflows", logo: null },
+      { name: "Node.js", logo: "/img/logos/node.svg" },
+      { name: "SQL, Postgres, MySQL", logo: ["/img/logos/postgres.svg", "/img/logos/mysql.svg"] },
+      { name: "DynamoDB, Elasticsearch", logo: ["/img/logos/dynamodb.svg"] },
+      {
+        name: "Claude Code, OpenAI, Agentic workflows",
+        logo: ["/img/logos/anthropic.svg", "/img/logos/openai.svg"],
+      },
     ],
   },
   {
@@ -56,10 +60,16 @@ const skillGroups = [
     skills: [
       { name: "Docker, Terraform", logo: "/img/logos/docker.svg" },
       { name: "Git", logo: "/img/logos/git.svg" },
-      { name: "Linux", logo: null },
-      { name: "Cloud Technologies (AWS & Firebase)", logo: null },
-      { name: "Vitest, Pytest, Jest, Playwright", logo: null },
-      { name: "Dagster", logo: null },
+      { name: "Linux", logo: "/img/logos/linux.svg" },
+      {
+        name: "Cloud Technologies (AWS & Firebase)",
+        logo: ["/img/logos/aws.svg", "/img/logos/firebase.svg"],
+      },
+      {
+        name: "Vitest, Pytest, Jest, Playwright",
+        logo: ["/img/logos/vitest.svg", "/img/logos/pytest.svg"],
+      },
+      { name: "Dagster", logo: "/img/logos/dagster.svg" },
     ],
   },
 ];
@@ -105,16 +115,26 @@ const skillGroups = [
 .skill-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 1rem;
 }
 
 .skill-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  min-height: 80px;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.skill-logos {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .skill-logo {
@@ -124,15 +144,21 @@ const skillGroups = [
   object-fit: contain;
 }
 
-/* Default (Dev/Frontend theme): hide skill names */
-.skill-name {
-  display: none;
+.skill-logos .skill-logo {
+  max-width: 60px;
+  width: 60px;
 }
 
-/* Show text for skills without image logos */
-.skill-item:not(:has(img)) .skill-name {
+.skill-logos:has(> :only-child) .skill-logo {
+  max-width: 80px;
+  width: 100%;
+}
+
+.skill-name {
   display: block;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 /* Minimalist theme: show all text, hide logos, compact grid */
@@ -141,7 +167,7 @@ const skillGroups = [
   gap: 1rem;
 }
 
-:global(html[data-theme="minimalist"] .skill-logo) {
+:global(html[data-theme="minimalist"] .skill-logos) {
   display: none;
 }
 

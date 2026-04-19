@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="vitest-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6e7a45;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#729b1b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="84" height="84" fill="url(#vitest-grad)" rx="8"/>
+  <circle cx="50" cy="50" r="30" fill="white"/>
+  <path d="M 40 45 L 45 55 L 60 35" stroke="#729b1b" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

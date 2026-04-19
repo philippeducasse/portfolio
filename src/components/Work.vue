@@ -5,7 +5,7 @@
       <div
         v-for="item in jobs"
         :key="item.company"
-        class="work-item hidden"
+        :class="['work-item', 'hidden', getAnimationDirection(index)]"
       >
         <div class="work-header">
           <div class="work-title-group">

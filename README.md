@@ -1,1 +1,1 @@
-My personal page for displaying my latest projects. wirtten in vanilla JS
+My personal page for displaying my latest projects. Written in Vue and served with Astro
