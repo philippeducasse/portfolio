@@ -207,3 +207,52 @@ html[data-theme="nostalgic"] main {
   margin-top: 26px;
 }
 
+/* Work section: Windows 95 panel style */
+html[data-theme="nostalgic"] .work-item {
+  background-color: #c0c0c0;
+  border: 3px outset #fff;
+  border-left: 3px outset #fff;
+  box-shadow: 4px 4px 0 #000;
+  padding: 0;
+}
+
+html[data-theme="nostalgic"] .work-header {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  padding: 4px 8px;
+  margin-bottom: 0;
+}
+
+html[data-theme="nostalgic"] .job-title {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+  margin: 0 0 2px 0;
+}
+
+html[data-theme="nostalgic"] .company {
+  color: #ffff88;
+  font-family: "Comic Neue", "Comic Sans MS", cursive;
+  font-size: 0.85rem;
+}
+
+html[data-theme="nostalgic"] .date {
+  color: #c0ffff;
+  font-style: italic;
+  font-family: "Comic Neue", "Comic Sans MS", cursive;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+html[data-theme="nostalgic"] .tech-tags {
+  padding: 0.5rem 0.6rem;
+}
+
+html[data-theme="nostalgic"] .tech-tag {
+  background-color: #c0c0c0;
+  color: #000;
+  border: 2px outset #fff;
+  border-radius: 0;
+  font-family: "Comic Neue", "Comic Sans MS", cursive;
+  font-size: 0.75rem;
+}
+
