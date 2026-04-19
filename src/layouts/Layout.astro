@@ -1,9 +1,5 @@
 ---
 import "../styles/global.css";
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import AnimationInit from "../components/AnimationInit.vue";
-import ViewingModeModal from "../components/ViewingModeModal.vue";
 
 interface Props {
   title?: string;
@@ -26,19 +22,8 @@ const { title = "Philippe Ducasse Dev Portfolio" } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Apply saved theme before first paint to avoid flash -->
-    <script is:inline>
-      const saved = localStorage.getItem('viewingMode');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    </script>
   </head>
   <body>
-    <Header client:load />
-    <AnimationInit client:load />
-    <ViewingModeModal client:load />
-    <main>
-      <slot />
-    </main>
-    <Footer client:load />
+    <slot />
   </body>
 </html>
