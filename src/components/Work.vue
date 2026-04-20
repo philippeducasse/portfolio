@@ -3,9 +3,9 @@
     <h2 class="section-title hidden right">Professional Experience</h2>
     <div class="work-list">
       <div
-        v-for="item in jobs"
+        v-for="(item, index) in jobs"
         :key="item.company"
-        :class="['work-item', 'hidden']"
+        :class="['work-item', 'hidden', getAnimationDirection(index)]"
       >
         <div class="work-header">
           <div class="work-title-group">
@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { jobs } from '../data/jobs';
-
+import { jobs } from "../data/jobs";
+import { getAnimationDirection } from "../utils/useAnimations";
 </script>
 
 <style scoped>

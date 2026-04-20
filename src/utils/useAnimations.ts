@@ -10,11 +10,14 @@ export function useAnimations(): void {
   const { currentTheme } = useTheme();
   let observer: IntersectionObserver | null = null;
   const animatedElements = new Set<Element>();
+  const pendingTimeouts = new Map<Element, number>();
   let intersectionCounter = 0;
   let lastIntersectionTime = 0;
 
   function revealAll() {
     if (observer) observer.disconnect();
+    pendingTimeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    pendingTimeouts.clear();
     document.querySelectorAll(".slide-in").forEach((el) => {
       el.classList.remove("slide-in");
       el.classList.add("shows");
@@ -27,6 +30,8 @@ export function useAnimations(): void {
       observer.disconnect();
     }
 
+    pendingTimeouts.forEach((timeoutId) => clearTimeout(timeoutId));
+    pendingTimeouts.clear();
     animatedElements.clear();
     intersectionCounter = 0;
     lastIntersectionTime = 0;
@@ -39,35 +44,43 @@ export function useAnimations(): void {
     // Slide-in animations
     const sliderInit = document.querySelectorAll(".slide-in");
     sliderInit.forEach((box, index) => {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         box.classList.remove("slide-in");
         box.classList.add("shows");
+        pendingTimeouts.delete(box);
       }, 100 * index);
+      pendingTimeouts.set(box, timeoutId);
     });
 
     // Intersection Observer for visibility animations
     observer = new IntersectionObserver((entries) => {
+      const now = Date.now();
+
+      // Reset counter if enough time has passed (new scroll session)
+      if (now - lastIntersectionTime > 1000) {
+        intersectionCounter = 0;
+      }
+      lastIntersectionTime = now;
+
+      // Use a local counter for this batch to prevent accumulation across rapid scrolls
+      let batchCounter = 0;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting && !animatedElements.has(entry.target)) {
           animatedElements.add(entry.target);
 
-          // Reset counter if scrolling after a gap (new batch)
-          const now = Date.now();
-          if (now - lastIntersectionTime > 1000) {
-            intersectionCounter = 0;
-          }
-          lastIntersectionTime = now;
+          const step = parseInt((entry.target as HTMLElement).dataset.staggerStep ?? "50");
+          // Don't apply the 10x multiplier to skill items (they're numerous and cumulative delay gets too high)
+          const multiplier = (entry.target as HTMLElement).classList.contains("skill-item") ? 1 : 10;
+          const delay = step * batchCounter * multiplier;
 
-          // Read per-element stagger step (default 200ms)
-          const step = parseInt((entry.target as HTMLElement).dataset.staggerStep ?? "500");
-
-          // Stagger the animation with configurable step delay
-          // Elements animate in the order they come into view
-          setTimeout(() => {
+          const timeoutId = setTimeout(() => {
             entry.target.classList.add("shows");
-          }, step * intersectionCounter);
+            pendingTimeouts.delete(entry.target);
+          }, delay);
+          pendingTimeouts.set(entry.target, timeoutId);
 
-          intersectionCounter++;
+          batchCounter++;
         }
       });
     });
