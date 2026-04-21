@@ -1,6 +1,7 @@
 <template>
   <div class="selector-page">
     <div class="selector-card">
+      <h1 class="selector-title">Philippe Ducasse</h1>
       <h2 class="selector-heading">Please select your viewing mode</h2>
       <div class="selector-options">
         <button
@@ -61,6 +62,15 @@ function select(theme: string) {
   width: 100%;
 }
 
+.selector-title {
+  color: #e8e8e8;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.3rem, 4vw, 1.6);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
 .selector-heading {
   color: #e8e8e8;
   font-family: "Lato", sans-serif;
