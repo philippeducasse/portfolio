@@ -27,11 +27,11 @@ const modes = [
   {
     id: "minimalist",
     name: "The Minimalist",
-    subtitle: "Elegant, simple. If you think css isn't real programming, this is for you",
+    subtitle: "Elegant, simple, because real programmers don't need css",
   },
   {
     id: "frontend",
-    name: "The Frontend Dev",
+    name: "Modern",
     subtitle: "If you like animations and drink fancy coffee",
   },
   {

@@ -30,13 +30,17 @@
           During my free time i like to code circus related things. I also love learning how
           computers and the internet work. And hulahoop.
         </p>
+        <p class="hidden bottom">
+          You can contact me at info@philippeducasse.com, or on
+          <a href="https://linkedin.com/in/philippe-ducasse" target="_blank">LinkedIn</a>.
+        </p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from '../utils/useTheme';
+import { useTheme } from "../utils/useTheme";
 
 const { currentTheme } = useTheme();
 </script>

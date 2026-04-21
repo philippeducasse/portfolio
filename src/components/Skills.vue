@@ -5,7 +5,12 @@
       <div v-for="group in skillGroups" :key="group.name" class="skill-group">
         <h3 class="skill-group-title">{{ group.name }}</h3>
         <div class="skills-container">
-          <div v-for="(skill, index) in group.skills" :key="skill.name" :class="['skill-item', 'hidden', getAnimationDirection(index)]" data-stagger-step="100">
+          <div
+            v-for="(skill, index) in group.skills"
+            :key="skill.name"
+            :class="['skill-item', 'hidden', getAnimationDirection(index)]"
+            data-stagger-step="100"
+          >
             <div class="skill-content">
               <div v-if="skill.logo" class="skill-logos">
                 <img
@@ -27,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { getAnimationDirection } from '../utils/useAnimations';
+import { getAnimationDirection } from "../utils/useAnimations";
 
 const skillGroups = [
   {
@@ -48,10 +53,9 @@ const skillGroups = [
       { name: "Django", logo: "/img/logos/django.svg" },
       { name: "Node.js", logo: "/img/logos/node.svg" },
       { name: "SQL, Postgres, MySQL", logo: ["/img/logos/postgres.svg", "/img/logos/mysql.svg"] },
-      { name: "DynamoDB, Elasticsearch", logo: ["/img/logos/dynamodb.svg"] },
       {
-        name: "Claude Code, OpenAI, Agentic workflows",
-        logo: ["/img/logos/anthropic.svg", "/img/logos/openai.svg"],
+        name: "DynamoDB, Elasticsearch",
+        logo: ["/img/logos/dynamodb.svg", "/img/logos/elasticsearch.svg"],
       },
     ],
   },
@@ -69,7 +73,10 @@ const skillGroups = [
         name: "Vitest, Pytest, Jest, Playwright",
         logo: ["/img/logos/vitest.svg", "/img/logos/pytest.svg"],
       },
-      { name: "Dagster", logo: "/img/logos/dagster.svg" },
+      {
+        name: "Claude Code, OpenAI, Agentic workflows",
+        logo: ["/img/logos/anthropic.svg", "/img/logos/openai.svg"],
+      },
     ],
   },
 ];
