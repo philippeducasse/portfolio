@@ -1,23 +1,20 @@
 <template>
-  <section class="winner-section" aria-label="Congratulations">
+  <div class="winner-section" aria-label="Congratulations">
     <div class="winner-box">
       <div class="winner-stars">★ ★ ★ ★ ★</div>
       <h2 class="winner-title">YOU WON!!!</h2>
-      <p class="winner-subtitle">Congratulations! </p>
-      <p class="winner-message">
-        You are the <strong>1000th visitor</strong> to this site!
-      </p>
+      <p class="winner-subtitle">Congratulations!</p>
+      <p class="winner-message">You are the <strong>1000th visitor</strong> to this site!</p>
       <p class="winner-prize">You have won a SPECIAL PRIZE!</p>
-      <a href="#" class="winner-btn" @click.prevent>
-        *** CLICK HERE TO CLAIM YOUR PRIZE ***
-      </a>
+      <a href="#" class="winner-btn" @click.prevent> *** CLICK HERE TO CLAIM YOUR PRIZE *** </a>
       <div class="winner-stars">★ ★ ★ ★ ★</div>
     </div>
-  </section>
+  </div>
 </template>
 
 <style scoped>
 .winner-section {
+  margin-top: -200px;
   display: flex;
   justify-content: center;
   padding: 24px 16px;
@@ -27,27 +24,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #ffff00;
   border: 4px solid #ff0000;
   padding: 24px 32px;
   text-align: center;
   max-width: 480px;
   width: 100%;
   box-shadow: 6px 6px 0 #000;
-  animation: winner-flash 3s step-end infinite;
-}
-
-@keyframes winner-flash {
-  0%,
-  100% {
-    background-color: #ffff00;
-    border-color: #ff0000;
-  }
-
-  50% {
-    background-color: #ff00ff;
-    border-color: #0000ff;
-  }
 }
 
 .winner-stars {

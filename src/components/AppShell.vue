@@ -6,13 +6,13 @@
     <AnimationInit />
     <main>
       <Hero />
+      <NostalgicWinner v-if="currentTheme === 'nostalgic'" />
       <Separator />
       <Skills />
       <Separator />
       <Work />
       <Separator />
       <Projects />
-      <NostalgicWinner v-if="currentTheme === 'nostalgic'" />
     </main>
     <Footer />
   </template>
