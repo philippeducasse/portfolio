@@ -193,7 +193,7 @@ const skillGroups = [
 
 @media (max-width: 650px) {
   .skills-container {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 1rem;
   }
 
@@ -205,9 +205,46 @@ const skillGroups = [
     min-height: 60px;
   }
 
+  .skill-logo {
+    max-width: 60px;
+  }
+
+  .skill-logos .skill-logo {
+    max-width: 50px;
+    width: 50px;
+  }
+
   :global(html[data-theme="minimalist"] .skills-container) {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .skill-item {
+    padding: 0.5rem;
+  }
+
+  .skill-logo {
+    max-width: 50px;
+  }
+
+  .skill-logos .skill-logo {
+    max-width: 40px;
+    width: 40px;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+
+  .skill-group-title {
+    font-size: 1rem;
   }
 }
 </style>

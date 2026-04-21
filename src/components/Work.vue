@@ -142,8 +142,46 @@ import { getAnimationDirection } from "../utils/useAnimations";
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
   font-weight: 500;
+}
+
+@media (max-width: 650px) {
+  .work-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .date {
+    white-space: normal;
+  }
+
+  .job-title {
+    font-size: 1.125rem;
+  }
+
+  .company {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .work-item {
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+
+  .job-title {
+    font-size: 1rem;
+  }
+
+  .company {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    font-size: 0.85rem;
+  }
 }
 
 :global(html[data-theme="minimalist"] .work-item) {

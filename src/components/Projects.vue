@@ -83,15 +83,28 @@ import ProjectCard from "./ProjectCard.vue";
 @media (max-width: 650px) {
   .grid {
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
   }
 
   .grid__item {
-    max-width: 80%;
+    max-width: 95%;
     margin: 0 auto;
   }
 
   .grid__item img {
-    max-width: 12.5rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-gap: 0.75rem;
+  }
+
+  .grid__item {
+    max-width: 100%;
+    min-width: unset;
+    min-height: unset;
   }
 }
 

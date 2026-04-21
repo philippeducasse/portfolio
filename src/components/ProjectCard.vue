@@ -105,6 +105,7 @@ const animationDir = computed(() => DIRS[props.index % 3]);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  justify-content: space-around;
 }
 
 .card-title {
@@ -167,12 +168,40 @@ const animationDir = computed(() => DIRS[props.index % 3]);
 
 @media (max-width: 500px) {
   .grid__item {
-    max-width: 80%;
+    max-width: 95%;
     margin: 0 auto;
+    padding: 1rem;
   }
 
   .screenshot {
-    height: 150px;
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .short-description {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .tools__logo {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 350px) {
+  .grid__item {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+
+  .screenshot {
+    height: 100px;
   }
 }
 

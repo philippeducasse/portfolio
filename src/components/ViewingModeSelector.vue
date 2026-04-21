@@ -64,7 +64,7 @@ function select(theme: string) {
 .selector-heading {
   color: #e8e8e8;
   font-family: "Lato", sans-serif;
-  font-size: 1.375rem;
+  font-size: clamp(1.125rem, 4vw, 1.375rem);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 400;
@@ -93,14 +93,14 @@ function select(theme: string) {
 
 .mode-btn__name {
   font-family: "Lato", sans-serif;
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
   font-weight: 700;
   line-height: 1.3;
   display: block;
 }
 
 .mode-btn__subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2vw, 1rem);
   line-height: 1.5;
   display: block;
 }
@@ -173,6 +173,22 @@ function select(theme: string) {
 @media (max-width: 600px) {
   .selector-options {
     flex-direction: column;
+  }
+
+  .mode-btn {
+    min-width: 100%;
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .selector-page {
+    padding: 1rem;
+  }
+
+  .mode-btn {
+    padding: 1rem 0.875rem;
+    gap: 0.5rem;
   }
 }
 </style>

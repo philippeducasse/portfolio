@@ -94,16 +94,16 @@ html[data-theme="minimalist"] .page-header {
   background-color: #0d0d0d;
   border-bottom: 1px solid #2a2a2a;
   height: auto;
-  padding: 1rem 2rem;
+  padding: 1rem clamp(1rem, 5vw, 2rem);
   align-items: center;
 }
 
 html[data-theme="minimalist"] .page-header__logo h1 {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 3vw, 1rem);
 }
 
 html[data-theme="minimalist"] .page-header__item {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
 }
 
 html[data-theme="minimalist"] .navigation-list__item {

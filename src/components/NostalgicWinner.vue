@@ -14,7 +14,6 @@
 
 <style scoped>
 .winner-section {
-  margin-top: -200px;
   display: flex;
   justify-content: center;
   padding: 24px 16px;
@@ -52,7 +51,7 @@
 
 .winner-title {
   font-family: "Times New Roman", Times, serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   color: #cc0000;
   text-decoration: underline;
   margin: 8px 0;
@@ -121,6 +120,35 @@
   50% {
     background-color: #ff6600;
     color: #fff;
+  }
+}
+
+@media (max-width: 500px) {
+  .winner-box {
+    padding: 16px 20px;
+    max-width: 100%;
+  }
+
+  .winner-stars {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .winner-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .winner-message {
+    font-size: 0.95rem;
+  }
+
+  .winner-prize {
+    font-size: 1rem;
+  }
+
+  .winner-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 </style>

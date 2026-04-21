@@ -47,16 +47,17 @@ const closeMenu = () => {
 .page-header {
   display: flex;
   width: 100%;
-  height: 125px;
-  padding: 20px 100px;
+  height: auto;
+  padding: 15px 100px;
   border-bottom: 35px solid var(--primary-color);
   background-color: #fff;
   position: relative;
+  align-items: center;
 }
 
 .page-header__logo h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 100;
   font-family: inherit;
   color: inherit;
@@ -177,11 +178,16 @@ const closeMenu = () => {
 
 @media (max-width: 500px) {
   .page-header {
-    padding: 20px;
+    padding: 12px 15px;
+    border-bottom-width: 25px;
   }
 
   .page-header__logo {
-    font-size: 4.5rem;
+    font-size: 2rem;
+  }
+
+  .page-header__item {
+    font-size: 14px;
   }
 }
 

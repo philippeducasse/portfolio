@@ -27,7 +27,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 2.5vw, 1.2em);
   line-height: 1.6;
   margin: 0 auto;
   min-height: 100vh;
@@ -43,7 +43,6 @@ main {
 
 section {
   max-width: 1200px;
-  min-height: 70vh;
   margin: 3em auto;
   padding: 0 2em;
 }
@@ -185,22 +184,46 @@ button,
 
 @media (max-width: 900px) {
   section {
-    padding: 3rem 4rem;
+    padding: 2rem 2.5rem;
   }
 }
 
 @media (max-width: 650px) {
   section {
     padding: 2rem 1.5rem;
+    margin: 2.5em auto;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 400px) {
-  body {
-    font-size: 1rem;
+  section {
+    padding: 1.5rem 1rem;
+    margin: 2em auto;
   }
 
-  section {
-    padding: 2rem 1rem;
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
   }
 }

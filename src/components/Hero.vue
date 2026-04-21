@@ -50,11 +50,12 @@ const { currentTheme } = useTheme();
 }
 
 .profile__portrait {
-  width: 15.625rem;
-  height: 15.625rem;
+  width: clamp(120px, 30vw, 15.625rem);
+  height: clamp(120px, 30vw, 15.625rem);
   margin-right: 3rem;
   float: left;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .profile__description {
@@ -104,6 +105,8 @@ const { currentTheme } = useTheme();
 
   .profile__portrait {
     margin: 0 0 1.875rem;
+    width: 140px;
+    height: 140px;
   }
 
   .profile__description {
@@ -116,6 +119,18 @@ const { currentTheme } = useTheme();
 
   .profile-title {
     width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile__portrait {
+    width: 110px;
+    height: 110px;
+    margin: 0 0 1.5rem;
+  }
+
+  .profile h1 {
+    font-size: 1.25rem;
   }
 }
 </style>

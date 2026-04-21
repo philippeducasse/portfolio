@@ -1,9 +1,8 @@
 <template>
   <div v-if="currentTheme === 'nostalgic'" class="nostalgic-marquee" role="marquee">
     <span class="nostalgic-marquee__inner">
-        ★ PHP IS THE BEST ★ I LOVE NETSCAPE 4.0 ★ 1024×768 ★ COBOL ★ Y2K ★ RUNESCAPE USERNAME:
-        MR.SNUFFLES ★ I CAN HAZ CHEEZBURGER? ★ UNDER
-        CONSTRUCTION ★
+      ★ PHP IS THE BEST ★ I LOVE NETSCAPE 4.0 ★ 1024×768 ★ COBOL ★ Y2K ★ RUNESCAPE USERNAME:
+      MR.SNUFFLES ★ I CAN HAZ CHEEZBURGER? ★ UNDER CONSTRUCTION ★
     </span>
   </div>
 </template>
@@ -26,11 +25,12 @@ const { currentTheme } = useTheme();
   color: #ffff00;
   font-family: "Times New Roman", serif;
   font-size: 1rem;
-  padding: 3px 0;
-  border-top: 2px solid #fff;
-  border-bottom: 2px solid #808080;
+  padding: 10px 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #808080;
   z-index: 500;
   width: 100%;
+  line-height: 1;
 }
 
 .nostalgic-marquee__inner {
@@ -50,7 +50,15 @@ const { currentTheme } = useTheme();
 
 @media (max-width: 600px) {
   .nostalgic-marquee {
-    top: 90px;
+    font-size: 0.8rem;
+    border-top-width: 1px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nostalgic-marquee {
+    font-size: 0.8rem;
+    border: none;
   }
 }
 </style>

@@ -109,3 +109,19 @@ html[data-theme="frontend"] .background-bar {
 html[data-theme="frontend"] .background-bar2 {
   opacity: 0.4;
 }
+
+@media (max-width: 500px) {
+  html[data-theme="frontend"] .page-header {
+    border-bottom-width: 25px;
+  }
+
+  html[data-theme="frontend"] .profile__portrait {
+    box-shadow:
+      0 0 0 2px #337ab7,
+      0 0 20px rgba(51, 122, 183, 0.25) !important;
+  }
+
+  html[data-theme="frontend"] .grid__item:hover {
+    transform: translateY(-4px) perspective(700px) rotateY(2deg);
+  }
+}
