@@ -2,6 +2,7 @@
   <div class="selector-page">
     <div class="selector-card">
       <h1 class="selector-title">Philippe Ducasse</h1>
+      <h1 class="selector-title">Portfolio</h1>
       <h2 class="selector-heading">Please select your viewing mode</h2>
       <div class="selector-options">
         <button
@@ -28,12 +29,12 @@ const modes = [
   {
     id: "minimalist",
     name: "The Minimalist",
-    subtitle: "Elegant, simple, because real programmers don't need css",
+    subtitle: "Because real programmers don't need css",
   },
   {
     id: "frontend",
     name: "Modern",
-    subtitle: "If you like animations and drink fancy coffee",
+    subtitle: "If you drink oat milk flat whites, this is for you",
   },
   {
     id: "nostalgic",
