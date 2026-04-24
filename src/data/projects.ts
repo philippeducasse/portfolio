@@ -8,7 +8,10 @@ export interface Project {
   tools: Tool[];
 }
 
- interface Tool { name: string; image: string }
+interface Tool {
+  name: string;
+  image: string;
+}
 
 export const projects: Project[] = [
   {
@@ -18,7 +21,7 @@ export const projects: Project[] = [
     description:
       "Clapp helps freelance performance manage and enhance their careers by streamlining the application process.",
     image: "/img/clapp.png",
-    link: "https://clapp.ovh",
+    link: "https://clapp.ovh/api/profiles/demo-login",
     githubLinks: [
         "https://github.com/philippeducasse/clapp_frontend",
         "https://github.com/philippeducasse/clapp_backend",

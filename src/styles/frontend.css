@@ -28,14 +28,9 @@ html[data-theme="frontend"] body {
 /* Header: animated rainbow border */
 html[data-theme="frontend"] .page-header {
   border-bottom: 35px solid var(--primary-color);
-  background-color: var(--primary-color);
-  background-image:
-    linear-gradient(#fff, #fff), linear-gradient(90deg, #337ab7, #107d85, #489c79, #94b1cf, #337ab7);
-  background-origin: padding-box, border-box;
-  background-size:
-    auto,
-    200% auto;
-  animation: frontend-border-flow 4s linear infinite;
+  background: linear-gradient(135deg, #fff 0%, #eef4ff 30%, #f0fffd 70%, #fff 100%);
+  background-size: 400% 400%;
+  animation: frontend-bg-shift 10s ease infinite;
 }
 
 @keyframes frontend-border-flow {

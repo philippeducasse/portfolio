@@ -2,6 +2,7 @@
   <div class="selector-page">
     <div class="selector-card">
       <h1 class="selector-title">Philippe Ducasse</h1>
+      <h1 class="selector-title">Portfolio</h1>
       <h2 class="selector-heading">Please select your viewing mode</h2>
       <div class="selector-options">
         <button
@@ -33,7 +34,7 @@ const modes = [
   {
     id: "frontend",
     name: "Modern",
-    subtitle: "If you drink oat milk flat whites",
+    subtitle: "If you drink oat milk flat whites, this is for you",
   },
   {
     id: "nostalgic",

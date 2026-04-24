@@ -18,8 +18,8 @@
       </button>
       <ul id="nav-menu" class="navigation-list" :class="{ 'is-open': isOpen }">
         <li><a class="navigation-list__item" href="#home" @click="closeMenu">Home</a></li>
-        <li><a class="navigation-list__item" href="#skills" @click="closeMenu">Skills</a></li>
         <li><a class="navigation-list__item" href="#work" @click="closeMenu">Work</a></li>
+        <li><a class="navigation-list__item" href="#skills" @click="closeMenu">Skills</a></li>
         <li><a class="navigation-list__item" href="#projects" @click="closeMenu">Projects</a></li>
         <li>
           <a class="navigation-list__item" @click="emit('change-mode')">Change mode</a>
@@ -50,7 +50,7 @@ const closeMenu = () => {
   height: auto;
   padding: 15px 100px;
   border-bottom: 35px solid var(--primary-color);
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   position: relative;
   align-items: center;
 }

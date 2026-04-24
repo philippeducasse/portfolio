@@ -1,6 +1,6 @@
 <template>
   <section class="work" id="work">
-    <h2 class="section-title hidden right">Professional Experience</h2>
+    <h2 class="section-title hidden right">Work</h2>
     <div class="work-list">
       <div
         v-for="(item, index) in jobs"
@@ -10,10 +10,20 @@
         <div class="work-header">
           <div class="work-title-group">
             <h3 class="job-title">{{ item.title }}</h3>
-            <p class="company">{{ item.company }}</p>
+            <a
+              v-if="item.link"
+              :href="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="company-link"
+            >
+              {{ item.company }}
+            </a>
+            <p v-else class="company">{{ item.company }}</p>
           </div>
           <p class="date">{{ item.date }}</p>
         </div>
+        <p class="description">{{ item.description }}</p>
         <div class="tech-tags">
           <span v-for="tech in item.tags" :key="tech" class="tech-tag">{{ tech }}</span>
         </div>
@@ -81,6 +91,26 @@ import { getAnimationDirection } from "../utils/useAnimations";
   color: var(--text-muted);
   margin: 0;
   white-space: nowrap;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0 0.25rem;
+  color: black;
+}
+
+.company-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.company-link:hover {
+  opacity: 0.7;
 }
 
 .accomplishments {
