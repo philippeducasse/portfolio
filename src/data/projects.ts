@@ -19,6 +19,10 @@ export const projects: Project[] = [
       "Clapp helps freelance performance manage and enhance their careers by streamlining the application process.",
     image: "/img/clapp.png",
     link: "https://clapp.ovh",
+    githubLinks: [
+        "https://github.com/philippeducasse/clapp_frontend",
+        "https://github.com/philippeducasse/clapp_backend",
+    ],
     tools: [
       { name: "Next.js", image: "/img/logos/next.svg" },
       { name: "Django", image: "/img/logos/django.svg" },
