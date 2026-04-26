@@ -74,7 +74,7 @@ const skillGroups = [
         logo: ["/img/logos/vitest.svg", "/img/logos/pytest.svg"],
       },
       {
-        name: "Claude Code, OpenAI, Agentic workflows",
+        name: "Claude Code, ChatGPT, Agentic workflows",
         logo: ["/img/logos/anthropic.svg", "/img/logos/openai.svg"],
       },
     ],
